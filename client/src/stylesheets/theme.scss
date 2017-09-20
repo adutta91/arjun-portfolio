@@ -15,10 +15,12 @@ $z-5 : 2000;
 // --------------------------------------------------
 // colors
 // --------------------------------------------------
-$red: #f33;
-$gray: #7F7979;
-$teal: #699;
-$dark-teal: #003333;
+$red  : #f33;
+$gray : #666;
+
+$blue       : #336699;
+$dark-blue  : darken(#336699, 10%);
+$light-blue : lighten(#336699, 10%);
 
 // --------------------------------------------------
 // variables
@@ -28,13 +30,16 @@ $default-text-color: lighten($gray, 10%);
 
 
 #arjun-portfolio-main {
+  // ------------
+  // Landing CSS
+  // --------------------------------------------------
   .landing {
     position: relative;
     top: 200px;
     margin: auto;
     text-align: center;
-    width: max-content;
-    transition: all 1s ease-in-out;
+    width: 400px;
+    transition: opacity 1s ease-in-out;
 
     &.hidden {
       opacity: 0;
@@ -42,11 +47,14 @@ $default-text-color: lighten($gray, 10%);
     }
 
     >.header {
+      width: 350px;
+      margin: auto;
       font-size: 48px;
       letter-spacing: 15px;
-      color: $gray;
+      text-indent: 15px;
+      color: $blue;
       opacity: 1;
-      transition: all 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
 
       &.hidden {
         opacity: 0;
@@ -57,10 +65,18 @@ $default-text-color: lighten($gray, 10%);
       margin-top: 15px;
       color: $default-text-color;
       opacity: 1;
-      transition: all 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
 
       &.hidden {
         opacity: 0;
+      }
+
+      &:hover > .dash {
+        width: 400px;
+      }
+
+      &.hidden:hover > .dash {
+        width: 0px;
       }
 
       .enter {
@@ -71,7 +87,7 @@ $default-text-color: lighten($gray, 10%);
         position: relative;
         padding: 0 10px;
         cursor: pointer;
-        transition: all .2s;
+        transition: opacity .2s;
 
         &:active {
           transition: all .2s;
@@ -81,19 +97,91 @@ $default-text-color: lighten($gray, 10%);
       }
 
       .dash {
+        width: 350px;
+        margin: auto;
         position: relative;
-        width: 100%;
-        top: 11px;
-        border-top: 1px solid $default-text-color;
+        bottom: 7px;
+        border-top: 1px solid $blue;
         z-index: $z-1;
+        transition: width .75s;
+
+        &.hidden {
+          width: 0;
+        }
+
+        &:hover {
+          width: 400px;
+        }
       }
     }
-
   }
+
+  // -----------
+  // Profile CSS
+  // --------------------------------------------------
   .profile {
     margin: auto;
     position: relative;
     top: 200px;
-    width: max-content;
+    opacity: 1;
+    transition: all .5s ease-in-out;
+
+    &.hidden {
+      opacity: 0;
+    }
+
+    >.sidebar {
+      height: 100vh;
+      width: 300px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: $dark-blue;
+      //
+      // >.first-name {
+      //   position: relative;
+      //   top: 330px;
+      //   color: white;
+      //   font-size: 48px;
+      //   font-weight: 400;
+      //   left: 25px;
+      // }
+      // >.last-name {
+      //   position: relative;
+      //   top: 340px;
+      //   color: white;
+      //   font-size: 48px;
+      //   font-weight: 400;
+      //   left: 140px;
+      // }
+
+      >.contact-info {
+        position: absolute;
+        bottom: 10px;
+        width: 240px;
+        padding: 15px;
+        margin: 15px;
+        color: white;
+
+        >.info-item {
+          display: flex;
+          margin: 15px 0;
+
+          >a, span {
+            margin-left: 5px;
+            color: white;
+          }
+        }
+      }
+    }
+
+    >.profile-img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      position: fixed;
+      top: 50px;
+      left: 100px;
+    }
   }
 }

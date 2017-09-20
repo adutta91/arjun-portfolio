@@ -7,26 +7,33 @@ body {
   top: 200px;
   margin: auto;
   text-align: center;
-  width: max-content;
-  transition: all 1s ease-in-out; }
+  width: 400px;
+  transition: opacity 1s ease-in-out; }
   #arjun-portfolio-main .landing.hidden {
     opacity: 0;
     pointer-events: none; }
   #arjun-portfolio-main .landing > .header {
+    width: 350px;
+    margin: auto;
     font-size: 48px;
     letter-spacing: 15px;
-    color: #7F7979;
+    text-indent: 15px;
+    color: #336699;
     opacity: 1;
-    transition: all 1s ease-in-out; }
+    transition: opacity 1s ease-in-out; }
     #arjun-portfolio-main .landing > .header.hidden {
       opacity: 0; }
   #arjun-portfolio-main .landing > .subheader {
     margin-top: 15px;
-    color: #989393;
+    color: gray;
     opacity: 1;
-    transition: all 1s ease-in-out; }
+    transition: opacity 1s ease-in-out; }
     #arjun-portfolio-main .landing > .subheader.hidden {
       opacity: 0; }
+    #arjun-portfolio-main .landing > .subheader:hover > .dash {
+      width: 400px; }
+    #arjun-portfolio-main .landing > .subheader.hidden:hover > .dash {
+      width: 0px; }
     #arjun-portfolio-main .landing > .subheader .enter {
       z-index: 500;
       background: white;
@@ -35,20 +42,56 @@ body {
       position: relative;
       padding: 0 10px;
       cursor: pointer;
-      transition: all .2s; }
+      transition: opacity .2s; }
       #arjun-portfolio-main .landing > .subheader .enter:active {
         transition: all .2s;
         transform: scale(0.95);
-        color: #7F7979; }
+        color: #666; }
     #arjun-portfolio-main .landing > .subheader .dash {
+      width: 350px;
+      margin: auto;
       position: relative;
-      width: 100%;
-      top: 11px;
-      border-top: 1px solid #989393;
-      z-index: 100; }
+      bottom: 7px;
+      border-top: 1px solid #336699;
+      z-index: 100;
+      transition: width .75s; }
+      #arjun-portfolio-main .landing > .subheader .dash.hidden {
+        width: 0; }
+      #arjun-portfolio-main .landing > .subheader .dash:hover {
+        width: 400px; }
 
 #arjun-portfolio-main .profile {
   margin: auto;
   position: relative;
   top: 200px;
-  width: max-content; }
+  opacity: 1;
+  transition: all .5s ease-in-out; }
+  #arjun-portfolio-main .profile.hidden {
+    opacity: 0; }
+  #arjun-portfolio-main .profile > .sidebar {
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #264d73; }
+    #arjun-portfolio-main .profile > .sidebar > .contact-info {
+      position: absolute;
+      bottom: 10px;
+      width: 240px;
+      padding: 15px;
+      margin: 15px;
+      color: white; }
+      #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item {
+        display: flex;
+        margin: 15px 0; }
+        #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item > a, #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item span {
+          margin-left: 5px;
+          color: white; }
+  #arjun-portfolio-main .profile > .profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: fixed;
+    top: 50px;
+    left: 100px; }
