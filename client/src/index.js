@@ -1,8 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { render } from 'react-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import Store from './app/store';
+
+import AppContainer from './containers/app-container.js';
+
+import registerServiceWorker from './registerServiceWorker';
+import './stylesheets/theme.css';
+
+
+const routes = (
+  <Provider store={Store}>
+    <BrowserRouter>
+      <Route exact path="/" component={AppContainer}/>
+    </BrowserRouter>
+  </Provider>
+);
+
+render(routes, document.getElementById('arjun-portfolio-main'));
 registerServiceWorker();

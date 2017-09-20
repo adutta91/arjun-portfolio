@@ -1,0 +1,99 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+}
+
+// --------------------------------------------------
+// z-indices
+// --------------------------------------------------
+$z-1 : 100;
+$z-2 : 500;
+$z-3 : 1000;
+$z-4 : 1500;
+$z-5 : 2000;
+
+// --------------------------------------------------
+// colors
+// --------------------------------------------------
+$red: #f33;
+$gray: #7F7979;
+$teal: #699;
+$dark-teal: #003333;
+
+// --------------------------------------------------
+// variables
+// --------------------------------------------------
+$default-text-color: lighten($gray, 10%);
+
+
+
+#arjun-portfolio-main {
+  .landing {
+    position: relative;
+    top: 200px;
+    margin: auto;
+    text-align: center;
+    width: max-content;
+    transition: all 1s ease-in-out;
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    >.header {
+      font-size: 48px;
+      letter-spacing: 15px;
+      color: $gray;
+      opacity: 1;
+      transition: all 1s ease-in-out;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    >.subheader {
+      margin-top: 15px;
+      color: $default-text-color;
+      opacity: 1;
+      transition: all 1s ease-in-out;
+
+      &.hidden {
+        opacity: 0;
+      }
+
+      .enter {
+        z-index: $z-2;
+        background: white;
+        width: max-content;
+        margin: auto;
+        position: relative;
+        padding: 0 10px;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:active {
+          transition: all .2s;
+          transform: scale(.95);
+          color: $gray;
+        }
+      }
+
+      .dash {
+        position: relative;
+        width: 100%;
+        top: 11px;
+        border-top: 1px solid $default-text-color;
+        z-index: $z-1;
+      }
+    }
+
+  }
+  .profile {
+    margin: auto;
+    position: relative;
+    top: 200px;
+    width: max-content;
+  }
+}

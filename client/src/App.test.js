@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import Store from './app/store';
+
+import AppContainer from './containers/app-container';
+
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  render(
+    <Provider store={Store}><AppContainer /></Provider>,
+    document.getElementById('root')
+  );
 });
