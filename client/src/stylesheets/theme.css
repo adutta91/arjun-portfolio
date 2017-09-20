@@ -1,97 +1,138 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 200; }
+  font-weight: 200;
+  margin: 0; }
 
-#arjun-portfolio-main .landing {
-  position: relative;
-  top: 200px;
-  margin: auto;
-  text-align: center;
-  width: 400px;
-  transition: opacity 1s ease-in-out; }
-  #arjun-portfolio-main .landing.hidden {
-    opacity: 0;
-    pointer-events: none; }
-  #arjun-portfolio-main .landing > .header {
-    width: 350px;
+@keyframes grow {
+  from {
+    width: 0; }
+  to {
+    width: 350px; } }
+
+#arjun-portfolio-main {
+  width: 100%;
+  height: 100%; }
+  #arjun-portfolio-main .landing {
+    position: relative;
+    top: 200px;
     margin: auto;
-    font-size: 48px;
-    letter-spacing: 15px;
-    text-indent: 15px;
-    color: #336699;
-    opacity: 1;
+    text-align: center;
+    width: 400px;
     transition: opacity 1s ease-in-out; }
-    #arjun-portfolio-main .landing > .header.hidden {
-      opacity: 0; }
-  #arjun-portfolio-main .landing > .subheader {
-    margin-top: 15px;
-    color: gray;
-    opacity: 1;
-    transition: opacity 1s ease-in-out; }
-    #arjun-portfolio-main .landing > .subheader.hidden {
-      opacity: 0; }
-    #arjun-portfolio-main .landing > .subheader:hover > .dash {
-      width: 400px; }
-    #arjun-portfolio-main .landing > .subheader.hidden:hover > .dash {
-      width: 0px; }
-    #arjun-portfolio-main .landing > .subheader .enter {
-      z-index: 500;
-      background: white;
-      width: max-content;
-      margin: auto;
-      position: relative;
-      padding: 0 10px;
-      cursor: pointer;
-      transition: opacity .2s; }
-      #arjun-portfolio-main .landing > .subheader .enter:active {
-        transition: all .2s;
-        transform: scale(0.95);
-        color: #666; }
-    #arjun-portfolio-main .landing > .subheader .dash {
+    #arjun-portfolio-main .landing.hidden {
+      opacity: 0;
+      pointer-events: none; }
+    #arjun-portfolio-main .landing > .header {
       width: 350px;
       margin: auto;
-      position: relative;
-      bottom: 7px;
-      border-top: 1px solid #336699;
-      z-index: 100;
-      transition: width .75s; }
-      #arjun-portfolio-main .landing > .subheader .dash.hidden {
-        width: 0; }
-      #arjun-portfolio-main .landing > .subheader .dash:hover {
+      font-size: 48px;
+      letter-spacing: 15px;
+      text-indent: 15px;
+      color: #336699;
+      opacity: 1;
+      transition: opacity 1s ease-in-out; }
+      #arjun-portfolio-main .landing > .header.hidden {
+        opacity: 0; }
+    #arjun-portfolio-main .landing > .subheader {
+      margin-top: 15px;
+      color: gray;
+      opacity: 1;
+      transition: opacity 1s ease-in-out; }
+      #arjun-portfolio-main .landing > .subheader.hidden {
+        opacity: 0; }
+      #arjun-portfolio-main .landing > .subheader:hover > .dash {
         width: 400px; }
-
-#arjun-portfolio-main .profile {
-  margin: auto;
-  position: relative;
-  top: 200px;
-  opacity: 1;
-  transition: all .5s ease-in-out; }
-  #arjun-portfolio-main .profile.hidden {
-    opacity: 0; }
-  #arjun-portfolio-main .profile > .sidebar {
-    height: 100vh;
-    width: 300px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: #264d73; }
-    #arjun-portfolio-main .profile > .sidebar > .contact-info {
-      position: absolute;
-      bottom: 10px;
-      width: 240px;
-      padding: 15px;
-      margin: 15px;
-      color: white; }
-      #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item {
-        display: flex;
-        margin: 15px 0; }
-        #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item > a, #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item span {
-          margin-left: 5px;
-          color: white; }
-  #arjun-portfolio-main .profile > .profile-img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    position: fixed;
-    top: 50px;
-    left: 100px; }
+      #arjun-portfolio-main .landing > .subheader.hidden:hover > .dash {
+        width: 0px; }
+      #arjun-portfolio-main .landing > .subheader .enter {
+        z-index: 500;
+        background: white;
+        width: max-content;
+        margin: auto;
+        position: relative;
+        padding: 0 10px;
+        cursor: pointer;
+        transition: opacity .2s; }
+        #arjun-portfolio-main .landing > .subheader .enter:active {
+          transition: all .2s;
+          transform: scale(0.95);
+          color: #666; }
+      #arjun-portfolio-main .landing > .subheader .dash {
+        width: 350px;
+        margin: auto;
+        position: relative;
+        bottom: 7px;
+        border-top: 1px solid gray;
+        z-index: 100;
+        transition: width .75s; }
+        #arjun-portfolio-main .landing > .subheader .dash.hidden {
+          width: 0; }
+        #arjun-portfolio-main .landing > .subheader .dash:hover {
+          width: 400px; }
+  #arjun-portfolio-main .profile {
+    opacity: 1;
+    display: flex;
+    transition: all .5s ease-in-out; }
+    #arjun-portfolio-main .profile.hidden {
+      opacity: 0; }
+    #arjun-portfolio-main .profile > .sidebar {
+      height: 100vh;
+      width: 300px;
+      background: #264d73;
+      display: inline-block; }
+      #arjun-portfolio-main .profile > .sidebar > .contact-info {
+        position: absolute;
+        bottom: 10px;
+        width: 240px;
+        padding: 15px;
+        margin: 15px;
+        color: white; }
+        #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item {
+          display: flex;
+          margin: 15px 0; }
+          #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item > a, #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item span {
+            margin-left: 5px;
+            color: white; }
+      #arjun-portfolio-main .profile > .sidebar > .profile-img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-left: 75px;
+        margin-top: 50px; }
+    #arjun-portfolio-main .profile > .content {
+      display: inline-block; }
+      #arjun-portfolio-main .profile > .content > .bio {
+        margin-left: 120px;
+        margin-top: 60px;
+        padding: 20px; }
+        #arjun-portfolio-main .profile > .content > .bio > .title {
+          font-size: 48px;
+          margin-bottom: 10px; }
+        #arjun-portfolio-main .profile > .content > .bio > .content {
+          font-size: 20px;
+          line-height: 32px;
+          font-weight: 100; }
+      #arjun-portfolio-main .profile > .content > .explore {
+        margin-top: 200px; }
+        #arjun-portfolio-main .profile > .content > .explore:hover > .dash {
+          transform: scaleX(1.2); }
+        #arjun-portfolio-main .profile > .content > .explore > .btn {
+          font-size: 24px;
+          z-index: 500;
+          background: white;
+          width: max-content;
+          margin: auto;
+          position: relative;
+          padding: 0 10px;
+          cursor: pointer;
+          transition: opacity .2s; }
+        #arjun-portfolio-main .profile > .content > .explore > .dash {
+          transition: transform .3s ease-in-out;
+          animation: 1s ease-in-out .5s grow;
+          animation-fill-mode: forwards;
+          width: 0px;
+          margin: auto;
+          position: relative;
+          bottom: 12px;
+          border-top: 1px solid gray;
+          z-index: 100; }

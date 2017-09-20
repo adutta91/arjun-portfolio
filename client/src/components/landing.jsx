@@ -20,7 +20,7 @@ export default class Landing extends Component {
         this.setState({ showEnter : true });
         setTimeout(() => {
           this.setState({ showLine : true });
-        }, transitionDuration.short);
+        }, transitionDuration.medium);
       }, transitionDuration.short);
     }, transitionDuration.short);
   }

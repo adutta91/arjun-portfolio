@@ -1,6 +1,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
+  margin: 0;
 }
 
 // --------------------------------------------------
@@ -26,10 +27,28 @@ $light-blue : lighten(#336699, 10%);
 // variables
 // --------------------------------------------------
 $default-text-color: lighten($gray, 10%);
+$dash-width: 350px;
+
+// --------------------------------------------------
+// animations
+// --------------------------------------------------
+@keyframes grow {
+  from { width: 0; }
+  to   { width: $dash-width; }
+}
 
 
+
+// ******---------------------------------------------
+// ******---------------------------------------------
+// STYLING
+// ******---------------------------------------------
+// ******---------------------------------------------
 
 #arjun-portfolio-main {
+  width: 100%;
+  height: 100%;
+
   // ------------
   // Landing CSS
   // --------------------------------------------------
@@ -101,7 +120,7 @@ $default-text-color: lighten($gray, 10%);
         margin: auto;
         position: relative;
         bottom: 7px;
-        border-top: 1px solid $blue;
+        border-top: 1px solid $default-text-color;
         z-index: $z-1;
         transition: width .75s;
 
@@ -120,10 +139,8 @@ $default-text-color: lighten($gray, 10%);
   // Profile CSS
   // --------------------------------------------------
   .profile {
-    margin: auto;
-    position: relative;
-    top: 200px;
     opacity: 1;
+    display: flex;
     transition: all .5s ease-in-out;
 
     &.hidden {
@@ -133,27 +150,8 @@ $default-text-color: lighten($gray, 10%);
     >.sidebar {
       height: 100vh;
       width: 300px;
-      position: fixed;
-      left: 0;
-      top: 0;
       background: $dark-blue;
-      //
-      // >.first-name {
-      //   position: relative;
-      //   top: 330px;
-      //   color: white;
-      //   font-size: 48px;
-      //   font-weight: 400;
-      //   left: 25px;
-      // }
-      // >.last-name {
-      //   position: relative;
-      //   top: 340px;
-      //   color: white;
-      //   font-size: 48px;
-      //   font-weight: 400;
-      //   left: 140px;
-      // }
+      display: inline-block;
 
       >.contact-info {
         position: absolute;
@@ -173,15 +171,67 @@ $default-text-color: lighten($gray, 10%);
           }
         }
       }
+
+      >.profile-img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-left: 75px;
+        margin-top: 50px
+      }
     }
 
-    >.profile-img {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      position: fixed;
-      top: 50px;
-      left: 100px;
+    >.content {
+      display: inline-block;
+
+      >.bio {
+        margin-left: 120px;
+        margin-top: 60px;
+        padding: 20px;
+
+        >.title {
+          font-size: 48px;
+          margin-bottom: 10px;
+        }
+
+        >.content {
+          font-size: 20px;
+          line-height: 32px;
+          font-weight: 100;
+        }
+      }
+
+      >.explore {
+        margin-top: 200px;
+
+        &:hover > .dash {
+          transform: scaleX(1.2);
+        }
+
+        >.btn {
+          font-size: 24px;
+          z-index: $z-2;
+          background: white;
+          width: max-content;
+          margin: auto;
+          position: relative;
+          padding: 0 10px;
+          cursor: pointer;
+          transition: opacity .2s;
+        }
+
+        >.dash {
+          transition: transform .3s ease-in-out;
+          animation: 1s ease-in-out .5s grow;
+          animation-fill-mode: forwards;
+          width: 0px;
+          margin: auto;
+          position: relative;
+          bottom: 12px;
+          border-top: 1px solid $default-text-color;
+          z-index: $z-1;
+        }
+      }
     }
   }
 }

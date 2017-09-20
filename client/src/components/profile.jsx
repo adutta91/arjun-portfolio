@@ -37,16 +37,38 @@ export default class Profile extends Component {
     );
   }
 
+  renderBio() {
+    return (
+      <div className='bio'>
+        <div className='title'>Arjun Dutta</div>
+        <span className='content'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </span>
+      </div>
+    );
+  }
+
   render() {
-    // <div className='first-name'>Arjun</div>
-    // <div className='last-name'>Dutta</div>
+    // {this.state.showMenu ? <Menu {...menuData} /> : null}
     return (
       <div className={`profile ${this.state.show ? '' : 'hidden'}`}>
         <div className='sidebar'>
           {this.renderContactInfo()}
+          <div className='profile-img' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/goofy-me.png)`}}></div>
         </div>
-        <div className='profile-img' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/goofy-me.png)`}}></div>
-        {this.state.showMenu ? <Menu {...menuData} /> : null}
+        <div className='content'>
+          {this.renderBio()}
+          <div className='explore'>
+            <div className='btn'>explore</div>
+            <div className='dash'></div>
+          </div>
+        </div>
       </div>
     );
   }
