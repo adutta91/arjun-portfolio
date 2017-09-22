@@ -6,31 +6,12 @@ import { siteEntered } from '../app/actions';
 
 export default class Landing extends Component {
   state = {
-    showWelcome : false,
-    showEnter   : false,
-    showLine    : false,
-    showLanding : true
-  }
-
-  componentDidMount() {
-    // cascading css transitions
-    setTimeout(() => {
-      this.setState({ showWelcome : true });
-      setTimeout(() => {
-        this.setState({ showEnter : true });
-        setTimeout(() => {
-          this.setState({ showLine : true });
-        }, transitionDuration.medium);
-      }, transitionDuration.short);
-    }, transitionDuration.short);
+    entered : false
   }
 
   onEnter() {
     this.setState({
-      showWelcome : false,
-      showEnter   : false,
-      showLanding : false,
-      showLine    : false
+      entered : true
     });
     setTimeout(() => {
       siteEntered();
@@ -38,17 +19,15 @@ export default class Landing extends Component {
   }
 
   render() {
-    const showWelcome = this.state.showWelcome ? '' : 'hidden';
-    const showEnter   = this.state.showEnter   ? '' : 'hidden';
-    const showLine   = this.state.showLine     ? '' : 'hidden';
-    const showLanding = this.state.showLanding ? '' : 'hidden';
+    const entered = this.state.entered ? 'fadeout' : '';
+    const dashentered = this.state.entered ? 'off' : '';
 
     return (
-      <div className={`landing ${showLanding}`}>
-        <div className={`header ${showWelcome}`}>Welcome</div>
-        <div onClick={this.onEnter.bind(this)} className={`subheader ${showEnter}`}>
+      <div className={`landing ${entered}`}>
+        <div className={`header ${entered}`}>Welcome</div>
+        <div onClick={this.onEnter.bind(this)} className={`subheader ${entered}`}>
           <div className='enter'>enter</div>
-          <div className={`dash ${showLine}`}></div>
+          <div className={`dash ${dashentered}`}></div>
         </div>
       </div>
     );

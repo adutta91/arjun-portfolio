@@ -3,48 +3,100 @@ body {
   font-weight: 200;
   margin: 0; }
 
-@keyframes grow {
+@keyframes grow-sm {
+  from {
+    width: 0; }
+  to {
+    width: 250px; } }
+
+@keyframes grow-lg {
   from {
     width: 0; }
   to {
     width: 350px; } }
+
+@keyframes shrink-sm {
+  from {
+    width: 250px; }
+  to {
+    width: 0; } }
+
+@keyframes shrink-lg {
+  from {
+    width: 350px; }
+  to {
+    width: 0; } }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade-out {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes draw-vertical {
+  from {
+    height: 0; }
+  to {
+    height: 100vh; } }
+
+@keyframes draw-horizontal {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+.fadeout {
+  opacity: 1;
+  animation: .5s ease-in-out 0s fade-out !important;
+  animation-fill-mode: forwards !important; }
+
+.hidden {
+  opacity: 0; }
 
 #arjun-portfolio-main {
   width: 100vw;
   height: 100vh;
   background-color: #ece9e9; }
   #arjun-portfolio-main .landing {
+    animation: 2s ease-in-out 0s fade-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
     position: relative;
     top: 200px;
     margin: auto;
     text-align: center;
-    width: 400px;
-    transition: opacity 1s ease-in-out; }
+    width: 400px; }
     #arjun-portfolio-main .landing.hidden {
       opacity: 0;
       pointer-events: none; }
     #arjun-portfolio-main .landing > .header {
+      animation: 1s ease-in-out .5s fade-in;
+      animation-fill-mode: forwards;
+      opacity: 0;
       width: 350px;
       margin: auto;
       font-size: 48px;
       letter-spacing: 15px;
       text-indent: 15px;
       color: #336699;
-      opacity: 1;
       transition: opacity 1s ease-in-out; }
-      #arjun-portfolio-main .landing > .header.hidden {
-        opacity: 0; }
     #arjun-portfolio-main .landing > .subheader {
+      animation: 1s ease-in-out 1s fade-in;
+      animation-fill-mode: forwards;
+      opacity: 0;
       margin-top: 15px;
       color: gray;
-      opacity: 1;
       transition: opacity 1s ease-in-out; }
       #arjun-portfolio-main .landing > .subheader.hidden {
         opacity: 0; }
       #arjun-portfolio-main .landing > .subheader:hover > .dash {
-        width: 400px; }
-      #arjun-portfolio-main .landing > .subheader.hidden:hover > .dash {
-        width: 0px; }
+        transform: scaleX(1.2); }
       #arjun-portfolio-main .landing > .subheader .enter {
         z-index: 500;
         background: #ece9e9;
@@ -59,66 +111,87 @@ body {
           transform: scale(0.95);
           color: #666; }
       #arjun-portfolio-main .landing > .subheader .dash {
-        width: 350px;
+        transition: transform .25s ease-in-out;
+        animation: .75s ease-in-out 1.25s grow-sm;
+        animation-fill-mode: forwards;
+        width: 0;
         margin: auto;
         position: relative;
         bottom: 7px;
         border-top: 1px solid #b3b3b3;
-        z-index: 100;
-        transition: width .75s; }
-        #arjun-portfolio-main .landing > .subheader .dash.hidden {
-          width: 0; }
+        z-index: 100; }
+        #arjun-portfolio-main .landing > .subheader .dash.off {
+          width: 250px;
+          animation: .5s ease-out 0s shrink-sm;
+          animation-fill-mode: forwards; }
         #arjun-portfolio-main .landing > .subheader .dash:hover {
           width: 400px; }
-  #arjun-portfolio-main .profile {
-    opacity: 1;
-    display: flex;
-    transition: all .5s ease-in-out; }
-    #arjun-portfolio-main .profile.hidden {
-      opacity: 0; }
-    #arjun-portfolio-main .profile > .sidebar {
+  #arjun-portfolio-main .profile > .vertical-draw {
+    animation: 1s ease-in-out 0s draw-vertical;
+    animation-fill-mode: forwards;
+    height: 0;
+    width: 1px;
+    background: gray;
+    display: inline-block;
+    left: 300px;
+    position: fixed; }
+  #arjun-portfolio-main .profile > .horizontal-draw {
+    animation: 1s ease-in-out .2s draw-horizontal;
+    animation-fill-mode: forwards;
+    position: fixed;
+    height: 1px;
+    width: 0;
+    background: gray;
+    top: 350px;
+    left: 300px; }
+  #arjun-portfolio-main .profile > .display {
+    animation: 1s ease-in-out .5s fade-in;
+    animation-fill-mode: forwards;
+    opacity: 0; }
+    #arjun-portfolio-main .profile > .display > .sidebar {
       height: 100vh;
       width: 300px;
       background: #264d73;
-      display: inline-block; }
-      #arjun-portfolio-main .profile > .sidebar > .contact-info {
+      position: fixed; }
+      #arjun-portfolio-main .profile > .display > .sidebar > .contact-info {
         position: absolute;
         bottom: 10px;
         width: 240px;
         padding: 15px;
         margin: 15px;
         color: white; }
-        #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item {
+        #arjun-portfolio-main .profile > .display > .sidebar > .contact-info > .info-item {
           display: flex;
           margin: 15px 0; }
-          #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item > a, #arjun-portfolio-main .profile > .sidebar > .contact-info > .info-item span {
+          #arjun-portfolio-main .profile > .display > .sidebar > .contact-info > .info-item > a, #arjun-portfolio-main .profile > .display > .sidebar > .contact-info > .info-item span {
             margin-left: 5px;
             color: white; }
-      #arjun-portfolio-main .profile > .sidebar > .profile-img {
+      #arjun-portfolio-main .profile > .display > .sidebar > .profile-img {
         width: 300px;
         height: 300px;
         border-radius: 50%;
         margin-left: 75px;
         margin-top: 50px; }
-    #arjun-portfolio-main .profile > .content {
-      display: inline-block; }
-      #arjun-portfolio-main .profile > .content > .bio {
-        margin-left: 120px;
+    #arjun-portfolio-main .profile > .display > .content {
+      margin-left: 300px; }
+      #arjun-portfolio-main .profile > .display > .content > .cover-photo {
+        height: 350px; }
+      #arjun-portfolio-main .profile > .display > .content > .bio {
         margin-top: 60px;
-        padding: 20px; }
-        #arjun-portfolio-main .profile > .content > .bio > .title {
+        padding: 20px 60px; }
+        #arjun-portfolio-main .profile > .display > .content > .bio > .title {
           font-size: 48px;
           margin-bottom: 10px; }
-        #arjun-portfolio-main .profile > .content > .bio > .content {
+        #arjun-portfolio-main .profile > .display > .content > .bio > .content {
           font-size: 20px;
           line-height: 32px;
           font-weight: 100; }
-      #arjun-portfolio-main .profile > .content > .explore {
-        margin-top: 200px; }
-        #arjun-portfolio-main .profile > .content > .explore:hover > .dash {
+      #arjun-portfolio-main .profile > .display > .content > .explore {
+        margin-top: 20px; }
+        #arjun-portfolio-main .profile > .display > .content > .explore:hover > .dash {
           transform: scaleX(1.2); }
-        #arjun-portfolio-main .profile > .content > .explore > .btn {
-          font-size: 24px;
+        #arjun-portfolio-main .profile > .display > .content > .explore > .btn {
+          font-size: 20px;
           z-index: 500;
           background: #ece9e9;
           width: max-content;
@@ -127,9 +200,9 @@ body {
           padding: 0 10px;
           cursor: pointer;
           transition: opacity .2s; }
-        #arjun-portfolio-main .profile > .content > .explore > .dash {
-          transition: transform .3s ease-in-out;
-          animation: 1s ease-in-out .5s grow;
+        #arjun-portfolio-main .profile > .display > .content > .explore > .dash {
+          transition: transform .5s ease-in-out;
+          animation: 1s ease-in-out .5s grow-lg;
           animation-fill-mode: forwards;
           width: 0px;
           margin: auto;

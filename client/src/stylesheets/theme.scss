@@ -29,14 +29,53 @@ $light-blue : lighten(#336699, 10%);
 // variables
 // --------------------------------------------------
 $default-text-color: lighten($gray, 10%);
-$dash-width: 350px;
+$dash-width-sm: 250px;
+$dash-width-lg: 350px;
 
 // --------------------------------------------------
 // animations
 // --------------------------------------------------
-@keyframes grow {
+
+// -------------grow
+@keyframes grow-sm {
   from { width: 0; }
-  to   { width: $dash-width; }
+  to   { width: $dash-width-sm; }
+}
+@keyframes grow-lg {
+  from { width: 0; }
+  to   { width: $dash-width-lg; }
+}
+
+// -------------shrink
+@keyframes shrink-sm {
+  from { width: $dash-width-sm; }
+  to   { width: 0; }
+}
+@keyframes shrink-lg {
+  from { width: $dash-width-lg; }
+  to   { width: 0; }
+}
+
+// -------------fade
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+// -------------draw
+@keyframes draw-vertical {
+  from { height: 0; }
+  to   { height: 100vh; }
+}
+
+@keyframes draw-horizontal {
+  from { width: 0; }
+  to   { width: 100%; }
 }
 
 
@@ -47,6 +86,17 @@ $dash-width: 350px;
 // ******---------------------------------------------
 // ******---------------------------------------------
 
+.fadeout {
+  opacity: 1;
+  animation: .5s ease-in-out 0s fade-out !important;
+  animation-fill-mode: forwards !important;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+
 #arjun-portfolio-main {
   width: 100vw;
   height: 100vh;
@@ -56,12 +106,14 @@ $dash-width: 350px;
   // Landing CSS
   // --------------------------------------------------
   .landing {
+    animation: 2s ease-in-out 0s fade-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
     position: relative;
     top: 200px;
     margin: auto;
     text-align: center;
     width: 400px;
-    transition: opacity 1s ease-in-out;
 
     &.hidden {
       opacity: 0;
@@ -69,24 +121,24 @@ $dash-width: 350px;
     }
 
     >.header {
+      animation: 1s ease-in-out .5s fade-in;
+      animation-fill-mode: forwards;
+      opacity: 0;
       width: 350px;
       margin: auto;
       font-size: 48px;
       letter-spacing: 15px;
       text-indent: 15px;
       color: $blue;
-      opacity: 1;
       transition: opacity 1s ease-in-out;
-
-      &.hidden {
-        opacity: 0;
-      }
     }
 
     >.subheader {
+      animation: 1s ease-in-out 1s fade-in;
+      animation-fill-mode: forwards;
+      opacity: 0;
       margin-top: 15px;
       color: $default-text-color;
-      opacity: 1;
       transition: opacity 1s ease-in-out;
 
       &.hidden {
@@ -94,11 +146,7 @@ $dash-width: 350px;
       }
 
       &:hover > .dash {
-        width: 400px;
-      }
-
-      &.hidden:hover > .dash {
-        width: 0px;
+        transform: scaleX(1.2);
       }
 
       .enter {
@@ -119,16 +167,20 @@ $dash-width: 350px;
       }
 
       .dash {
-        width: 350px;
+        transition: transform .25s ease-in-out;
+        animation: .75s ease-in-out 1.25s grow-sm;
+        animation-fill-mode: forwards;
+        width: 0;
         margin: auto;
         position: relative;
         bottom: 7px;
         border-top: 1px solid $lightgray;
-        z-index: $z-1;
-        transition: width .75s;
+        z-index: $z-1;;
 
-        &.hidden {
-          width: 0;
+        &.off {
+          width: 250px;
+          animation: .5s ease-out 0s shrink-sm;
+          animation-fill-mode: forwards;
         }
 
         &:hover {
@@ -142,97 +194,119 @@ $dash-width: 350px;
   // Profile CSS
   // --------------------------------------------------
   .profile {
-    opacity: 1;
-    display: flex;
-    transition: all .5s ease-in-out;
-
-    &.hidden {
-      opacity: 0;
+    >.vertical-draw {
+      animation: 1s ease-in-out 0s draw-vertical;
+      animation-fill-mode: forwards;
+      height: 0;
+      width: 1px;
+      background: $default-text-color;
+      display: inline-block;
+      left: 300px;
+      position: fixed;
+    }
+    >.horizontal-draw {
+      animation: 1s ease-in-out .2s draw-horizontal;
+      animation-fill-mode: forwards;
+      position: fixed;
+      height: 1px;
+      width: 0;
+      background: $default-text-color;
+      top: 350px;
+      left: 300px;
     }
 
-    >.sidebar {
-      height: 100vh;
-      width: 300px;
-      background: $dark-blue;
-      display: inline-block;
+    >.display {
+      animation: 1s ease-in-out .5s fade-in;
+      animation-fill-mode: forwards;
+      opacity: 0;
 
-      >.contact-info {
-        position: absolute;
-        bottom: 10px;
-        width: 240px;
-        padding: 15px;
-        margin: 15px;
-        color: white;
+      >.sidebar {
+        height: 100vh;
+        width: 300px;
+        background: $dark-blue;
+        position: fixed;
 
-        >.info-item {
-          display: flex;
-          margin: 15px 0;
+        >.contact-info {
+          position: absolute;
+          bottom: 10px;
+          width: 240px;
+          padding: 15px;
+          margin: 15px;
+          color: white;
 
-          >a, span {
-            margin-left: 5px;
-            color: white;
+          >.info-item {
+            display: flex;
+            margin: 15px 0;
+
+            >a, span {
+              margin-left: 5px;
+              color: white;
+            }
           }
         }
-      }
 
-      >.profile-img {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        margin-left: 75px;
-        margin-top: 50px
-      }
-    }
-
-    >.content {
-      display: inline-block;
-
-      >.bio {
-        margin-left: 120px;
-        margin-top: 60px;
-        padding: 20px;
-
-        >.title {
-          font-size: 48px;
-          margin-bottom: 10px;
-        }
-
-        >.content {
-          font-size: 20px;
-          line-height: 32px;
-          font-weight: 100;
+        >.profile-img {
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+          margin-left: 75px;
+          margin-top: 50px
         }
       }
 
-      >.explore {
-        margin-top: 200px;
+      >.content {
+        margin-left: 300px;
 
-        &:hover > .dash {
-          transform: scaleX(1.2);
+        >.cover-photo {
+          height: 350px;
         }
 
-        >.btn {
-          font-size: 24px;
-          z-index: $z-2;
-          background: $superlightgray;
-          width: max-content;
-          margin: auto;
-          position: relative;
-          padding: 0 10px;
-          cursor: pointer;
-          transition: opacity .2s;
+        >.bio {
+          margin-top: 60px;
+          padding: 20px 60px;
+
+          >.title {
+            font-size: 48px;
+            margin-bottom: 10px;
+          }
+
+          >.content {
+            font-size: 20px;
+            line-height: 32px;
+            font-weight: 100;
+          }
         }
 
-        >.dash {
-          transition: transform .3s ease-in-out;
-          animation: 1s ease-in-out .5s grow;
-          animation-fill-mode: forwards;
-          width: 0px;
-          margin: auto;
-          position: relative;
-          bottom: 12px;
-          border-top: 1px solid $lightgray;
-          z-index: $z-1;
+        >.explore {
+          margin-top: 20px;
+
+          &:hover > .dash {
+            transform: scaleX(1.2);
+          }
+
+          >.btn {
+            font-size: 20px;
+            z-index: $z-2;
+            background: $superlightgray;
+            width: max-content;
+            margin: auto;
+            position: relative;
+            padding: 0 10px;
+            cursor: pointer;
+            transition: opacity .2s;
+          }
+
+          >.dash {
+            transition: transform .5s ease-in-out;
+            animation: 1s ease-in-out .5s grow-lg;
+            animation-fill-mode: forwards;
+            width: 0px;
+            margin: auto;
+            position: relative;
+            bottom: 12px;
+            border-top: 1px solid $lightgray;
+            z-index: $z-1;
+          }
         }
       }
     }

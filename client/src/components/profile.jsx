@@ -26,10 +26,6 @@ export default class Profile extends Component {
           <a href='mailto:arjundutta91@gmail.com'>arjundutta91@gmail.com</a>
         </div>
         <div className='info-item'>
-          <i className='fa fa-paper-plane-o'/>
-          <span>900 NE 65th St.<br/> Seattle, WA 98115</span>
-        </div>
-        <div className='info-item'>
           <i className='fa fa-phone'/>
           <span>(408) 458-6077</span>
         </div>
@@ -56,17 +52,23 @@ export default class Profile extends Component {
 
   render() {
     // {this.state.showMenu ? <Menu {...menuData} /> : null}
+    const hidden = this.state.show ? '' : 'hidden'
     return (
-      <div className={`profile ${this.state.show ? '' : 'hidden'}`}>
-        <div className='sidebar'>
-          {this.renderContactInfo()}
-          <div className='profile-img' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/goofy-me.png)`}}></div>
-        </div>
-        <div className='content'>
-          {this.renderBio()}
-          <div className='explore'>
-            <div className='btn'>explore</div>
-            <div className='dash'></div>
+      <div className='profile'>
+        <div className={`vertical-draw`}></div>
+        <div className={`horizontal-draw`}></div>
+        <div className='display'>
+          <div className={`sidebar ${hidden}`}>
+            {this.renderContactInfo()}
+            <div className='profile-img' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/goofy-me.png)`}}></div>
+          </div>
+          <div className={`content ${hidden}`}>
+            <div className='cover-photo' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/coffee.jpeg)`}}></div>
+            {this.renderBio()}
+            <div className='explore'>
+              <div className='btn'>explore</div>
+              <div className='dash'></div>
+            </div>
           </div>
         </div>
       </div>
