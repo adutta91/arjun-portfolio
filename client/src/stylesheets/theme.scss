@@ -67,6 +67,12 @@ $dash-width-lg: 350px;
   to   { opacity: 0; }
 }
 
+@keyframes fade-out-end {
+  0%   { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 // -------------draw
 @keyframes draw-vertical {
   from { height: 0; }
@@ -79,6 +85,15 @@ $dash-width-lg: 350px;
 }
 
 
+// -------------draw
+@keyframes shift-right {
+  from { left: 75px; }
+  to   { left: 380px; }
+}
+@keyframes shift-left {
+  from { left: 75px; }
+  to   { left: -240px; }
+}
 
 // ******---------------------------------------------
 // ******---------------------------------------------
@@ -194,9 +209,12 @@ $dash-width-lg: 350px;
   // Profile CSS
   // --------------------------------------------------
   .profile {
-    >.vertical-draw {
-      animation: 1s ease-in-out 0s draw-vertical;
-      animation-fill-mode: forwards;
+    .lines {
+      // animation: .75s ease-in .25s fade-out-end forwards;
+    }
+    .vertical-draw {
+      transition: opacity .2s ease-in-out;
+      animation: .75s ease-in-out 0s draw-vertical forwards;
       height: 0;
       width: 1px;
       background: $default-text-color;
@@ -204,9 +222,9 @@ $dash-width-lg: 350px;
       left: 300px;
       position: fixed;
     }
-    >.horizontal-draw {
-      animation: 1s ease-in-out .2s draw-horizontal;
-      animation-fill-mode: forwards;
+    .horizontal-draw {
+      transition: opacity .2s ease-in-out;
+      animation: .75s ease-in-out .25s draw-horizontal forwards;
       position: fixed;
       height: 1px;
       width: 0;
@@ -214,11 +232,56 @@ $dash-width-lg: 350px;
       top: 350px;
       left: 300px;
     }
+    .circle {
+      transition: opacity .2s ease-in-out;
+      width: 300px;
+      height: 300px;
+      background: #666;
+      border-radius: 50%;
+      position: fixed;
+      top: 50px;
+      left: 75px;
+    }
+
+    .circle2 {
+      transition: opacity .2s ease-in-out;
+      width: 298px;
+      height: 298px;
+      border-radius: 50%;
+      background: #ece9e9;
+      z-index: 200;
+      position: fixed;
+      top: 51px;
+      left: 76px;
+    }
+
+    .block1 {
+      transition: opacity .2s ease-in-out;
+      animation: .75s ease-out .25s shift-right forwards;
+      width: 312px;
+      height: 160px;
+      background: #ece9e9;
+      position: fixed;
+      top: 50px;
+      left: 75px;
+    }
+
+    .block2 {
+      transition: opacity .2s ease-in-out;
+      animation: .75s ease-out .25s shift-left forwards;
+      width: 312px;
+      height: 160px;
+      background: #ece9e9;
+      position: fixed;
+      top: 210px;
+      left: 75px;
+    }
 
     >.display {
-      animation: 1s ease-in-out .5s fade-in;
-      animation-fill-mode: forwards;
+      animation: 1.25s ease-in-out .5s fade-in forwards;
       opacity: 0;
+      position: fixed;
+      z-index: $z-5;
 
       >.sidebar {
         height: 100vh;
@@ -246,11 +309,14 @@ $dash-width-lg: 350px;
         }
 
         >.profile-img {
+          transition: opacity .3s ease;
           width: 300px;
           height: 300px;
           border-radius: 50%;
           margin-left: 75px;
-          margin-top: 50px
+          margin-top: 50px;
+          z-index: $z-5;
+          position: fixed;
         }
       }
 

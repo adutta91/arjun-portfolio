@@ -15,7 +15,7 @@ export default class Profile extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ show : true });
-    }, transitionDuration.short);
+    }, 1500);
   }
 
   renderContactInfo() {
@@ -52,17 +52,17 @@ export default class Profile extends Component {
 
   render() {
     // {this.state.showMenu ? <Menu {...menuData} /> : null}
-    const hidden = this.state.show ? '' : 'hidden'
+    const hidden = this.state.show ? '' : '';
+
     return (
       <div className='profile'>
-        <div className={`vertical-draw`}></div>
-        <div className={`horizontal-draw`}></div>
+
         <div className='display'>
-          <div className={`sidebar ${hidden}`}>
+          <div className={`sidebar`}>
             {this.renderContactInfo()}
             <div className='profile-img' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/goofy-me.png)`}}></div>
           </div>
-          <div className={`content ${hidden}`}>
+          <div className={`content`}>
             <div className='cover-photo' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/coffee.jpeg)`}}></div>
             {this.renderBio()}
             <div className='explore'>
@@ -70,6 +70,14 @@ export default class Profile extends Component {
               <div className='dash'></div>
             </div>
           </div>
+        </div>
+        <div className={`vertical-draw ${hidden}`}></div>
+        <div className={`horizontal-draw ${hidden}`}></div>
+        <div className={`circle ${hidden}`}></div>
+        <div className={`circle2 ${hidden}`}></div>
+        <div className={`block1 ${hidden}`}></div>
+        <div className={`block2 ${hidden}`}></div>
+        <div className='lines'>
         </div>
       </div>
     );
