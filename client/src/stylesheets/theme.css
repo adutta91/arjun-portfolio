@@ -146,61 +146,63 @@ body {
           animation-fill-mode: forwards; }
         #arjun-portfolio-main .landing > .subheader .dash:hover {
           width: 400px; }
-  #arjun-portfolio-main .profile .vertical-draw {
-    transition: opacity .2s ease-in-out;
-    animation: .75s ease-in-out 0s draw-vertical forwards;
-    height: 0;
-    width: 1px;
-    background: gray;
-    display: inline-block;
-    left: 300px;
-    position: fixed; }
-  #arjun-portfolio-main .profile .horizontal-draw {
-    transition: opacity .2s ease-in-out;
-    animation: .75s ease-in-out .25s draw-horizontal forwards;
-    position: fixed;
-    height: 1px;
-    width: 0;
-    background: gray;
-    top: 350px;
-    left: 300px; }
-  #arjun-portfolio-main .profile .circle {
-    transition: opacity .2s ease-in-out;
-    width: 300px;
-    height: 300px;
-    background: #666;
-    border-radius: 50%;
-    position: fixed;
-    top: 50px;
-    left: 75px; }
-  #arjun-portfolio-main .profile .circle2 {
-    transition: opacity .2s ease-in-out;
-    width: 298px;
-    height: 298px;
-    border-radius: 50%;
-    background: #ece9e9;
-    z-index: 200;
-    position: fixed;
-    top: 51px;
-    left: 76px; }
-  #arjun-portfolio-main .profile .block1 {
-    transition: opacity .2s ease-in-out;
-    animation: .75s ease-out .25s shift-right forwards;
-    width: 312px;
-    height: 160px;
-    background: #ece9e9;
-    position: fixed;
-    top: 50px;
-    left: 75px; }
-  #arjun-portfolio-main .profile .block2 {
-    transition: opacity .2s ease-in-out;
-    animation: .75s ease-out .25s shift-left forwards;
-    width: 312px;
-    height: 160px;
-    background: #ece9e9;
-    position: fixed;
-    top: 210px;
-    left: 75px; }
+  #arjun-portfolio-main .profile .lines {
+    transition: opacity .2s ease-out; }
+    #arjun-portfolio-main .profile .lines .vertical-draw {
+      transition: opacity .2s ease-in-out;
+      animation: .75s ease-in-out 0s draw-vertical forwards;
+      height: 0;
+      width: 1px;
+      background: gray;
+      display: inline-block;
+      left: 300px;
+      position: fixed; }
+    #arjun-portfolio-main .profile .lines .horizontal-draw {
+      transition: opacity .2s ease-in-out;
+      animation: .75s ease-in-out .25s draw-horizontal forwards;
+      position: fixed;
+      height: 1px;
+      width: 0;
+      background: gray;
+      top: 350px;
+      left: 300px; }
+    #arjun-portfolio-main .profile .lines .circle {
+      transition: opacity .2s ease-in-out;
+      width: 300px;
+      height: 300px;
+      background: #666;
+      border-radius: 50%;
+      position: fixed;
+      top: 50px;
+      left: 75px; }
+    #arjun-portfolio-main .profile .lines .circle2 {
+      transition: opacity .2s ease-in-out;
+      width: 298px;
+      height: 298px;
+      border-radius: 50%;
+      background: #ece9e9;
+      z-index: 200;
+      position: fixed;
+      top: 51px;
+      left: 76px; }
+    #arjun-portfolio-main .profile .lines .block1 {
+      transition: opacity .2s ease-in-out;
+      animation: .75s ease-out .25s shift-right forwards;
+      width: 312px;
+      height: 160px;
+      background: #ece9e9;
+      position: fixed;
+      top: 50px;
+      left: 75px; }
+    #arjun-portfolio-main .profile .lines .block2 {
+      transition: opacity .2s ease-in-out;
+      animation: .75s ease-out .25s shift-left forwards;
+      width: 312px;
+      height: 160px;
+      background: #ece9e9;
+      position: fixed;
+      top: 210px;
+      left: 75px; }
   #arjun-portfolio-main .profile > .display {
     animation: 1.25s ease-in-out .5s fade-in forwards;
     opacity: 0;
@@ -248,7 +250,8 @@ body {
           line-height: 32px;
           font-weight: 100; }
       #arjun-portfolio-main .profile > .display > .content > .explore {
-        margin-top: 20px; }
+        margin-top: 40px;
+        color: gray; }
         #arjun-portfolio-main .profile > .display > .content > .explore:hover > .dash {
           transform: scaleX(1.2); }
         #arjun-portfolio-main .profile > .display > .content > .explore > .btn {
@@ -271,3 +274,16 @@ body {
           bottom: 12px;
           border-top: 1px solid #b3b3b3;
           z-index: 100; }
+  #arjun-portfolio-main .profile .blur-overlay {
+    transition: all .5s ease-in-out;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    opacity: .8;
+    filter: blur(5px);
+    z-index: 5000; }
+    #arjun-portfolio-main .profile .blur-overlay.hide {
+      transition: all .5s ease-in-out;
+      opacity: 0;
+      z-index: 0; }

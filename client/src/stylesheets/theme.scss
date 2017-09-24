@@ -12,6 +12,8 @@ $z-2 : 500;
 $z-3 : 1000;
 $z-4 : 1500;
 $z-5 : 2000;
+$z-modal-overlay : 5000;
+$z-modal : 5500;
 
 // --------------------------------------------------
 // colors
@@ -211,70 +213,71 @@ $dash-width-lg: 350px;
   .profile {
     .lines {
       // animation: .75s ease-in .25s fade-out-end forwards;
-    }
-    .vertical-draw {
-      transition: opacity .2s ease-in-out;
-      animation: .75s ease-in-out 0s draw-vertical forwards;
-      height: 0;
-      width: 1px;
-      background: $default-text-color;
-      display: inline-block;
-      left: 300px;
-      position: fixed;
-    }
-    .horizontal-draw {
-      transition: opacity .2s ease-in-out;
-      animation: .75s ease-in-out .25s draw-horizontal forwards;
-      position: fixed;
-      height: 1px;
-      width: 0;
-      background: $default-text-color;
-      top: 350px;
-      left: 300px;
-    }
-    .circle {
-      transition: opacity .2s ease-in-out;
-      width: 300px;
-      height: 300px;
-      background: #666;
-      border-radius: 50%;
-      position: fixed;
-      top: 50px;
-      left: 75px;
-    }
+      transition: opacity .2s ease-out;
+      .vertical-draw {
+        transition: opacity .2s ease-in-out;
+        animation: .75s ease-in-out 0s draw-vertical forwards;
+        height: 0;
+        width: 1px;
+        background: $default-text-color;
+        display: inline-block;
+        left: 300px;
+        position: fixed;
+      }
+      .horizontal-draw {
+        transition: opacity .2s ease-in-out;
+        animation: .75s ease-in-out .25s draw-horizontal forwards;
+        position: fixed;
+        height: 1px;
+        width: 0;
+        background: $default-text-color;
+        top: 350px;
+        left: 300px;
+      }
+      .circle {
+        transition: opacity .2s ease-in-out;
+        width: 300px;
+        height: 300px;
+        background: #666;
+        border-radius: 50%;
+        position: fixed;
+        top: 50px;
+        left: 75px;
+      }
 
-    .circle2 {
-      transition: opacity .2s ease-in-out;
-      width: 298px;
-      height: 298px;
-      border-radius: 50%;
-      background: #ece9e9;
-      z-index: 200;
-      position: fixed;
-      top: 51px;
-      left: 76px;
-    }
+      .circle2 {
+        transition: opacity .2s ease-in-out;
+        width: 298px;
+        height: 298px;
+        border-radius: 50%;
+        background: #ece9e9;
+        z-index: 200;
+        position: fixed;
+        top: 51px;
+        left: 76px;
+      }
 
-    .block1 {
-      transition: opacity .2s ease-in-out;
-      animation: .75s ease-out .25s shift-right forwards;
-      width: 312px;
-      height: 160px;
-      background: #ece9e9;
-      position: fixed;
-      top: 50px;
-      left: 75px;
-    }
+      .block1 {
+        transition: opacity .2s ease-in-out;
+        animation: .75s ease-out .25s shift-right forwards;
+        width: 312px;
+        height: 160px;
+        background: #ece9e9;
+        position: fixed;
+        top: 50px;
+        left: 75px;
+      }
 
-    .block2 {
-      transition: opacity .2s ease-in-out;
-      animation: .75s ease-out .25s shift-left forwards;
-      width: 312px;
-      height: 160px;
-      background: #ece9e9;
-      position: fixed;
-      top: 210px;
-      left: 75px;
+      .block2 {
+        transition: opacity .2s ease-in-out;
+        animation: .75s ease-out .25s shift-left forwards;
+        width: 312px;
+        height: 160px;
+        background: #ece9e9;
+        position: fixed;
+        top: 210px;
+        left: 75px;
+      }
     }
 
     >.display {
@@ -344,7 +347,8 @@ $dash-width-lg: 350px;
         }
 
         >.explore {
-          margin-top: 20px;
+          margin-top: 40px;
+          color: $default-text-color;
 
           &:hover > .dash {
             transform: scaleX(1.2);
@@ -374,6 +378,23 @@ $dash-width-lg: 350px;
             z-index: $z-1;
           }
         }
+      }
+    }
+
+    .blur-overlay {
+      transition: all .5s ease-in-out;
+      background-color: white;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      opacity: .8;
+      filter: blur(5px);
+      z-index: $z-modal-overlay;
+
+      &.hide {
+        transition: all .5s ease-in-out;
+        opacity: 0;
+        z-index: 0;
       }
     }
   }

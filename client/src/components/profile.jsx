@@ -18,6 +18,12 @@ export default class Profile extends Component {
     }, 1500);
   }
 
+  overlayClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.setState({ showMenu : false });
+  }
+
   renderContactInfo() {
     return (
       <div className='contact-info'>
@@ -52,32 +58,34 @@ export default class Profile extends Component {
 
   render() {
     // {this.state.showMenu ? <Menu {...menuData} /> : null}
-    const hidden = this.state.show ? '' : '';
+    const showMenu = this.state.showMenu ? '' : 'hide';
+    const hidden = this.state.show ? 'hidden' : '';
 
     return (
       <div className='profile'>
-
         <div className='display'>
-          <div className={`sidebar`}>
+          <div className='sidebar'>
             {this.renderContactInfo()}
             <div className='profile-img' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/goofy-me.png)`}}></div>
           </div>
-          <div className={`content`}>
+          <div className='content'>
             <div className='cover-photo' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/coffee.jpeg)`}}></div>
             {this.renderBio()}
             <div className='explore'>
-              <div className='btn'>explore</div>
+              <div className='btn' onClick={() => { this.setState({ showMenu : true })}}>explore</div>
               <div className='dash'></div>
             </div>
           </div>
         </div>
-        <div className={`vertical-draw ${hidden}`}></div>
-        <div className={`horizontal-draw ${hidden}`}></div>
-        <div className={`circle ${hidden}`}></div>
-        <div className={`circle2 ${hidden}`}></div>
-        <div className={`block1 ${hidden}`}></div>
-        <div className={`block2 ${hidden}`}></div>
-        <div className='lines'>
+        <div className={`lines ${hidden}`}>
+          <div className='vertical-draw'></div>
+          <div className='horizontal-draw'></div>
+          <div className='circle'></div>
+          <div className='circle2'></div>
+          <div className='block1'></div>
+          <div className='block2'></div>
+        </div>
+        <div className={`blur-overlay ${showMenu}`} onClick={this.overlayClick.bind(this)}>
         </div>
       </div>
     );
