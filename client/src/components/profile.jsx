@@ -16,12 +16,26 @@ export default class Profile extends Component {
     setTimeout(() => {
       this.setState({ show : true });
     }, 1500);
+    this.listener = window.addEventListener('keyup', this.keyListener.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keyup', this.listener);
+  }
+
+  keyListener(e) {
+    switch(e.key) {
+      case 'Escape': if (this.state.showMenu) this.setState({ showMenu : false});
+      default: return null;
+    }
   }
 
   overlayClick(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    this.setState({ showMenu : false });
+    if (this.state.showMenu) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.setState({ showMenu : false });
+    }
   }
 
   renderContactInfo() {
@@ -57,35 +71,35 @@ export default class Profile extends Component {
   }
 
   render() {
-    // {this.state.showMenu ? <Menu {...menuData} /> : null}
     const showMenu = this.state.showMenu ? '' : 'hide';
     const hidden = this.state.show ? 'hidden' : '';
 
     return (
-      <div className='profile'>
-        <div className='display'>
-          <div className='sidebar'>
+      <div className='profile' onKeyUp={this.keyListener.bind(this)}>
+        {this.state.showMenu ? <Menu {...menuData} /> : null}
+        <div className={`blur-overlay ${showMenu}`} onClick={this.overlayClick.bind(this)}>
+          <div className='display'>
+            <div className='sidebar'>
             {this.renderContactInfo()}
             <div className='profile-img' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/goofy-me.png)`}}></div>
-          </div>
-          <div className='content'>
-            <div className='cover-photo' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/coffee.jpeg)`}}></div>
-            {this.renderBio()}
-            <div className='explore'>
-              <div className='btn' onClick={() => { this.setState({ showMenu : true })}}>explore</div>
-              <div className='dash'></div>
+            </div>
+            <div className='content'>
+              <div className='cover-photo' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/coffee.jpeg)`}}></div>
+              {this.renderBio()}
+              <div className='explore'>
+                <div className='btn' onClick={() => { this.setState({ showMenu : true })}}>explore</div>
+                <div className='dash'></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={`lines ${hidden}`}>
-          <div className='vertical-draw'></div>
-          <div className='horizontal-draw'></div>
-          <div className='circle'></div>
-          <div className='circle2'></div>
-          <div className='block1'></div>
-          <div className='block2'></div>
-        </div>
-        <div className={`blur-overlay ${showMenu}`} onClick={this.overlayClick.bind(this)}>
+          <div className={`lines ${hidden}`}>
+            <div className='vertical-draw'></div>
+            <div className='horizontal-draw'></div>
+            <div className='circle'></div>
+            <div className='circle2'></div>
+            <div className='block1'></div>
+            <div className='block2'></div>
+          </div>
         </div>
       </div>
     );

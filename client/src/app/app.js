@@ -1,13 +1,25 @@
 export const menuData = {
   animateDelay : 10,
   diameter     : 10,
-  border       : 'dashed',
   animateStyle : 'radiate',
   items        : [
     {
-      type   : 'icon',
-      faIcon : 'fa fa-user-circle-o fa-3x',
-      items : [],
+      type    : 'icon',
+      faIcon  : 'fa fa-user-circle-o fa-3x',
+      items   : [],
+      onClick : () => { console.log(1); }
+    },
+    {
+      type    : 'icon',
+      faIcon  : 'fa fa-at fa-3x',
+      items   : [],
+      onClick : () => { console.log(2); }
+    },
+    {
+      type    : 'icon',
+      faIcon  : 'fa fa-paper-plane-o fa-3x',
+      items   : [],
+      onClick : () => { console.log(3); }
     }
   ]
 };
