@@ -4,69 +4,60 @@ export const menuData = {
   animateStyle : 'swing',
   items        : [
     {
-      type  : 'icon',
-      icon  : 'fa fa-user-circle-o fa-3x',
-      items : [
-        {
-          type    : 'text',
-          text    : '1',
-          items   : [],
-          onClick : () => { console.log(4); }
-        },
-        {
-          type    : 'text',
-          text    : '2',
-          items   : [],
-          onClick : () => { console.log(5); }
-        },
-        {
-          type    : 'text',
-          text    : '3',
-          items   : [],
-          onClick : () => { console.log(6); }
-        },
-        {
-          type    : 'text',
-          text    : '4',
-          items   : [],
-          onClick : () => { console.log(7); }
-        }
-      ],
-      onClick : () => { console.log(1); }
-    },
-    {
-      type  : 'icon',
-      icon  : 'fa fa-at fa-3x',
-      items : [],
+      type    : 'icon',
+      icon    : 'fa fa-wrench fa-3x',
+      popover : 'Projects',
+      items   : [],
       onClick : () => { console.log(2); }
     },
     {
-      type  : 'icon',
-      icon  : 'fa fa-paper-plane-o fa-3x',
-      items : [],
+      type    : 'icon',
+      icon    : 'fa fa-user-plus fa-3x',
+      popover : 'Skills',
+      items   : [],
+      onClick : () => { console.log(2); }
+    },
+    {
+      type    : 'icon',
+      icon    : 'fa fa-road fa-3x',
+      popover : 'Experience',
+      items   : [],
+      onClick : () => { console.log(1); }
+    },
+    {
+      type    : 'icon',
+      icon    : 'fa fa-comment-o fa-3x',
+      popover : 'Contact Me',
+      items   : [],
+      onClick : () => { console.log(1); }
+    },
+    {
+      type    : 'icon',
+      icon    : 'fa fa-ellipsis-h fa-3x',
+      popover : 'Miscellaneous',
+      items   : [
+        {
+          type    : 'text',
+          text    : 'Goofy Pictures',
+          items   : [],
+          onClick : () => { console.log(1); }
+        },
+        {
+          type    : 'text',
+          text    : 'Favorite Things',
+          items   : [],
+          onClick : () => { console.log(2); }
+        },
+        {
+          type    : 'text',
+          text    : 'Placeholder',
+          items   : [],
+          onClick : () => { console.log('This is a placeholder - congratulations for finding this output! Call me to receive your prize!'); }
+        }
+      ],
       onClick : () => { console.log(3); }
     }
   ]
-  // items        : [
-  //   {
-  //     type    : 'icon',
-  //     icon    : 'fa fa-user-circle-o fa-3x',
-  //     items   : [],
-  //     onClick : () => { console.log(1); }
-  //   },
-  //   {
-  //     type    : 'icon',
-  //     icon    : 'fa fa-at fa-3x',
-  //     items   : [],
-  //     onClick : () => { console.log(2); }
-  //   },
-  //   {
-  //     type    : 'icon',
-  //     icon    : 'fa fa-paper-plane-o fa-3x',
-  //     items   : [],
-  //     onClick : () => { console.log(3); }
-  //   }
-  // ]
 };
 
 export const transitionDuration = {
