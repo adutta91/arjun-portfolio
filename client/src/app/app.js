@@ -8,28 +8,28 @@ export const menuData = {
       icon    : 'fa fa-wrench fa-3x',
       popover : 'Projects',
       items   : [],
-      onClick : () => { console.log(2); }
+      onClick : () => { alert('In progress! Please check back soon.'); }
     },
     {
       type    : 'icon',
       icon    : 'fa fa-user-plus fa-3x',
       popover : 'Skills',
       items   : [],
-      onClick : () => { console.log(2); }
+      onClick : () => { alert('In progress! Please check back soon.'); }
     },
     {
       type    : 'icon',
       icon    : 'fa fa-road fa-3x',
       popover : 'Experience',
       items   : [],
-      onClick : () => { console.log(1); }
+      onClick : () => { alert('In progress! Please check back soon.'); }
     },
     {
       type    : 'icon',
       icon    : 'fa fa-comment-o fa-3x',
       popover : 'Contact Me',
       items   : [],
-      onClick : () => { console.log(1); }
+      onClick : () => { alert('In progress! Please check back soon.'); }
     },
     {
       type    : 'icon',
@@ -40,13 +40,13 @@ export const menuData = {
           type    : 'text',
           text    : 'Goofy Pictures',
           items   : [],
-          onClick : () => { console.log(1); }
+          onClick : () => { alert('In progress! Please check back soon.'); }
         },
         {
           type    : 'text',
           text    : 'Favorite Things',
           items   : [],
-          onClick : () => { console.log(2); }
+          onClick : () => { alert('In progress! Please check back soon.'); }
         },
         {
           type    : 'text',
@@ -55,7 +55,7 @@ export const menuData = {
           onClick : () => { console.log('This is a placeholder - congratulations for finding this output! Call me to receive your prize!'); }
         }
       ],
-      onClick : () => { console.log(3); }
+      onClick : () => { alert('In progress! Please check back soon.'); }
     }
   ]
 };

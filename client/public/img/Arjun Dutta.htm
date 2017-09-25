@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en" class="fa-events-icons-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.png">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link href="./Arjun Dutta_files/css" rel="stylesheet">
+    <script src="./Arjun Dutta_files/d15bd54e9b.js"></script><link href="./Arjun Dutta_files/d15bd54e9b.css" media="all" rel="stylesheet">
+
+    <title>Arjun Dutta</title>
+  <style type="text/css">@keyframes bounce {
+  0% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: .7;
+  }
+  60% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.85);
+  }
+}
+
+/* Standard syntax */
+@keyframes popover-up {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -40px;
+  }
+}
+
+@keyframes popover-down {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: -40px;
+  }
+}
+
+@keyframes popover-left {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -20px;
+  }
+}
+
+@keyframes popover-right {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -20px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bounce {
+  animation: bounce 1s .5s;
+  transform: scale(0.85);
+}
+
+.react-revolver-menu {
+  /**
+  * Position icons into circle (SO)
+  * http://stackoverflow.com/q/12813573/1397351
+  */
+}
+
+.react-revolver-menu .circle-container {
+  position: relative;
+  border-radius: 50%;
+  margin: 1.75em auto 0;
+}
+
+.react-revolver-menu .circle-container .menu-item {
+  transition: all .5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4em;
+  height: 4em;
+  text-align: center;
+  line-height: 4em;
+  margin: -2em;
+  /* 2em = 4em/2 */
+  /* half the width */
+  opacity: 0;
+  cursor: pointer;
+}
+
+.react-revolver-menu .menu-item .popover {
+  transition: all .2s ease-out;
+  opacity: 0;
+  position: absolute;
+}
+
+.react-revolver-menu .menu-item .popover.bottom {
+  animation: .2s ease-out 0s popover-down forwards, .2s ease-in 0s fade-in forwards;
+}
+
+.react-revolver-menu .menu-item .popover.top {
+  animation: .2s ease-out 0s popover-up forwards, .2s ease-in 0s fade-in forwards;
+}
+
+.react-revolver-menu .menu-item .popover.right {
+  animation: .2s ease-out 0s popover-right forwards, .2s ease-in 0s fade-in forwards;
+}
+
+.react-revolver-menu .menu-item .popover.left {
+  animation: .2s ease-out 0s popover-left forwards, .2s ease-in 0s fade-in forwards;
+}
+
+.react-revolver-menu .circle-container .menu-item.show {
+  opacity: 1;
+}
+
+.react-revolver-menu .circle-container img {
+  display: block;
+  width: 100%;
+}
+</style><style type="text/css">body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  margin: 0; }
+
+@-webkit-keyframes grow-sm {
+  from {
+    width: 0; }
+  to {
+    width: 250px; } }
+
+@keyframes grow-sm {
+  from {
+    width: 0; }
+  to {
+    width: 250px; } }
+
+@-webkit-keyframes grow-lg {
+  from {
+    width: 0; }
+  to {
+    width: 350px; } }
+
+@keyframes grow-lg {
+  from {
+    width: 0; }
+  to {
+    width: 350px; } }
+
+@-webkit-keyframes shrink-sm {
+  from {
+    width: 250px; }
+  to {
+    width: 0; } }
+
+@keyframes shrink-sm {
+  from {
+    width: 250px; }
+  to {
+    width: 0; } }
+
+@-webkit-keyframes shrink-lg {
+  from {
+    width: 350px; }
+  to {
+    width: 0; } }
+
+@keyframes shrink-lg {
+  from {
+    width: 350px; }
+  to {
+    width: 0; } }
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes fade-out {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes fade-out-end {
+  0% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fade-out-end {
+  0% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes draw-vertical {
+  from {
+    height: 0; }
+  to {
+    height: 100vh; } }
+
+@keyframes draw-vertical {
+  from {
+    height: 0; }
+  to {
+    height: 100vh; } }
+
+@-webkit-keyframes draw-horizontal {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@keyframes draw-horizontal {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@-webkit-keyframes shift-right {
+  from {
+    left: 75px; }
+  to {
+    left: 380px; } }
+
+@keyframes shift-right {
+  from {
+    left: 75px; }
+  to {
+    left: 380px; } }
+
+@-webkit-keyframes shift-left {
+  from {
+    left: 75px; }
+  to {
+    left: -240px; } }
+
+@keyframes shift-left {
+  from {
+    left: 75px; }
+  to {
+    left: -240px; } }
+
+.fadeout {
+  opacity: 1;
+  -webkit-animation: .5s ease-in-out 0s fade-out !important;
+          animation: .5s ease-in-out 0s fade-out !important;
+  -webkit-animation-fill-mode: forwards !important;
+          animation-fill-mode: forwards !important; }
+
+.hidden {
+  opacity: 0; }
+
+.popover {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content; }
+
+@media screen and (min-width: 1048px) {
+  #arjun-portfolio-main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ece9e9; }
+    #arjun-portfolio-main .landing {
+      -webkit-animation: 2s ease-in-out 0s fade-in;
+              animation: 2s ease-in-out 0s fade-in;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+      opacity: 0;
+      position: relative;
+      top: 200px;
+      margin: auto;
+      text-align: center;
+      width: 400px; }
+      #arjun-portfolio-main .landing.hidden {
+        opacity: 0;
+        pointer-events: none; }
+      #arjun-portfolio-main .landing > .header {
+        -webkit-animation: 1s ease-in-out .5s fade-in;
+                animation: 1s ease-in-out .5s fade-in;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        opacity: 0;
+        width: 350px;
+        margin: auto;
+        font-size: 48px;
+        letter-spacing: 15px;
+        text-indent: 15px;
+        color: #336699;
+        -webkit-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out; }
+      #arjun-portfolio-main .landing > .subheader {
+        -webkit-animation: 1s ease-in-out 1s fade-in;
+                animation: 1s ease-in-out 1s fade-in;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        opacity: 0;
+        margin-top: 15px;
+        color: gray;
+        -webkit-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out; }
+        #arjun-portfolio-main .landing > .subheader.hidden {
+          opacity: 0; }
+        #arjun-portfolio-main .landing > .subheader:hover > .dash {
+          -webkit-transform: scaleX(1.2);
+              -ms-transform: scaleX(1.2);
+                  transform: scaleX(1.2); }
+        #arjun-portfolio-main .landing > .subheader .enter {
+          z-index: 500;
+          background: #ece9e9;
+          width: -webkit-max-content;
+          width: -moz-max-content;
+          width: max-content;
+          margin: auto;
+          position: relative;
+          padding: 0 10px;
+          cursor: pointer;
+          -webkit-transition: opacity .2s;
+          -o-transition: opacity .2s;
+          transition: opacity .2s; }
+          #arjun-portfolio-main .landing > .subheader .enter:active {
+            -webkit-transition: all .2s;
+            -o-transition: all .2s;
+            transition: all .2s;
+            -webkit-transform: scale(0.95);
+                -ms-transform: scale(0.95);
+                    transform: scale(0.95);
+            color: #666; }
+        #arjun-portfolio-main .landing > .subheader .dash {
+          -webkit-transition: -webkit-transform .25s ease-in-out;
+          transition: -webkit-transform .25s ease-in-out;
+          -o-transition: transform .25s ease-in-out;
+          transition: transform .25s ease-in-out;
+          transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
+          -webkit-animation: .75s ease-in-out 1.25s grow-sm;
+                  animation: .75s ease-in-out 1.25s grow-sm;
+          -webkit-animation-fill-mode: forwards;
+                  animation-fill-mode: forwards;
+          width: 0;
+          margin: auto;
+          position: relative;
+          bottom: 7px;
+          border-top: 1px solid #b3b3b3;
+          z-index: 100; }
+          #arjun-portfolio-main .landing > .subheader .dash.off {
+            width: 250px;
+            -webkit-animation: .5s ease-out 0s shrink-sm;
+                    animation: .5s ease-out 0s shrink-sm;
+            -webkit-animation-fill-mode: forwards;
+                    animation-fill-mode: forwards; }
+          #arjun-portfolio-main .landing > .subheader .dash:hover {
+            width: 400px; }
+    #arjun-portfolio-main .profile .react-revolver-menu {
+      z-index: 5500;
+      pointer-events: all;
+      position: fixed;
+      width: 100%;
+      top: 100px;
+      -webkit-filter: none;
+              filter: none; }
+    #arjun-portfolio-main .profile .blur-overlay {
+      background-color: white;
+      opacity: .5;
+      -webkit-filter: blur(3px);
+              filter: blur(3px); }
+      #arjun-portfolio-main .profile .blur-overlay.hide {
+        -webkit-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        opacity: 1;
+        -webkit-filter: none;
+                filter: none; }
+      #arjun-portfolio-main .profile .blur-overlay .lines {
+        -webkit-transition: opacity .2s ease-out;
+        -o-transition: opacity .2s ease-out;
+        transition: opacity .2s ease-out; }
+        #arjun-portfolio-main .profile .blur-overlay .lines .vertical-draw {
+          -webkit-transition: opacity .2s ease-in-out;
+          -o-transition: opacity .2s ease-in-out;
+          transition: opacity .2s ease-in-out;
+          -webkit-animation: .75s ease-in-out 0s draw-vertical forwards;
+                  animation: .75s ease-in-out 0s draw-vertical forwards;
+          height: 0;
+          width: 1px;
+          background: gray;
+          display: inline-block;
+          left: 300px;
+          position: fixed; }
+        #arjun-portfolio-main .profile .blur-overlay .lines .horizontal-draw {
+          -webkit-transition: opacity .2s ease-in-out;
+          -o-transition: opacity .2s ease-in-out;
+          transition: opacity .2s ease-in-out;
+          -webkit-animation: .75s ease-in-out .25s draw-horizontal forwards;
+                  animation: .75s ease-in-out .25s draw-horizontal forwards;
+          position: fixed;
+          height: 1px;
+          width: 0;
+          background: gray;
+          top: 350px;
+          left: 300px; }
+        #arjun-portfolio-main .profile .blur-overlay .lines .circle {
+          -webkit-transition: opacity .2s ease-in-out;
+          -o-transition: opacity .2s ease-in-out;
+          transition: opacity .2s ease-in-out;
+          width: 300px;
+          height: 300px;
+          background: #666;
+          border-radius: 50%;
+          position: fixed;
+          top: 50px;
+          left: 75px; }
+        #arjun-portfolio-main .profile .blur-overlay .lines .circle2 {
+          -webkit-transition: opacity .2s ease-in-out;
+          -o-transition: opacity .2s ease-in-out;
+          transition: opacity .2s ease-in-out;
+          width: 298px;
+          height: 298px;
+          border-radius: 50%;
+          background: #ece9e9;
+          z-index: 200;
+          position: fixed;
+          top: 51px;
+          left: 76px; }
+        #arjun-portfolio-main .profile .blur-overlay .lines .block1 {
+          -webkit-transition: opacity .2s ease-in-out;
+          -o-transition: opacity .2s ease-in-out;
+          transition: opacity .2s ease-in-out;
+          -webkit-animation: .75s ease-out .25s shift-right forwards;
+                  animation: .75s ease-out .25s shift-right forwards;
+          width: 312px;
+          height: 160px;
+          background: #ece9e9;
+          position: fixed;
+          top: 50px;
+          left: 75px; }
+        #arjun-portfolio-main .profile .blur-overlay .lines .block2 {
+          -webkit-transition: opacity .2s ease-in-out;
+          -o-transition: opacity .2s ease-in-out;
+          transition: opacity .2s ease-in-out;
+          -webkit-animation: .75s ease-out .25s shift-left forwards;
+                  animation: .75s ease-out .25s shift-left forwards;
+          width: 312px;
+          height: 160px;
+          background: #ece9e9;
+          position: fixed;
+          top: 210px;
+          left: 75px; }
+      #arjun-portfolio-main .profile .blur-overlay > .display {
+        -webkit-animation: 1.25s ease-in-out .5s fade-in forwards;
+                animation: 1.25s ease-in-out .5s fade-in forwards;
+        opacity: 0;
+        position: fixed;
+        z-index: 2000; }
+        #arjun-portfolio-main .profile .blur-overlay > .display > .sidebar {
+          height: 100vh;
+          width: 300px;
+          background: #264d73;
+          position: fixed; }
+          #arjun-portfolio-main .profile .blur-overlay > .display > .sidebar > .contact-info {
+            position: absolute;
+            bottom: 10px;
+            width: 240px;
+            padding: 15px;
+            margin: 15px;
+            color: white; }
+            #arjun-portfolio-main .profile .blur-overlay > .display > .sidebar > .contact-info > .info-item {
+              display: -ms-flexbox;
+              display: flex;
+              margin: 15px 0; }
+              #arjun-portfolio-main .profile .blur-overlay > .display > .sidebar > .contact-info > .info-item > a, #arjun-portfolio-main .profile .blur-overlay > .display > .sidebar > .contact-info > .info-item span {
+                margin-left: 5px;
+                color: white; }
+          #arjun-portfolio-main .profile .blur-overlay > .display > .sidebar > .profile-img {
+            -webkit-transition: opacity .3s ease;
+            -o-transition: opacity .3s ease;
+            transition: opacity .3s ease;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-left: 75px;
+            margin-top: 50px;
+            z-index: 2000;
+            position: fixed; }
+        #arjun-portfolio-main .profile .blur-overlay > .display > .content {
+          margin-left: 300px; }
+          #arjun-portfolio-main .profile .blur-overlay > .display > .content > .cover-photo {
+            height: 350px; }
+          #arjun-portfolio-main .profile .blur-overlay > .display > .content > .bio {
+            margin-top: 60px;
+            padding: 20px 60px; }
+            #arjun-portfolio-main .profile .blur-overlay > .display > .content > .bio > .title {
+              font-size: 48px;
+              margin-bottom: 10px; }
+            #arjun-portfolio-main .profile .blur-overlay > .display > .content > .bio > .content {
+              font-size: 20px;
+              line-height: 32px;
+              font-weight: 100; }
+          #arjun-portfolio-main .profile .blur-overlay > .display > .content > .explore {
+            margin-top: 40px;
+            color: gray; }
+            #arjun-portfolio-main .profile .blur-overlay > .display > .content > .explore:hover > .dash {
+              -webkit-transform: scaleX(1.2);
+                  -ms-transform: scaleX(1.2);
+                      transform: scaleX(1.2); }
+            #arjun-portfolio-main .profile .blur-overlay > .display > .content > .explore > .btn {
+              pointer-events: all;
+              font-size: 20px;
+              z-index: 500;
+              background: #ece9e9;
+              width: -webkit-max-content;
+              width: -moz-max-content;
+              width: max-content;
+              margin: auto;
+              position: relative;
+              padding: 0 10px;
+              cursor: pointer;
+              -webkit-transition: opacity .2s;
+              -o-transition: opacity .2s;
+              transition: opacity .2s; }
+            #arjun-portfolio-main .profile .blur-overlay > .display > .content > .explore > .dash {
+              -webkit-transition: -webkit-transform .5s ease-in-out;
+              transition: -webkit-transform .5s ease-in-out;
+              -o-transition: transform .5s ease-in-out;
+              transition: transform .5s ease-in-out;
+              transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+              -webkit-animation: 1s ease-in-out .5s grow-lg;
+                      animation: 1s ease-in-out .5s grow-lg;
+              -webkit-animation-fill-mode: forwards;
+                      animation-fill-mode: forwards;
+              width: 0px;
+              margin: auto;
+              position: relative;
+              bottom: 12px;
+              border-top: 1px solid #b3b3b3;
+              z-index: 100; } }
+</style></head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="arjun-portfolio-main"><div data-reactroot=""><div class="profile"><div class="blur-overlay hide"><div class="display"><div class="sidebar"><div class="contact-info"><div class="info-item"><i class="fa fa-at"></i><a href="mailto:arjundutta91@gmail.com">arjundutta91@gmail.com</a></div><div class="info-item"><i class="fa fa-phone"></i><span>(408) 458-6077</span></div></div><div class="profile-img" style="background: url(&quot;/img/goofy-me.png&quot;) center center / 100% no-repeat;"></div></div><div class="content"><div class="cover-photo" style="background: url(&quot;/img/coffee.jpeg&quot;) center center / 100% no-repeat;"></div><div class="bio"><div class="title">Arjun Dutta</div><span class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div><div class="explore"><div class="btn">explore</div><div class="dash"></div></div></div></div><div class="lines hidden"><div class="vertical-draw"></div><div class="horizontal-draw"></div><div class="circle"></div><div class="circle2"></div><div class="block1"></div><div class="block2"></div></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script type="text/javascript" src="./Arjun Dutta_files/bundle.js"></script>
+
+</body></html>
