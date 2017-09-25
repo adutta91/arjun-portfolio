@@ -8,7 +8,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        { this.props.entered ? <Profile /> : <Landing />}
+        { this.props.entered ? <Profile {...this.props} /> : <Landing {...this.props} />}
       </div>
     );
   }

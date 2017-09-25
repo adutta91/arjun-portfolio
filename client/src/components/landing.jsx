@@ -35,5 +35,5 @@ export default class Landing extends Component {
 };
 
 Landing.propTypes = {
-
+  entered : PropTypes.bool
 };

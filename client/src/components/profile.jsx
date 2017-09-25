@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { transitionDuration } from '../app/app';
 import { menuData } from '../app/app.js';
 
 import Menu from 'react-revolver-menu';
@@ -25,7 +24,9 @@ export default class Profile extends Component {
 
   keyListener(e) {
     switch(e.key) {
-      case 'Escape': if (this.state.showMenu) this.setState({ showMenu : false});
+      case 'Escape':
+        if (this.state.showMenu) this.setState({ showMenu : false});
+        break;
       default: return null;
     }
   }
@@ -107,5 +108,5 @@ export default class Profile extends Component {
 };
 
 Profile.propTypes = {
-
+  entered : PropTypes.bool
 };
