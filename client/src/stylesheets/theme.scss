@@ -217,6 +217,9 @@ $dash-width-lg: 350px;
     // Profile CSS
     // --------------------------------------------------
     .profile {
+      // width: 100vw;
+      // height: 100vh;
+
       .react-revolver-menu {
         z-index: $z-modal;
         pointer-events: all;
@@ -230,6 +233,8 @@ $dash-width-lg: 350px;
         background-color: white;
         opacity: .5;
         filter: blur(3px);
+        width: 100%;
+        height: 100%;
 
         &.hide {
           transition: all .5s ease-in-out;
@@ -257,7 +262,7 @@ $dash-width-lg: 350px;
             height: 1px;
             width: 0;
             background: $default-text-color;
-            top: 350px;
+            top: 450px;
             left: 300px;
           }
           .circle {
@@ -311,6 +316,9 @@ $dash-width-lg: 350px;
           opacity: 0;
           position: fixed;
           z-index: $z-5;
+          width: 100%;
+          height: 100%;
+          background-color: $superlightgray;
 
           >.sidebar {
             height: 100vh;
@@ -349,15 +357,15 @@ $dash-width-lg: 350px;
             }
           }
 
+          >.cover-photo {
+            height: 450px;
+          }
+
           >.content {
             margin-left: 300px;
 
-            >.cover-photo {
-              height: 350px;
-            }
-
             >.bio {
-              margin-top: 60px;
+              margin-top: 40px;
               padding: 20px 60px;
 
               >.title {
@@ -365,15 +373,23 @@ $dash-width-lg: 350px;
                 margin-bottom: 10px;
               }
 
+              >.sub-title {
+                font-size: 36px;
+                margin: 15px 0;
+              }
+
               >.content {
-                font-size: 20px;
-                line-height: 32px;
+                font-size: 30px;
+                line-height: 42px;
                 font-weight: 100;
+
+                >p .secret {
+                  color: $superlightgray;
+                }
               }
             }
 
             >.explore {
-              margin-top: 40px;
               color: $default-text-color;
 
               &:hover > .dash {

@@ -57,15 +57,11 @@ export default class Profile extends Component {
   renderBio() {
     return (
       <div className='bio'>
-        <div className='title'>Arjun Dutta</div>
+        <div className='title'>Hello!</div>
         <span className='content'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
+        <p> My name is Arjun, and I'm a Web Developer based in Seattle, WA. </p>
+        <p> I like to build things. <span className='secret'>And I have a lot of fun doing so.</span></p>
+        <p> Thanks for visiting my site - hope you enjoy it! </p>
         </span>
       </div>
     );
@@ -84,8 +80,8 @@ export default class Profile extends Component {
             {this.renderContactInfo()}
             <div className='profile-img' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/goofy-me.png)`}}></div>
             </div>
+            <div className='cover-photo' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/coffee-laptop.jpeg)`}}></div>
             <div className='content'>
-              <div className='cover-photo' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/coffee.jpeg)`}}></div>
               {this.renderBio()}
               <div className='explore'>
                 <div className='btn' onClick={() => { this.setState({ showMenu : true })}}>explore</div>

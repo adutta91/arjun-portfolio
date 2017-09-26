@@ -160,7 +160,9 @@ body {
     #arjun-portfolio-main .profile .blur-overlay {
       background-color: white;
       opacity: .5;
-      filter: blur(3px); }
+      filter: blur(3px);
+      width: 100%;
+      height: 100%; }
       #arjun-portfolio-main .profile .blur-overlay.hide {
         transition: all .5s ease-in-out;
         opacity: 1;
@@ -183,7 +185,7 @@ body {
           height: 1px;
           width: 0;
           background: gray;
-          top: 350px;
+          top: 450px;
           left: 300px; }
         #arjun-portfolio-main .profile .blur-overlay .lines .circle {
           transition: opacity .2s ease-in-out;
@@ -226,7 +228,10 @@ body {
         animation: 1.25s ease-in-out .5s fade-in forwards;
         opacity: 0;
         position: fixed;
-        z-index: 2000; }
+        z-index: 2000;
+        width: 100%;
+        height: 100%;
+        background-color: #ece9e9; }
         #arjun-portfolio-main .profile .blur-overlay > .display > .sidebar {
           height: 100vh;
           width: 300px;
@@ -254,22 +259,26 @@ body {
             margin-top: 50px;
             z-index: 2000;
             position: fixed; }
+        #arjun-portfolio-main .profile .blur-overlay > .display > .cover-photo {
+          height: 450px; }
         #arjun-portfolio-main .profile .blur-overlay > .display > .content {
           margin-left: 300px; }
-          #arjun-portfolio-main .profile .blur-overlay > .display > .content > .cover-photo {
-            height: 350px; }
           #arjun-portfolio-main .profile .blur-overlay > .display > .content > .bio {
-            margin-top: 60px;
+            margin-top: 40px;
             padding: 20px 60px; }
             #arjun-portfolio-main .profile .blur-overlay > .display > .content > .bio > .title {
               font-size: 48px;
               margin-bottom: 10px; }
+            #arjun-portfolio-main .profile .blur-overlay > .display > .content > .bio > .sub-title {
+              font-size: 36px;
+              margin: 15px 0; }
             #arjun-portfolio-main .profile .blur-overlay > .display > .content > .bio > .content {
-              font-size: 20px;
-              line-height: 32px;
+              font-size: 30px;
+              line-height: 42px;
               font-weight: 100; }
+              #arjun-portfolio-main .profile .blur-overlay > .display > .content > .bio > .content > p .secret {
+                color: #ece9e9; }
           #arjun-portfolio-main .profile .blur-overlay > .display > .content > .explore {
-            margin-top: 40px;
             color: gray; }
             #arjun-portfolio-main .profile .blur-overlay > .display > .content > .explore:hover > .dash {
               transform: scaleX(1.2); }
