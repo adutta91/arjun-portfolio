@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
+// import PropTypes from 'prop-types';
+import { Redirect } from 'react-router'
 import { menuData } from '../app/app.js';
 
 import Menu from 'react-revolver-menu';
@@ -8,12 +8,15 @@ import Menu from 'react-revolver-menu';
 export default class Profile extends Component {
   state = {
     show     : false,
-    showMenu : false
+    showMenu : false,
+    menuData : {},
+    redirect : null
   }
 
   componentDidMount() {
+    const menu = menuData(this.setState);
     setTimeout(() => {
-      this.setState({ show : true });
+      this.setState({ show : true, menuData : menu });
     }, 1500);
     this.listener = window.addEventListener('keyup', this.keyListener.bind(this));
   }
@@ -70,17 +73,17 @@ export default class Profile extends Component {
   render() {
     const showMenu = this.state.showMenu ? '' : 'hide';
     const hidden = this.state.show ? 'hidden' : '';
-
+    if (this.state.redirect) return <Redirect to={this.state.redirect}/>
     return (
       <div className='profile' onKeyUp={this.keyListener.bind(this)}>
-        {this.state.showMenu ? <Menu {...menuData} /> : null}
+        {this.state.showMenu ? <Menu {...this.state.menuData} /> : null}
         <div className={`blur-overlay ${showMenu}`} onClick={this.overlayClick.bind(this)}>
           <div className='display'>
             <div className='sidebar'>
             {this.renderContactInfo()}
-            <div className='profile-img' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/goofy-me.png)`}}></div>
+            <div className='profile-img' style={{background : `no-repeat center url(${process.env.PUBLIC_URL}/img/goofy-me.png)`, backgroundSize : 'cover' }}></div>
             </div>
-            <div className='cover-photo' style={{background : `no-repeat center/100% url(${process.env.PUBLIC_URL}/img/coffee-laptop.jpeg)`}}></div>
+            <div className='cover-photo' style={{background : `no-repeat center url(${process.env.PUBLIC_URL}/img/code.png)`, backgroundSize : 'cover' }}></div>
             <div className='content'>
               {this.renderBio()}
               <div className='explore'>
@@ -103,6 +106,4 @@ export default class Profile extends Component {
   }
 };
 
-Profile.propTypes = {
-  entered : PropTypes.bool
-};
+Profile.propTypes = {};

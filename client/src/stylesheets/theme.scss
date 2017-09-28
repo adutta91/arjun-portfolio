@@ -128,86 +128,93 @@ $dash-width-lg: 350px;
     // ------------
     // Landing CSS
     // --------------------------------------------------
-    .landing {
-      animation: 2s ease-in-out 0s fade-in;
-      animation-fill-mode: forwards;
-      opacity: 0;
-      position: relative;
-      top: 200px;
-      margin: auto;
-      text-align: center;
-      width: 400px;
+    .landing-wrapper {
+      background: url('/img/coffee-laptop.jpeg') center;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
 
-      &.hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      >.header {
-        animation: 1s ease-in-out .5s fade-in;
+      .landing {
+        animation: 2s ease-in-out 0s fade-in;
         animation-fill-mode: forwards;
         opacity: 0;
-        width: 350px;
+        position: relative;
+        top: 200px;
         margin: auto;
-        font-size: 48px;
-        letter-spacing: 15px;
-        text-indent: 15px;
-        color: $blue;
-        transition: opacity 1s ease-in-out;
-      }
-
-      >.subheader {
-        animation: 1s ease-in-out 1s fade-in;
-        animation-fill-mode: forwards;
-        opacity: 0;
-        margin-top: 15px;
-        color: $default-text-color;
-        transition: opacity 1s ease-in-out;
+        text-align: center;
+        width: 400px;
 
         &.hidden {
           opacity: 0;
+          pointer-events: none;
         }
 
-        &:hover > .dash {
-          transform: scaleX(1.2);
-        }
-
-        .enter {
-          z-index: $z-2;
-          background: $superlightgray;
-          width: max-content;
-          margin: auto;
-          position: relative;
-          padding: 0 10px;
-          cursor: pointer;
-          transition: opacity .2s;
-
-          &:active {
-            transition: all .2s;
-            transform: scale(.95);
-            color: $gray;
-          }
-        }
-
-        .dash {
-          transition: transform .25s ease-in-out;
-          animation: .75s ease-in-out 1.25s grow-sm;
+        >.header {
+          animation: 1s ease-in-out .5s fade-in;
           animation-fill-mode: forwards;
-          width: 0;
+          opacity: 0;
+          width: 350px;
           margin: auto;
-          position: relative;
-          bottom: 7px;
-          border-top: 1px solid $lightgray;
-          z-index: $z-1;;
+          font-size: 48px;
+          letter-spacing: 15px;
+          text-indent: 15px;
+          color: $blue;
+          transition: opacity 1s ease-in-out;
+        }
 
-          &.off {
-            width: 250px;
-            animation: .5s ease-out 0s shrink-sm;
-            animation-fill-mode: forwards;
+        >.subheader {
+          animation: 1s ease-in-out 1s fade-in;
+          animation-fill-mode: forwards;
+          opacity: 0;
+          margin-top: 15px;
+          color: $default-text-color;
+          transition: opacity 1s ease-in-out;
+
+          &.hidden {
+            opacity: 0;
           }
 
-          &:hover {
-            width: 400px;
+          &:hover > .dash {
+            transform: scaleX(1.2);
+          }
+
+          .enter {
+            z-index: $z-2;
+            background: $superlightgray;
+            width: max-content;
+            margin: auto;
+            position: relative;
+            padding: 0 10px;
+            cursor: pointer;
+            transition: opacity .2s;
+
+            &:active {
+              transition: all .2s;
+              transform: scale(.95);
+              color: $gray;
+            }
+          }
+
+          .dash {
+            transition: transform .25s ease-in-out;
+            animation: .75s ease-in-out 1.25s grow-sm;
+            animation-fill-mode: forwards;
+            width: 0;
+            margin: auto;
+            position: relative;
+            bottom: 7px;
+            border-top: 1px solid $lightgray;
+            z-index: $z-1;;
+
+            &.off {
+              width: 250px;
+              animation: .5s ease-out 0s shrink-sm;
+              animation-fill-mode: forwards;
+            }
+
+            &:hover {
+              width: 400px;
+            }
           }
         }
       }
@@ -365,12 +372,11 @@ $dash-width-lg: 350px;
             margin-left: 300px;
 
             >.bio {
-              margin-top: 40px;
+              margin-top: 20px;
               padding: 20px 60px;
 
               >.title {
                 font-size: 48px;
-                margin-bottom: 10px;
               }
 
               >.sub-title {

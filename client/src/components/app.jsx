@@ -3,8 +3,18 @@ import PropTypes from 'prop-types';
 
 import Landing from './landing.jsx';
 import Profile from './profile.jsx';
+import About from './about.jsx';
 
 export default class App extends Component {
+
+  getComponent() {
+    switch(this.props.page) {
+      case 'index': return <Profile {...this.props} />;
+      case 'about': return <About {...this.props} />
+      default: return <Profile {...this.props} />;
+    }
+  }
+
   render() {
     if (window.innerWidth < 1048) return (
       <div>
@@ -18,15 +28,21 @@ export default class App extends Component {
         <br/>
         Arjun
       </div>
-    )
+    );
+    let showLanding = true;
+    if (this.props.entered || this.props.page !== 'index') {
+      showLanding = false;
+    }
+
     return (
       <div>
-        { this.props.entered ? <Profile {...this.props} /> : <Landing {...this.props} />}
+        { showLanding ? <Landing {...this.props} /> : this.getComponent()}
       </div>
     );
   }
 };
 
 App.propTypes = {
-  entered : PropTypes.bool.isRequired
+  entered : PropTypes.bool.isRequired,
+  page    : PropTypes.string
 };

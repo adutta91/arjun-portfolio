@@ -23,11 +23,13 @@ export default class Landing extends Component {
     const dashentered = this.state.entered ? 'off' : '';
 
     return (
-      <div className={`landing ${entered}`}>
-        <div className={`header ${entered}`}>Welcome</div>
-        <div onClick={this.onEnter.bind(this)} className={`subheader ${entered}`}>
-          <div className='enter'>enter</div>
-          <div className={`dash ${dashentered}`}></div>
+      <div className='landing-wrapper'>
+        <div className={`landing ${entered}`}>
+          <div className={`header ${entered}`}>Welcome</div>
+          <div onClick={this.onEnter.bind(this)} className={`subheader ${entered}`}>
+            <div className='enter'>enter</div>
+            <div className={`dash ${dashentered}`}></div>
+          </div>
         </div>
       </div>
     );

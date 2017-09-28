@@ -15,7 +15,10 @@ import './stylesheets/theme.css';
 const routes = (
   <Provider store={Store}>
     <BrowserRouter>
-      <Route exact path="/" component={AppContainer}/>
+      <div>
+        <Route exact path="/" component={AppContainer} />
+        <Route path="/:page" component={AppContainer}/>
+      </div>
     </BrowserRouter>
   </Provider>
 );
