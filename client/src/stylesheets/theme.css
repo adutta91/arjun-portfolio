@@ -71,9 +71,14 @@ body {
   to {
     left: -240px; } }
 
-.fadeout {
+.fade-out {
   opacity: 1;
-  animation: .5s ease-in-out 0s fade-out !important;
+  animation: .2s ease-out 0s fade-out !important;
+  animation-fill-mode: forwards !important; }
+
+.fade-in {
+  opacity: 1;
+  animation: .2s ease-out 0s fade-in !important;
   animation-fill-mode: forwards !important; }
 
 .hidden {
@@ -81,3 +86,40 @@ body {
 
 .popover {
   width: max-content; }
+
+@media screen and (min-width: 1048px) {
+  #arjun-portfolio-main .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: calc(100% - 80px);
+    transition: all .2s ease-out; }
+    #arjun-portfolio-main .header > h3 {
+      font-weight: lighter;
+      font-size: 2.5vw;
+      margin: 0;
+      color: #666; }
+    #arjun-portfolio-main .header > a {
+      text-decoration: none;
+      color: #666; }
+    #arjun-portfolio-main .header.scrolled {
+      background-color: rgba(0, 0, 0, 0.15); }
+      #arjun-portfolio-main .header.scrolled > h3 {
+        color: white; }
+      #arjun-portfolio-main .header.scrolled > a {
+        color: white; }
+  #arjun-portfolio-main .container-content {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    #arjun-portfolio-main .container-content.landing {
+      background-color: lightgray; }
+    #arjun-portfolio-main .container-content.projects {
+      background-color: lightblue; }
+    #arjun-portfolio-main .container-content.todo {
+      background-color: lightgoldenrodyellow; }
+    #arjun-portfolio-main .container-content.aboutme {
+      background-color: lightgreen; } }

@@ -5,7 +5,8 @@ import App from '../components/app.jsx';
 
 const mapStateToProps = (state, props) => {
   return _.extend(state, {
-    page : props.match.params.page || 'index'
+    page : props.match.params.page || 'index',
+    scrolled : state.scrolled
   });
 };
 

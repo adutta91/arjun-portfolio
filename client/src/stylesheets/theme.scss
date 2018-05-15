@@ -104,9 +104,15 @@ $dash-width-lg: 350px;
 // ******---------------------------------------------
 // ******---------------------------------------------
 
-.fadeout {
+.fade-out {
   opacity: 1;
-  animation: .5s ease-in-out 0s fade-out !important;
+  animation: .2s ease-out 0s fade-out !important;
+  animation-fill-mode: forwards !important;
+}
+
+.fade-in {
+  opacity: 1;
+  animation: .2s ease-out 0s fade-in !important;
   animation-fill-mode: forwards !important;
 }
 
@@ -121,6 +127,61 @@ $dash-width-lg: 350px;
 
 @media screen and (min-width: 1048px) {
   #arjun-portfolio-main {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      position: fixed;
+      width: calc(100% - 80px);
+      transition: all .2s ease-out;
+      
+      > h3 {
+        font-weight: lighter;
+        font-size: 2.5vw;
+        margin: 0;
+        color: $gray;
+      }
+      
+      > a {
+        text-decoration: none;
+        color: $gray;
+      }
+      
+      &.scrolled {
+        background-color: rgba(0,0,0,0.15);
+        
+        > h3 {
+          color: white;
+        }
+        
+        > a {
+          color: white;
+        }
+      }
+    }
     
+    .container-content {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &.landing {
+        background-color: lightgray;
+      }
+      
+      &.projects {
+        background-color: lightblue;
+      }
+      
+      &.todo {
+        background-color: lightgoldenrodyellow;
+      }
+      
+      &.aboutme {
+        background-color: lightgreen;
+      }
+    }
   }
 }

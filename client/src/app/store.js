@@ -1,16 +1,19 @@
 import { createStore } from 'redux';
 
 import {
-  SITE_ENTERED
+  SET_SCROLL,
+  TOGGLE_HEADER
 } from './actions';
 
 const initialState = {
-  entered : false
+  scrolled : false,
+  showHeader : true
 };
 
 const AppReducer = (state = initialState, action) => {
   switch(action.type) {
-    case SITE_ENTERED: return { ...state, entered : true };
+    case SET_SCROLL: return { ...state, scrolled : action.val };
+    case TOGGLE_HEADER: return { ...state, showHeader : action.val };
     default: return state;
   }
 };
