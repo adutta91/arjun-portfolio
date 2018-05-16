@@ -114,6 +114,29 @@ body {
     #arjun-portfolio-main .header > a {
       text-decoration: none;
       color: #666; }
+  #arjun-portfolio-main .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    background-color: #264d73;
+    color: white; }
+    #arjun-portfolio-main .footer > .icons {
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 25px; }
+      #arjun-portfolio-main .footer > .icons > i {
+        cursor: pointer;
+        transition: color .2s ease-out, transform .1s ease-out; }
+        #arjun-portfolio-main .footer > .icons > i:hover {
+          color: #cccccc; }
+        #arjun-portfolio-main .footer > .icons > i:active {
+          transform: scale(0.9); }
+    #arjun-portfolio-main .footer > a {
+      color: lightblue; }
   #arjun-portfolio-main .container-content {
     min-height: 500px;
     display: flex;

@@ -165,7 +165,40 @@ $dash-width-lg: 350px;
         text-decoration: none;
         color: $gray;
       }
+    }
+    
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px;
+      background-color: $dark-blue;
+      color: white;
       
+      > .icons {
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 25px;
+        
+        > i {
+          cursor: pointer;
+          transition: color .2s ease-out, transform .1s ease-out;
+          
+          &:hover {
+            color: darken(white, 20%);
+          }
+          &:active {
+            transform: scale(.9);
+          }
+        }
+      }
+      
+      > a {
+        color: lightblue;
+      }
     }
     
     .container-content {
