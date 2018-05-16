@@ -9,7 +9,7 @@ export default class Header extends Component {
         
         if (this.props.scrolled) className += ' scrolled';
         if (this.props.show) className += ' fade-in';
-        if (!this.props.show) className += ' fade-out';
+        if (!this.props.show) className += ' fade-out up';
         
         return className;
     }

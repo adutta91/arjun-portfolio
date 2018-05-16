@@ -95,7 +95,17 @@ body {
     padding: 20px 40px;
     position: fixed;
     width: calc(100% - 80px);
-    transition: all .2s ease-out; }
+    transition: all .3s ease-out;
+    height: 40px;
+    top: 0; }
+    #arjun-portfolio-main .header.scrolled {
+      background-color: rgba(0, 0, 0, 0.15); }
+      #arjun-portfolio-main .header.scrolled > h3 {
+        color: white; }
+      #arjun-portfolio-main .header.scrolled > a {
+        color: white; }
+    #arjun-portfolio-main .header.up {
+      top: -80px; }
     #arjun-portfolio-main .header > h3 {
       font-weight: lighter;
       font-size: 2.5vw;
@@ -104,12 +114,6 @@ body {
     #arjun-portfolio-main .header > a {
       text-decoration: none;
       color: #666; }
-    #arjun-portfolio-main .header.scrolled {
-      background-color: rgba(0, 0, 0, 0.15); }
-      #arjun-portfolio-main .header.scrolled > h3 {
-        color: white; }
-      #arjun-portfolio-main .header.scrolled > a {
-        color: white; }
   #arjun-portfolio-main .container-content {
     min-height: 500px;
     display: flex;
