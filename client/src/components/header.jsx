@@ -15,14 +15,16 @@ export default class Header extends Component {
     }
     
     scrollToBottom() {
-        // TODO
+        $('html, body').animate({
+            scrollTop: $('#contact-info').offset().top
+        }, 500);
     }
      
     render() {
         return (
             <div className={this.getClassname()}>
                 <h3>Arjun Dutta</h3>
-                <a href="#contact-info" onClick={this.scrollToBottom.bind(this)}>Contact Me</a>
+                <a href="#" onClick={this.scrollToBottom.bind(this)}>Contact Me</a>
             </div>
         );
     }

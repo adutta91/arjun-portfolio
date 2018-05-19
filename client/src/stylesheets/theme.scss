@@ -127,100 +127,118 @@ $dash-width-lg: 350px;
 
 @media screen and (min-width: 1048px) {
   #arjun-portfolio-main {
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 40px;
-      position: fixed;
-      width: calc(100% - 80px);
-      transition: all .3s ease-out;
-      height: 40px;
-      top: 0;
+    .container-content-wrapper {
+      position: relative;
+      overflow: hidden;
       
-      &.scrolled {
-        background-color: rgba(0,0,0,0.15);
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        position: fixed;
+        width: calc(100% - 80px);
+        transition: all .3s ease-out;
+        height: 40px;
+        top: 0;
+        
+        &.scrolled {
+          background-color: rgba(0,0,0,0.15);
+          
+          > h3 {
+            color: white;
+          }
+          
+          > a {
+            color: white;
+          }
+        }
+        
+        &.up {
+          top : -80px;
+        }
         
         > h3 {
+          font-weight: lighter;
+          font-size: 2.5vw;
+          margin: 0;
           color: white;
         }
         
         > a {
+          text-decoration: none;
           color: white;
         }
       }
       
-      &.up {
-        top : -80px;
-      }
-      
-      > h3 {
-        font-weight: lighter;
-        font-size: 2.5vw;
-        margin: 0;
-        color: $gray;
-      }
-      
-      > a {
-        text-decoration: none;
-        color: $gray;
-      }
-    }
-    
-    .footer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 100px;
-      background-color: $dark-blue;
-      color: white;
-      
-      > .icons {
-        width: 200px;
+      .footer {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-around;
-        margin-bottom: 25px;
+        justify-content: center;
+        background-color: $dark-blue;
+        color: white;
+        transition: all .3s ease-out;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 150px;
         
-        > i {
-          cursor: pointer;
-          transition: color .2s ease-out, transform .1s ease-out;
+        &.out {
+          bottom: -175px
+        }
+        
+        > .icons {
+          width: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          margin-bottom: 25px;
+          color: darken(white, 20%);
           
-          &:hover {
-            color: darken(white, 20%);
+          > i {
+            cursor: pointer;
+            transition: color .2s ease-out, transform .1s ease-out;
+            
+            &:hover {
+              color: white;
+            }
+            
+            &:active {
+              transform: scale(.9);
+            }
           }
-          &:active {
-            transform: scale(.9);
-          }
+        }
+        
+        > a {
+          color: lightblue;
         }
       }
       
-      > a {
-        color: lightblue;
-      }
-    }
-    
-    .container-content {
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      
-      &.landing {
-        background-color: lightgray;
-      }
-      
-      &.projects {
-        background-color: lightblue;
-      }
-      
-      &.todo {
-        background-color: lightgoldenrodyellow;
-      }
-      
-      &.aboutme {
-        background-color: lightgreen;
+      .container-content {
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &.landing {
+          height: 100vh; // height override
+          background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);
+          // background: linear-gradient(to top right, $light-blue 0%, $dark-blue 100%);
+          
+        }
+        
+        &.projects {
+          background-color: lightblue;
+        }
+        
+        &.todo {
+          background-color: lightgoldenrodyellow;
+        }
+        
+        &.aboutme {
+          background-color: lightgreen;
+        }
       }
     }
   }

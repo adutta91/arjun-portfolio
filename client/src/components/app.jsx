@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
+// import particlesJS from 'particles.js';
 
 import HeaderContainer from '../containers/header-container';
+import FooterContainer from '../containers/footer-container';
 
 import Landing from './landing';
 import Projects from './projects';
 import Todo from './todo';
 import AboutMe from './aboutme';
-import Footer from './footer';
 
-import { setScrolled, toggleHeader } from '../app/actions';
+import { setScrolled, toggleHeader, showFooter } from '../app/actions';
 
 export default class App extends Component {
   constructor(props) {
@@ -24,6 +25,13 @@ export default class App extends Component {
   componentDidMount() {
     $(window).on('scroll', (e) => {
       let scroll = e.currentTarget.scrollY;
+      
+      if ((scroll + $(window).height()) == $(document).height()) {
+        showFooter(true);
+      } else {
+        if (this.props.showFooter) showFooter(false);
+      }
+      
       
       if (scroll && !this.props.scrolled) setScrolled(true);
       else if (!scroll) {
@@ -43,10 +51,10 @@ export default class App extends Component {
       let diff = $(window)[0].scrollY - scroll1;
       
       // going down
-      if (diff > 200) toggleHeader(false);
+      if (diff > 300) toggleHeader(false);
       
       // going up
-      if (diff < -300) toggleHeader(true);
+      if (diff < -400) toggleHeader(true);
       
       
       setTimeout(() => {
@@ -71,13 +79,13 @@ export default class App extends Component {
     );
 
     return (
-      <div>
+      <div className='container-content-wrapper'>
         <HeaderContainer key={0}/>
         <Landing key={1} />
         <Projects key={2} />
         <Todo key={3} />
         <AboutMe key={4} />
-        <Footer key={5}/>
+        <FooterContainer key={5}/>
       </div>
     )
   }
@@ -85,4 +93,5 @@ export default class App extends Component {
 
 App.propTypes = {
   scrolled : PropTypes.bool,
+  showFooter : PropTypes.bool,
 }

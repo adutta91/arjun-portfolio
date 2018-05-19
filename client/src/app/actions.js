@@ -16,3 +16,11 @@ export const toggleHeader = (val) => {
     val
   });
 };
+
+export const SHOW_FOOTER = 'SHOW_FOOTER';
+export const showFooter = (val) => {
+  Store.dispatch({
+    type : SHOW_FOOTER,
+    val
+  });
+};
