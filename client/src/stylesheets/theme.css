@@ -78,7 +78,7 @@ body {
 
 .fade-in {
   opacity: 1;
-  animation: .2s ease-out 0s fade-in !important;
+  animation: .2s ease-out 1s fade-in !important;
   animation-fill-mode: forwards !important; }
 
 .hidden {
@@ -155,6 +155,13 @@ body {
       #arjun-portfolio-main .container-content-wrapper .container-content.landing {
         height: 100vh;
         background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%); }
+        #arjun-portfolio-main .container-content-wrapper .container-content.landing > h1 {
+          font-weight: lighter;
+          color: white;
+          opacity: 0;
+          transition: opacity 1s ease-in-out; }
+          #arjun-portfolio-main .container-content-wrapper .container-content.landing > h1.in {
+            opacity: 1; }
       #arjun-portfolio-main .container-content-wrapper .container-content.projects {
         background-color: lightblue; }
       #arjun-portfolio-main .container-content-wrapper .container-content.todo {

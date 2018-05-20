@@ -112,7 +112,7 @@ $dash-width-lg: 350px;
 
 .fade-in {
   opacity: 1;
-  animation: .2s ease-out 0s fade-in !important;
+  animation: .2s ease-out 1s fade-in !important;
   animation-fill-mode: forwards !important;
 }
 
@@ -224,7 +224,17 @@ $dash-width-lg: 350px;
         &.landing {
           height: 100vh; // height override
           background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);
-          // background: linear-gradient(to top right, $light-blue 0%, $dark-blue 100%);
+          
+          > h1 {
+            font-weight: lighter;
+            color: white;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            
+            &.in {
+              opacity: 1;
+            }
+          }
           
         }
         
