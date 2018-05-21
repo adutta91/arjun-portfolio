@@ -8,13 +8,11 @@ body {
 // --------------------------------------------------
 // z-indices
 // --------------------------------------------------
-$z-1 : 100;
-$z-2 : 500;
-$z-3 : 1000;
-$z-4 : 1500;
-$z-5 : 2000;
-$z-modal-overlay : 5000;
-$z-modal : 5500;
+$z-1 : 1000;
+$z-2 : 900;
+$z-3 : 800;
+$z-4 : 700;
+$z-5 : 600;
 
 // --------------------------------------------------
 // colors
@@ -27,6 +25,10 @@ $superlightgray : #ece9e9;
 $blue       : #336699;
 $dark-blue  : darken(#336699, 10%);
 $light-blue : lighten(#336699, 10%);
+
+$off-white-blue : #e9f8f9;
+
+$background-code-color: #403836;
 
 // --------------------------------------------------
 // variables
@@ -125,6 +127,18 @@ $dash-width-lg: 350px;
   width: max-content;
 }
 
+
+.btn {
+  cursor: pointer;
+  transition: all .2s ease-out;
+  
+  &.btn-outline {
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
+
 @media screen and (min-width: 1048px) {
   #arjun-portfolio-main {
     .container-content-wrapper {
@@ -141,6 +155,7 @@ $dash-width-lg: 350px;
         transition: all .3s ease-out;
         height: 40px;
         top: 0;
+        z-index: $z-1;
         
         &.scrolled {
           background-color: rgba(0,0,0,0.15);
@@ -183,6 +198,7 @@ $dash-width-lg: 350px;
         width: 100%;
         bottom: 0;
         height: 150px;
+        z-index: $z-1;
         
         &.out {
           bottom: -175px
@@ -239,7 +255,144 @@ $dash-width-lg: 350px;
         }
         
         &.projects {
-          background-color: lightblue;
+          display: flex;
+          flex-direction: column;
+          
+          > .project-item {
+            padding: 100px;
+            display: flex;
+            background-color: $off-white-blue;
+            position: relative;
+            
+            &.other {
+              background-color: #eaf3f9;
+            }
+            
+            > .content-wrapper {
+              
+              > .title {
+                font-weight: lighter;
+                font-size: 36px;
+              }
+              
+              > .description {
+                margin-bottom: 20px;
+                font-size: 18px;
+                line-height: 30px;
+                font-weight: 100;
+              }
+              
+              > .skills {
+                
+                > h4 {
+                  font-weight: lighter;
+                  margin-top: 50px;
+                  margin-bottom: 25px;
+                  font-size: 24px;
+                }
+                
+                > .skill-list {
+                  display: flex;
+                  margin-bottom: 50px;
+                  
+                  > .skill {
+                    margin-right: 10px;
+                    
+                    &:last-child {
+                      margin-right: 0;
+                    }
+                  }
+                }
+              }
+              
+              > .links {
+                display: flex;
+                
+                > div {
+                  margin-left: 10px;
+                }
+                
+                > .icon {
+                  cursor: pointer;
+                  transition: color .2s ease-out, transform .1s ease-out;
+                  
+                  &:hover {
+                    color: $gray;
+                  }
+                  
+                  &:active {
+                    transform: scale(.9);
+                  }
+                }
+              }
+            }
+              
+            > .sampleCode {
+              height: 100%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              
+              &.open {
+                width: 100%;                
+              }
+              
+              > .sample-tag {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                margin-right: 5px;
+                
+                > .text {
+                  transition: all .2s ease-out;
+                  margin-left: 5px;
+                  width: 0;
+                  overflow: hidden;
+                }
+                
+                &:hover {
+                  > .text {
+                    width: 65px;
+                  }
+                }
+              }
+              
+              > .sample-text {
+                transition: all .3s ease-in-out;
+                height: 100%;
+                
+                > .close {
+                  position: absolute;
+                  top: 15px;
+                  right: 15px;
+                }
+                
+                &.closed {
+                  width: 0;
+                  overflow: hidden;
+                  
+                  > .close {
+                    display: none;
+                  }
+                }
+                
+                &.open {
+                  width: 100%;
+                  background-color: $background-code-color;
+                  color: white;
+                  overflow-x: hidden;
+                  overflow-y: scroll;
+                }
+                
+                > pre {
+                  margin: 0;
+                }
+              }
+            }
+          }
         }
         
         &.todo {
@@ -248,6 +401,40 @@ $dash-width-lg: 350px;
         
         &.aboutme {
           background-color: lightgreen;
+        }
+      }
+    }
+  }
+  
+  .modal-demo {
+    
+    > .modal-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      transition: all .2s ease-out;
+      
+      &.closed {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      &.open {
+        background-color: rgba(0,0,0,0.75);
+      }
+      
+      > .modal-content {
+        
+        > .react-revolver-menu {
+          
+          .menu-item {
+            color: white;
+          }
         }
       }
     }

@@ -1,4 +1,8 @@
 
+export const goTo = (url) => {
+  if (url) window.open(url, '_blank');
+};
+
 export const menuData = (cb) => {
 
   return {
@@ -61,7 +65,6 @@ export const transitionDuration = {
   medium : 500,
   long   : 1000
 };
-
 
 export const particlesConfig = {
   particles : {
