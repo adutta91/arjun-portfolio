@@ -164,7 +164,8 @@ body {
       justify-content: center; }
       #arjun-portfolio-main .container-content-wrapper .container-content.landing {
         height: 100vh;
-        background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%); }
+        background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);
+        position: relative; }
         #arjun-portfolio-main .container-content-wrapper .container-content.landing > h1 {
           font-weight: lighter;
           color: white;
@@ -172,6 +173,40 @@ body {
           transition: opacity 1s ease-in-out; }
           #arjun-portfolio-main .container-content-wrapper .container-content.landing > h1.in {
             opacity: 1; }
+        #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons {
+          display: flex;
+          justify-content: center;
+          position: absolute;
+          transition: all .3s ease-out;
+          margin-left: auto;
+          margin-right: auto;
+          left: 0;
+          right: 0;
+          bottom: 50%; }
+          #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons.away {
+            bottom: 20px; }
+          #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons > i {
+            color: white;
+            margin-right: 20px;
+            border: 1px solid white;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            opacity: 0.7;
+            transition: all .3s ease-out;
+            cursor: pointer; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons > i:hover {
+              opacity: 1; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons > i:active {
+              transform: scale(0.9); }
+            #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons > i.disabled {
+              opacity: 0.5 !important;
+              pointer-events: none; }
+          #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons:last-child {
+            margin-right: 0; }
       #arjun-portfolio-main .container-content-wrapper .container-content.projects {
         display: flex;
         flex-direction: column; }
@@ -205,7 +240,11 @@ body {
           #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item > .content-wrapper > .links {
             display: flex; }
             #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item > .content-wrapper > .links > div {
-              margin-left: 10px; }
+              margin-right: 20px; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item > .content-wrapper > .links > i {
+              margin-right: 20px; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item > .content-wrapper > .links:last-child {
+              margin-right: 0; }
             #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item > .content-wrapper > .links > .icon {
               cursor: pointer;
               transition: color .2s ease-out, transform .1s ease-out; }

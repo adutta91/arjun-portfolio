@@ -38,7 +38,7 @@ export default class ProjectItem extends Component {
         );
     }
     
-    renderSampleCode() {
+    renderSampleCode() {https://www.npmjs.com/package/react-revolver-menu
         if (!this.props.sampleCode) return null;
         
         return (
@@ -47,6 +47,12 @@ export default class ProjectItem extends Component {
                 {this.renderSampleText()}
             </div>
         );
+    }
+    
+    renderLinks() {
+        return map(this.props.links, (link, id) => {
+            return <i key={id} className={`icon fab fa-2x fa-${id}`} onClick={goTo.bind(this, link)} />
+        });
     }
     
     render() {
@@ -68,7 +74,7 @@ export default class ProjectItem extends Component {
                         </div>
                     </div>
                     <div className="links">
-                        <i className="icon fab fa-2x fa-github" onClick={goTo.bind(this, this.props.link)} />
+                        {this.renderLinks()}
                         {this.props.component || null}
                     </div>
                 </div>
@@ -80,11 +86,11 @@ export default class ProjectItem extends Component {
 
 ProjectItem.propTypes = {
     title : PropTypes.string.isRequired,
-    link : PropTypes.string.isRequired,
+    links : PropTypes.object.isRequired,
     description : PropTypes.string.isRequired,
     skills : PropTypes.arrayOf(PropTypes.string).isRequired,
     date : PropTypes.string,
     sampleCode : PropTypes.string,
     other : PropTypes.bool,
-    component : PropTypes.node
+    component : PropTypes.node,
 };

@@ -94,7 +94,10 @@ export const projects = [
     {
         title: 'React Revolver Menu',
         skills: ['ReactJS', 'JavaScript', 'HTML/CSS', 'NPM'],
-        link: 'https://github.com/adutta91/react-revolver-menu',
+        links: {
+            github : 'https://github.com/adutta91/react-revolver-menu',
+            npm : 'https://www.npmjs.com/package/react-revolver-menu',
+        },
         component: <MenuDemo {...revolverMenuProps} />,
         description: `
             A circular menu I built using React that is available as an NPM module. The idea is an arbitrarily deep menu arranged in a circle, with option to go back to the higher level in the menu through a button in the center. I had a lot of fun figuring out the challenge of making it as dynamic as possible - allowing for any number
