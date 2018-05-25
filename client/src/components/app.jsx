@@ -10,6 +10,7 @@ import Landing from './landing';
 import Projects from './projects';
 import Todo from './todo';
 import AboutMe from './aboutme';
+import SectionHeader from './section-header';
 
 import { setScrolled, toggleHeader, showFooter } from '../app/actions';
 
@@ -82,9 +83,17 @@ export default class App extends Component {
       <div className='container-content-wrapper'>
         <HeaderContainer key={0}/>
         <Landing key={1} />
+        
+        <SectionHeader title='Done but always in progress' />
         <Projects key={2} />
+        
+        
+        <SectionHeader title='In the pipeline...' />
         <Todo key={3} />
+        
+        <SectionHeader title='About me' />
         <AboutMe key={4} />
+        
         <FooterContainer key={5}/>
       </div>
     )

@@ -157,6 +157,11 @@ body {
             transform: scale(0.9); }
       #arjun-portfolio-main .container-content-wrapper .footer > a {
         color: lightblue; }
+    #arjun-portfolio-main .container-content-wrapper .section-header {
+      background: #333333;
+      color: #e6e6e6;
+      padding: 20px 40px;
+      font-size: 24px; }
     #arjun-portfolio-main .container-content-wrapper .container-content {
       min-height: 500px;
       display: flex;
@@ -198,6 +203,9 @@ body {
             opacity: 0.7;
             transition: all .3s ease-out;
             cursor: pointer; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons > i.on {
+              color: green;
+              border-color: green; }
             #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons > i:hover {
               opacity: 1; }
             #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons > i:active {
@@ -295,7 +303,7 @@ body {
               #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item > .sampleCode > .sample-text > pre {
                 margin: 0; }
       #arjun-portfolio-main .container-content-wrapper .container-content.todo {
-        background-color: white; }
+        background-color: #e6e6e6; }
         #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper {
           width: 33%; }
           #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item {
@@ -306,7 +314,8 @@ body {
             margin: 20px;
             position: relative;
             padding-bottom: 40px;
-            transition: all .2s ease-out; }
+            transition: all .2s ease-out;
+            background-color: white; }
             #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .expand {
               position: absolute;
               top: 10px;
@@ -323,7 +332,7 @@ body {
               font-weight: lighter;
               font-size: 24px; }
             #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .description {
-              height: 100px;
+              height: 150px;
               overflow: hidden;
               color: #b3b3b3;
               line-height: 20px;
@@ -343,7 +352,7 @@ body {
             background: rgba(0, 0, 0, 0.4);
             display: flex;
             justify-content: center;
-            z-index: 1000; }
+            z-index: 600; }
             #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper.expanded > .todo-item {
               border-top: 1px solid #b3b3b3;
               background: white;

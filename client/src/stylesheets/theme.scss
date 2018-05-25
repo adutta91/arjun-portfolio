@@ -20,7 +20,9 @@ $z-5 : 600;
 $red  : #f33;
 $gray : #666;
 $lightgray : lighten(#666, 30%);
-$superlightgray : #ece9e9;
+$darkgray : darken(#666, 20%);
+$superlightgray : lighten(#666, 50%);
+// $superlightgray : #ece9e9;
 
 $blue       : #336699;
 $dark-blue  : darken(#336699, 10%);
@@ -231,6 +233,14 @@ $dash-width-lg: 350px;
         }
       }
       
+      .section-header {
+        background: $darkgray;
+        // background: #4c4a4a;
+        color: $superlightgray;
+        padding: 20px 40px;
+        font-size: 24px;
+      }
+      
       .container-content {
         min-height: 500px;
         display: flex;
@@ -281,6 +291,11 @@ $dash-width-lg: 350px;
               opacity: 0.7;
               transition: all .3s ease-out;
               cursor: pointer;
+              
+              &.on {
+                color: green;
+                border-color: green;
+              }
               
               &:hover {
                 opacity: 1;
@@ -453,11 +468,10 @@ $dash-width-lg: 350px;
         }
         
         &.todo {
-          background-color: white;
+          background-color: $superlightgray;
           
           > .todo-item-wrapper {
             width: 33%;
-            // transition: all .2s ease-out;
             
             > .todo-item {
               padding: 20px;
@@ -468,6 +482,7 @@ $dash-width-lg: 350px;
               position: relative;
               padding-bottom: 40px;
               transition: all .2s ease-out;
+              background-color: white;
               
               > .expand {
                 position: absolute;
@@ -493,7 +508,7 @@ $dash-width-lg: 350px;
               }
               
               > .description {
-                height: 100px;
+                height: 150px;
                 overflow: hidden;
                 color: $lightgray;
                 line-height: 20px;
@@ -521,7 +536,7 @@ $dash-width-lg: 350px;
               background: rgba(0,0,0,0.4);
               display: flex;
               justify-content: center;
-              z-index: $z-1;
+              z-index: $z-5;
               
               > .todo-item {
                 border-top: 1px solid $lightgray;
