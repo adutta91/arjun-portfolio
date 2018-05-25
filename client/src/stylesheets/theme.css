@@ -295,7 +295,75 @@ body {
               #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item > .sampleCode > .sample-text > pre {
                 margin: 0; }
       #arjun-portfolio-main .container-content-wrapper .container-content.todo {
-        background-color: lightgoldenrodyellow; }
+        background-color: white; }
+        #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper {
+          width: 33%; }
+          #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item {
+            padding: 20px;
+            border: 1px solid #b3b3b3;
+            border-top: 8px solid #336699;
+            border-radius: 5px;
+            margin: 20px;
+            position: relative;
+            padding-bottom: 40px;
+            transition: all .2s ease-out; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .expand {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              transform: rotate(45deg) scale(1.5);
+              color: #b3b3b3;
+              cursor: pointer;
+              transition: all .2s ease-out; }
+              #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .expand:hover {
+                color: #666; }
+              #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .expand:active {
+                transform: rotate(45deg) scale(1.25); }
+            #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .title {
+              font-weight: lighter;
+              font-size: 24px; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .description {
+              height: 100px;
+              overflow: hidden;
+              color: #b3b3b3;
+              line-height: 20px;
+              position: relative; }
+              #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .description .fadeout {
+                position: absolute;
+                bottom: 0;
+                height: 40px;
+                width: 100%;
+                background: linear-gradient(rgba(255, 255, 255, 0) 0%, white 100%); }
+          #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper.expanded {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            z-index: 1000; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper.expanded > .todo-item {
+              border-top: 1px solid #b3b3b3;
+              background: white;
+              width: 500px;
+              height: max-content;
+              max-height: 75vh;
+              overflow: scroll;
+              margin-top: 100px;
+              padding-left: 50px;
+              padding-right: 50px; }
+              #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper.expanded > .todo-item > .description {
+                height: auto;
+                line-height: 25px; }
+              #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper.expanded > .todo-item > .skills {
+                display: flex;
+                flex-wrap: wrap; }
+                #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper.expanded > .todo-item > .skills > .skill {
+                  flex: 1;
+                  min-width: 100px;
+                  margin: 10px; }
       #arjun-portfolio-main .container-content-wrapper .container-content.aboutme {
         background-color: lightgreen; }
   .modal-demo > .modal-wrapper {
