@@ -28,7 +28,7 @@ export default class ProjectItem extends Component {
     renderSampleText() {
         return (
             <div className={`sample-text ${this.state.showSampleCode ? 'open' : 'closed'}`} >
-                <div className="btn btn-outline close" onClick={this.toggleSampleCode.bind(this, false)}>Close</div>
+                <div className="btn close" onClick={this.toggleSampleCode.bind(this, false)}>Close</div>
                 <pre>
                     <code className="language-jsx">
                         {this.props.sampleCode}

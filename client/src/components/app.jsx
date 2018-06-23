@@ -84,15 +84,15 @@ export default class App extends Component {
         <HeaderContainer key={0}/>
         <Landing key={1} />
         
-        <SectionHeader title='Done but always in progress' />
+        {/* <SectionHeader title='About me' /> */}
+        <AboutMe key={4} />
+        
+        {/* <SectionHeader title='Projects' /> */}
         <Projects key={2} />
         
         
-        <SectionHeader title='In the pipeline...' />
+        {/* <SectionHeader title='In the pipeline...' /> */}
         <Todo key={3} />
-        
-        <SectionHeader title='About me' />
-        <AboutMe key={4} />
         
         <FooterContainer key={5}/>
       </div>
