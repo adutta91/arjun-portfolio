@@ -1,10 +1,4 @@
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
-  margin: 0;
-}
-
 // --------------------------------------------------
 // z-indices
 // --------------------------------------------------
@@ -45,6 +39,16 @@ $default-text-color: lighten($gray, 10%);
 $dash-width-sm: 250px;
 $dash-width-lg: 350px;
 
+
+$lt-default-text-color: lighten($gray, 10%);
+// $dk-default-text-color: darken($gray, 10%);
+
+
+$lt-default-background-color: white;
+$dk-default-background-color: #3c3939;
+
+$lt-default-header-background-color: rgba(0,0,0,0.15);
+$dk-default-header-background-color: rgba(255,255,255,0.15);
 // --------------------------------------------------
 // animations
 // --------------------------------------------------
@@ -114,6 +118,21 @@ $dash-width-lg: 350px;
 // ******---------------------------------------------
 // ******---------------------------------------------
 
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  margin: 0;
+  transition: all .2s ease-out;
+  
+  &.light {
+    background-color: $lt-default-background-color;
+  }
+  
+  &.dark {
+    background-color: $dk-default-background-color;
+  }
+}
+
 .fade-out {
   opacity: 1;
   animation: .2s ease-out 0s fade-out !important;
@@ -166,7 +185,14 @@ $dash-width-lg: 350px;
         z-index: $z-1;
         
         &.scrolled {
-          background-color: rgba(0,0,0,0.15);
+          
+          &.light {
+            background-color: $lt-default-header-background-color;
+          }
+          
+          &.dark {
+            background-color: $dk-default-header-background-color;
+          }
           
           > h3 {
             color: white;
@@ -253,6 +279,15 @@ $dash-width-lg: 350px;
         align-items: center;
         justify-content: center;
         margin-bottom: 200px;
+        
+        &.light {
+          background-color: $lt-default-background-color;
+        }
+        
+        &.dark {
+          background-color: $dk-default-background-color;
+          color: white;
+        }
         
         &.landing {
           height: 100vh; // height override
@@ -342,13 +377,12 @@ $dash-width-lg: 350px;
               align-items: center;
               justify-content: center;
               border-radius: 50%;
-              opacity: 0.7;
+              opacity: 0.25;
               transition: all .3s ease-out;
               cursor: pointer;
               
               &.on {
-                color: green;
-                border-color: green;
+                opacity: .8;
               }
               
               &:hover {
@@ -379,7 +413,6 @@ $dash-width-lg: 350px;
           > .project-item {
             padding: 100px;
             display: flex;
-            background-color: white;
             position: relative;
             
             &.other {
@@ -522,7 +555,6 @@ $dash-width-lg: 350px;
         }
         
         &.todo {
-          background-color: white;
           margin-bottom: 100px;
           
           > .todo-item-wrapper {
@@ -625,7 +657,6 @@ $dash-width-lg: 350px;
         }
         
         &.aboutme {
-          background-color: white;
         }
       }
     }

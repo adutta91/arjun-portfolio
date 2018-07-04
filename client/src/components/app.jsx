@@ -23,6 +23,12 @@ export default class App extends Component {
     };
   }
   
+  componentWillReceiveProps(next) {
+    console.log(next.theme);
+    $('body').removeClass();
+    $('body').addClass(next.theme);
+  }
+  
   componentDidMount() {
     $(window).on('scroll', (e) => {
       let scroll = e.currentTarget.scrollY;
@@ -82,17 +88,17 @@ export default class App extends Component {
     return (
       <div className='container-content-wrapper'>
         <HeaderContainer key={0}/>
-        <Landing key={1} />
+        <Landing key={1} theme={this.props.theme} />
         
         {/* <SectionHeader title='About me' /> */}
-        <AboutMe key={4} />
+        <AboutMe key={4} theme={this.props.theme} />
         
         {/* <SectionHeader title='Projects' /> */}
-        <Projects key={2} />
+        <Projects key={2} theme={this.props.theme} />
         
         
         {/* <SectionHeader title='In the pipeline...' /> */}
-        <Todo key={3} />
+        <Todo key={3} theme={this.props.theme} />
         
         <FooterContainer key={5}/>
       </div>
@@ -103,4 +109,5 @@ export default class App extends Component {
 App.propTypes = {
   scrolled : PropTypes.bool,
   showFooter : PropTypes.bool,
+  theme : PropTypes.string,
 }

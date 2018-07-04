@@ -17,6 +17,14 @@ export const toggleHeader = (val) => {
   });
 };
 
+export const TOGGLE_THEME = 'TOGGLE_THEME';
+export const toggleTheme = (theme) => {
+  Store.dispatch({
+    type : TOGGLE_THEME,
+    theme
+  });
+};
+
 export const SHOW_FOOTER = 'SHOW_FOOTER';
 export const showFooter = (val) => {
   Store.dispatch({

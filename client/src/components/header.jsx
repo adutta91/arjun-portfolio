@@ -5,7 +5,7 @@ import $ from 'jquery';
 
 export default class Header extends Component {
     getClassname() {
-        let className = 'header';
+        let className = `header ${this.props.theme}`;
         
         if (this.props.scrolled) className += ' scrolled';
         if (this.props.show) className += ' fade-in';
@@ -33,4 +33,5 @@ export default class Header extends Component {
 Header.propTypes = {
     scrolled : PropTypes.bool,
     show : PropTypes.bool,
+    theme : PropTypes.string
 };

@@ -6,7 +6,8 @@ import Header from '../components/header.jsx';
 const mapStateToProps = (state, props) => {
     return {
         scrolled : state.scrolled,
-        show : state.showHeader
+        show : state.showHeader,
+        theme : state.theme,
     };
 };
 

@@ -17,7 +17,7 @@ export default class Todo extends Component {
     
     render() {
         return (
-            <div className='container-content todo'>
+            <div className={`container-content todo ${this.props.theme}`}>
                 {this.renderItems()}
             </div>
         );
@@ -25,4 +25,5 @@ export default class Todo extends Component {
 };
 
 Todo.propTypes = {
+    theme: PropTypes.string
 };

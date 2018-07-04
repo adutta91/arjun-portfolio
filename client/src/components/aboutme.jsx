@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Clipboard from './clipboard.jsx';
+import PropTypes from 'prop-types';
 
 export default class AboutMe extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ export default class AboutMe extends Component {
     
     render() {
         return (
-            <div className='container-content aboutme'>
+            <div className={`container-content aboutme ${this.props.theme}`}>
                 <div className="buttons">
                     <i className={`far fa-2x fa-user ${this.state.activeList == 'summary' ? 'active' : ''}`} onClick={this.selectList.bind(this, 'summary')} />
                     <i className={`fas fa-2x fa-graduation-cap ${this.state.activeList == 'education' ? 'active' : ''}`} onClick={this.selectList.bind(this, 'education')} />
@@ -37,4 +38,8 @@ export default class AboutMe extends Component {
             </div>
         );
     }
+};
+
+AboutMe.propTypes = {
+    theme : PropTypes.string
 };
