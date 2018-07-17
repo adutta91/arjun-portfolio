@@ -342,8 +342,12 @@ body {
               font-size: 22px;
               margin-top: 12px;
               transition: all .5s ease-in-out;              
-              color: white;
-              font-weight: 600;
+              
+              > a {
+                color: white;
+                font-weight: 600;
+                text-decoration: none;
+              }
               
               &.in {
                 opacity: 1;

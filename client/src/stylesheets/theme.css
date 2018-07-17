@@ -216,9 +216,11 @@ body {
             opacity: 0;
             font-size: 22px;
             margin-top: 12px;
-            transition: all .5s ease-in-out;
-            color: white;
-            font-weight: 600; }
+            transition: all .5s ease-in-out; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.landing > h1 > .sub > a {
+              color: white;
+              font-weight: 600;
+              text-decoration: none; }
             #arjun-portfolio-main .container-content-wrapper .container-content.landing > h1 > .sub.in {
               opacity: 1; }
         #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons {
