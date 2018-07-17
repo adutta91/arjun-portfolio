@@ -278,7 +278,8 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 200px;
+        // margin-bottom: 200px;
+        padding-bottom: 150px;
         
         &.light {
           background-color: $lt-default-background-color;
@@ -289,11 +290,19 @@ body {
           color: white;
         }
         
+        &.landing.light {
+          background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);
+        }
+        
+        &.landing.dark {
+          // background: linear-gradient(to bottom left, #301c8a 0%, #0c7cd6 100%);            
+          background: linear-gradient(to bottom left, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);            
+        }
+        
         &.landing {
           height: 100vh; // height override
-          background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);
           position: relative;
-          
+        
           > .scene {
             width: 100%;
             height: 100%;
@@ -316,10 +325,27 @@ body {
             font-weight: lighter;
             color: white;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: all .5s ease-in-out;
+            position: absolute;
+            top: 30%;
+            text-align: center;
+            width: 100%;
             
             &.in {
               opacity: 1;
+              top: 33%;
+              position: absolute;
+            }
+            
+            > .sub {
+              opacity: 0;              
+              font-size: 22px;
+              margin-top: 12px;
+              transition: all .5s ease-in-out;              
+              
+              &.in {
+                opacity: 1;
+              }
             }
           }
           
@@ -336,7 +362,7 @@ body {
             padding: 20px;
             
             &.away {
-              bottom: 0px;
+              bottom: 150px;
             }
             
             > .coming-soon {
@@ -403,7 +429,6 @@ body {
               margin-right: 0;
             }
           }
-          
         }
         
         &.projects {
@@ -592,6 +617,7 @@ body {
               > .title {
                 font-weight: lighter;
                 font-size: 24px;
+                color: black;
               }
               
               > .description {

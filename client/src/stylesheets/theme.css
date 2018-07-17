@@ -174,15 +174,18 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 200px; }
+      padding-bottom: 150px; }
       #arjun-portfolio-main .container-content-wrapper .container-content.light {
         background-color: white; }
       #arjun-portfolio-main .container-content-wrapper .container-content.dark {
         background-color: #3c3939;
         color: white; }
+      #arjun-portfolio-main .container-content-wrapper .container-content.landing.light {
+        background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%); }
+      #arjun-portfolio-main .container-content-wrapper .container-content.landing.dark {
+        background: linear-gradient(to bottom left, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%); }
       #arjun-portfolio-main .container-content-wrapper .container-content.landing {
         height: 100vh;
-        background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);
         position: relative; }
         #arjun-portfolio-main .container-content-wrapper .container-content.landing > .scene {
           width: 100%;
@@ -200,9 +203,22 @@ body {
           font-weight: lighter;
           color: white;
           opacity: 0;
-          transition: opacity 1s ease-in-out; }
+          transition: all .5s ease-in-out;
+          position: absolute;
+          top: 30%;
+          text-align: center;
+          width: 100%; }
           #arjun-portfolio-main .container-content-wrapper .container-content.landing > h1.in {
-            opacity: 1; }
+            opacity: 1;
+            top: 33%;
+            position: absolute; }
+          #arjun-portfolio-main .container-content-wrapper .container-content.landing > h1 > .sub {
+            opacity: 0;
+            font-size: 22px;
+            margin-top: 12px;
+            transition: all .5s ease-in-out; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.landing > h1 > .sub.in {
+              opacity: 1; }
         #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons {
           display: flex;
           justify-content: center;
@@ -215,7 +231,7 @@ body {
           bottom: 50%;
           padding: 20px; }
           #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons.away {
-            bottom: 0px; }
+            bottom: 150px; }
           #arjun-portfolio-main .container-content-wrapper .container-content.landing > .buttons > .coming-soon {
             opacity: 0;
             transition: all .2s ease-out;
@@ -374,7 +390,8 @@ body {
                 transform: rotate(45deg) scale(1.25); }
             #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .title {
               font-weight: lighter;
-              font-size: 24px; }
+              font-size: 24px;
+              color: black; }
             #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper > .todo-item > .description {
               height: 150px;
               overflow: hidden;

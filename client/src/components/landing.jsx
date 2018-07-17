@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import TreeScene from './scenes/tree-scene';
+import PropTypes from 'prop-types';
+import $ from 'jquery';
 
 import { toggleTheme } from '../app/actions';
 
 export default class Landing extends Component {    
     state = {
-        fade : false,
+        fade1 : false,
+        fade2 : false,
         activeScene : null
     }
     
     componentDidMount() {
         this.timeout = setTimeout(() => {
-            this.setState({ fade : true });
+            this.setState({ fade1 : true });
+            clearTimeout(this.timeout);
+            
+            this.timeout = setTimeout(() => {
+               this.setState({ fade2 : true }) ;
+            }, 1000);
         }, 1000);
     }
     
@@ -30,12 +38,23 @@ export default class Landing extends Component {
             default: return null;
         }
     }
+
+    scrollToBottom() {
+        $('html, body').animate({
+            scrollTop: $('#contact-info').offset().top
+        }, 500);
+    }
     
     render() {
         return (
-            <div className='container-content landing'>
-                {/* <h1 className={`${this.state.fade ? 'in' : ''}`}> Find me where I love to be. </h1> */}
-                {/* <div className={`buttons ${this.state.activeScene ? 'away' : ''}`}> */}
+            <div className={`container-content landing ${this.props.theme}`}>
+                <h1 className={`${this.state.fade1 ? 'in' : ''}`}>
+                    Coming soon!
+                    <div className={`sub ${this.state.fade2 ? 'in' : ''}`}>
+                        Please <a href="#" onClick={this.scrollToBottom.bind(this)}>say hi</a> for more info!
+                    </div>
+                </h1>
+                
                 <div className="buttons away">
                     <i className={`far fa-2x fa-sun ${this.props.theme == 'light' ? 'on' : 'off'}`} onClick={toggleTheme.bind(this, 'light')}/>
                     <i className={`far fa-2x fa-moon ${this.props.theme == 'dark' ? 'on' : 'off'}`} onClick={toggleTheme.bind(this, 'dark')}/>
@@ -52,4 +71,8 @@ export default class Landing extends Component {
             </div>
         );
     }
+};
+
+Landing.propTypes = {
+    theme: PropTypes.string
 };

@@ -24,7 +24,6 @@ export default class App extends Component {
   }
   
   componentWillReceiveProps(next) {
-    console.log(next.theme);
     $('body').removeClass();
     $('body').addClass(next.theme);
   }
@@ -57,12 +56,11 @@ export default class App extends Component {
     setTimeout(() => {
       let diff = $(window)[0].scrollY - scroll1;
       
-      // going down
+      // scrolling down
       if (diff > 300) toggleHeader(false);
       
-      // going up
+      // scrolling up
       if (diff < -400) toggleHeader(true);
-      
       
       setTimeout(() => {
         this.setState({ calculateScrollSpeed : false });
@@ -71,6 +69,7 @@ export default class App extends Component {
   }
   
   render() {
+    // mobile disclaimer
     if (window.innerWidth < 1048) return (
       <div>
         Oops! The mobile site is under construction...
@@ -90,15 +89,11 @@ export default class App extends Component {
         <HeaderContainer key={0}/>
         <Landing key={1} theme={this.props.theme} />
         
-        {/* <SectionHeader title='About me' /> */}
-        <AboutMe key={4} theme={this.props.theme} />
+        {/* <AboutMe key={4} theme={this.props.theme} /> */}
         
-        {/* <SectionHeader title='Projects' /> */}
-        <Projects key={2} theme={this.props.theme} />
+        {/* <Projects key={2} theme={this.props.theme} /> */}
         
-        
-        {/* <SectionHeader title='In the pipeline...' /> */}
-        <Todo key={3} theme={this.props.theme} />
+        {/* <Todo key={3} theme={this.props.theme} /> */}
         
         <FooterContainer key={5}/>
       </div>
