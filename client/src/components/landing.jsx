@@ -45,20 +45,30 @@ export default class Landing extends Component {
         }, 500);
     }
     
+    renderContent() {
+        // NOTE - uncomment when ready
+        return null;
+        
+        return (
+            <h1 className={`${this.state.fade1 ? 'in' : ''}`}>
+                Coming soon!
+                <div className={`sub ${this.state.fade2 ? 'in' : ''}`}>
+                    Please <a href="#" onClick={this.scrollToBottom.bind(this)}>say hi</a> for more info!
+                </div>
+            </h1>
+        );
+    }
+    
     render() {
         return (
             <div className={`container-content landing ${this.props.theme}`}>
-                <h1 className={`${this.state.fade1 ? 'in' : ''}`}>
-                    Coming soon!
-                    <div className={`sub ${this.state.fade2 ? 'in' : ''}`}>
-                        Please <a href="#" onClick={this.scrollToBottom.bind(this)}>say hi</a> for more info!
-                    </div>
-                </h1>
+                {this.renderContent()}
                 
-                <div className="buttons away">
+                {/* <div className="buttons away">
                     <i className={`far fa-2x fa-sun ${this.props.theme == 'light' ? 'on' : 'off'}`} onClick={toggleTheme.bind(this, 'light')}/>
                     <i className={`far fa-2x fa-moon ${this.props.theme == 'dark' ? 'on' : 'off'}`} onClick={toggleTheme.bind(this, 'dark')}/>
-                </div>
+                </div> */}
+                
                 {/* <div className="buttons away">
                     <div className="coming-soon">Scenes Coming Soon</div>
                     <i className={`fas fa-2x fa-tree ${this.state.activeScene == 'tree' ? 'on' : 'off'} disabled`} onClick={this.setScene.bind(this, 'tree')}/>
@@ -67,7 +77,7 @@ export default class Landing extends Component {
                     <i className={`fas fa-2x fa-coffee ${this.state.activeScene == 'coffee' ? 'on' : 'off'} disabled`} onClick={this.setScene.bind(this, 'coffee')}/>
                     <i className={`fas fa-2x fa-book ${this.state.activeScene == 'book' ? 'on' : 'off'} disabled`} onClick={this.setScene.bind(this, 'book')}/>
                 </div> */}
-                {this.renderScene()}
+                {/* {this.renderScene()} */}
             </div>
         );
     }

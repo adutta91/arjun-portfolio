@@ -19,7 +19,8 @@ export default class App extends Component {
     super(props);
     
     this.state = {
-      calculatingSpeed : false
+      calculatingSpeed : false,
+      scroll : 0
     };
   }
   
@@ -31,13 +32,13 @@ export default class App extends Component {
   componentDidMount() {
     $(window).on('scroll', (e) => {
       let scroll = e.currentTarget.scrollY;
+      let state = { scroll };
       
       if ((scroll + $(window).height()) == $(document).height()) {
         showFooter(true);
       } else {
         if (this.props.showFooter) showFooter(false);
       }
-      
       
       if (scroll && !this.props.scrolled) setScrolled(true);
       else if (!scroll) {
@@ -46,9 +47,10 @@ export default class App extends Component {
       }
       
       if (!this.state.calculatingSpeed) {
-        this.setState({ calculateScrollSpeed : true });
+        state.calculateScrollSpeed = true;
         this.calculateScrollSpeed(scroll);
       }
+      this.setState(state);
     });
   }
   
@@ -89,9 +91,9 @@ export default class App extends Component {
         <HeaderContainer key={0}/>
         <Landing key={1} theme={this.props.theme} />
         
-        {/* <AboutMe key={4} theme={this.props.theme} /> */}
+        <AboutMe key={4} theme={this.props.theme} pos={this.state.scroll} />
         
-        {/* <Projects key={2} theme={this.props.theme} /> */}
+        <Projects key={2} theme={this.props.theme} />
         
         {/* <Todo key={3} theme={this.props.theme} /> */}
         

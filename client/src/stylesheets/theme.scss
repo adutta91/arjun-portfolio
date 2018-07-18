@@ -114,6 +114,87 @@ $dk-default-header-background-color: rgba(255,255,255,0.15);
 
 // ******---------------------------------------------
 // ******---------------------------------------------
+// SVG
+// ******---------------------------------------------
+// ******---------------------------------------------
+
+svg {
+  width: 50px;
+  display: block;
+  transform: scale(.5); // hack - TODO: set hardcoded measures correctly
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  &.circle {
+    -webkit-animation: dash 1s ease-in;
+    animation: dash 1s ease-in;
+  }
+  &.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 2s 1s ease-out forwards;
+    animation: dash 4s 1s ease-out forwards;
+  }
+  &.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check 2s 1s ease-out forwards;
+    animation: dash-check 4s 1s ease-out forwards;
+  }
+} 
+
+p {
+  text-align: center;
+  margin: 20px 0 60px;
+  font-size: 1.25em;
+  &.success {
+    color: #73AF55;
+  }
+  &.error {
+    color: #D06079;
+  }
+}
+
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+
+// ******---------------------------------------------
+// ******---------------------------------------------
 // STYLING
 // ******---------------------------------------------
 // ******---------------------------------------------
@@ -689,6 +770,58 @@ body {
         }
         
         &.aboutme {
+          display: flex;
+          opacity: 0;
+          transition: all .5s ease-out;
+          border-bottom: 1px solid lightgray;
+          
+          &.inView {
+            opacity: 1;
+          }
+          
+          > .container-abilities {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            
+            > .ability {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              width: 250px;
+              height: 50px;
+            }
+          }
+          
+          > .container-skills {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            
+            > .skill {
+              // width: 250px;
+              height: 50px;
+              display: flex;
+              align-items: center;
+              
+              > .container-progress {
+                width: 250px;
+                margin-right: 15px;
+                height: 15px;
+                background: $superlightgray;
+                border-radius: 3px;
+                
+                > .progress {
+                  width: 0;
+                  transition: width 1s ease-out;
+                  height: 100%;
+                  background: $light-blue;
+                  border-radius: 3px;
+                }
+              }
+            }
+          }
         }
       }
     }

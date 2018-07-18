@@ -66,6 +66,59 @@
   to {
     left: -240px; } }
 
+svg {
+  width: 50px;
+  display: block;
+  transform: scale(0.5); }
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0; }
+  .path.circle {
+    -webkit-animation: dash 1s ease-in;
+    animation: dash 1s ease-in; }
+  .path.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 2s 1s ease-out forwards;
+    animation: dash 4s 1s ease-out forwards; }
+  .path.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check 2s 1s ease-out forwards;
+    animation: dash-check 4s 1s ease-out forwards; }
+
+p {
+  text-align: center;
+  margin: 20px 0 60px;
+  font-size: 1.25em; }
+  p.success {
+    color: #73AF55; }
+  p.error {
+    color: #D06079; }
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100; }
+  100% {
+    stroke-dashoffset: 900; } }
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100; }
+  100% {
+    stroke-dashoffset: 900; } }
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
@@ -438,6 +491,44 @@ body {
                   flex: 1;
                   min-width: 100px;
                   margin: 10px; }
+      #arjun-portfolio-main .container-content-wrapper .container-content.aboutme {
+        display: flex;
+        opacity: 0;
+        transition: all .5s ease-out;
+        border-bottom: 1px solid lightgray; }
+        #arjun-portfolio-main .container-content-wrapper .container-content.aboutme.inView {
+          opacity: 1; }
+        #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .container-abilities {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end; }
+          #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .container-abilities > .ability {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 250px;
+            height: 50px; }
+        #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .container-skills {
+          flex: 1;
+          display: flex;
+          flex-direction: column; }
+          #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .container-skills > .skill {
+            height: 50px;
+            display: flex;
+            align-items: center; }
+            #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .container-skills > .skill > .container-progress {
+              width: 250px;
+              margin-right: 15px;
+              height: 15px;
+              background: #e6e6e6;
+              border-radius: 3px; }
+              #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .container-skills > .skill > .container-progress > .progress {
+                width: 0;
+                transition: width 1s ease-out;
+                height: 100%;
+                background: #4080bf;
+                border-radius: 3px; }
   .modal-demo > .modal-wrapper {
     position: fixed;
     top: 0;
