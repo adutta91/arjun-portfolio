@@ -20,7 +20,7 @@ export default class AboutMe extends Component {
             // clearTimeout(this.timeout);
             this.timeout = setTimeout(() => {
                 this.setState({ inView : true });
-            }, 500);
+            }, 200);
         }
     }
     
