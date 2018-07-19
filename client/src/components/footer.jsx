@@ -10,7 +10,7 @@ export default class Footer extends Component {
                 <div className="icons">
                     <i className="fab fa-2x fa-github" onClick={goTo.bind(this, 'https://github.com/adutta91')}/>
                     <i className="fab fa-2x fa-linkedin-in" onClick={goTo.bind(this, 'https://linkedin.com/in/arjundutta91/')}/>
-                    <i className="far fa-2x fa-file-alt" onClick={goTo.bind(this, '')}/>
+                    <i className="far fa-2x fa-file-alt" onClick={goTo.bind(this, '/assets/documents/Arjun Dutta CV.pdf')}/>
                 </div>
                 <a href="mailto:arjundutta91@gmail.com">arjundutta91@gmail.com</a>
             </div>
