@@ -13,11 +13,16 @@ export default class MenuDemo extends Component {
         this.setState({ show });
     }
     
+    modalClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    
     render() {
         return (
             <div className="modal-demo">
                 <div className={`modal-wrapper ${this.state.show ? 'open' : 'closed'}`} onClick={this.toggleModal.bind(this, false)}>
-                    <div className="modal-content">
+                    <div className="modal-content" onClick={this.modalClick.bind(this)}>
                         <ReactRevolverMenu {...this.props} />
                     </div>
                 </div>

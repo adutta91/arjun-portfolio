@@ -3,6 +3,21 @@ export const goTo = (url) => {
   if (url) window.open(url, '_blank');
 };
 
+export const testimonials = [
+  {
+    text : 'This is a test. Passed. Good job Arjun',
+    from : 'Arjun D.'
+  },
+  {
+    text : 'Great to work with - makes killer jokes',
+    from : 'Arjun Dutta'
+  },
+  {
+    text : 'Not too bad of a guy, though he talks to himself through website copy',
+    from : 'A. Dutta'
+  },
+];
+
 export const menuData = (cb) => {
 
   return {

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default class Clipboard extends Component {
     render() {
         return (
-            <div className={`container-clipboard`}>
+            <div className="container-clipboard">
                 <h3>{this.props.title}</h3>
             </div>
         );

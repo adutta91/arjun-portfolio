@@ -16,7 +16,9 @@ export default class AboutMe extends Component {
     
     componentWillReceiveProps(next) {
         let offset = $('.aboutme').offset().top;
-        if (!this.state.inView && next.pos > (offset / 2)) {
+        let height = $('.aboutme').height();
+        
+        if (!this.state.inView && next.pos > (offset - (height / 2))) {
             // clearTimeout(this.timeout);
             this.timeout = setTimeout(() => {
                 this.setState({ inView : true });
@@ -47,7 +49,7 @@ export default class AboutMe extends Component {
                 </div>
                 <div className="ability">
                     <Checkmark delay={2000} success={false} />
-                    <span>Good Dancer</span>
+                    <span>Good dancer</span>
                 </div>
             </div>
         )
@@ -86,11 +88,30 @@ export default class AboutMe extends Component {
         );
     }
     
+    renderSummary() {
+        return (
+            <div className="summary">
+                <h1 className='greeting'>Hello!</h1>
+                <p>
+                    I'm Arjun, a full-stack web developer based in Seattle, WA.
+                </p>
+                <p>
+                    I've been coding for well over 2 years now, and with an academic background in Psychology, I have a particular
+                    passion for building experiences that are intuitive and engaging. I find that puzzle of Human-Computer
+                    Interaction incredibly compelling and am always excited to work with like-minded people to create something awesome!
+                </p>
+            </div>
+        )
+    }
+    
     render() {
         return (
-            <div className={`container-content aboutme ${this.props.theme} ${this.state.inView ? 'inView' : ''}`}>
-                {this.renderAbilities()}
-                {this.renderSkills()}
+            <div className={`container-content aboutme ${this.props.theme}`}>
+                {this.renderSummary()}
+                <div className={`skills-wrapper ${this.state.inView ? 'inView' : ''}`}>
+                    {this.renderAbilities()}
+                    {this.renderSkills()}
+                </div>
             </div>
         );
     }

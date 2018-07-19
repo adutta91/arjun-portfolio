@@ -10,6 +10,7 @@ import Landing from './landing';
 import Projects from './projects';
 import Todo from './todo';
 import AboutMe from './aboutme';
+import Testimonials from './testimonials';
 import SectionHeader from './section-header';
 
 import { setScrolled, toggleHeader, showFooter } from '../app/actions';
@@ -72,19 +73,19 @@ export default class App extends Component {
   
   render() {
     // mobile disclaimer
-    if (window.innerWidth < 1048) return (
-      <div>
-        Oops! The mobile site is under construction...
-        <br />
-        Please come back soon, or visit the site on device with a wider screen.
-        <br /> <br />
-        Sorry for the inconvenience! Working on making this great! :)
-        <br /> <br />
-        Thanks!
-        <br />
-        Arjun
-      </div>
-    );
+    // if (window.innerWidth < 1048) return (
+    //   <div>
+    //     Oops! The mobile site is under construction...
+    //     <br />
+    //     Please come back soon, or visit the site on device with a wider screen.
+    //     <br /> <br />
+    //     Sorry for the inconvenience! Working on making this great! :)
+    //     <br /> <br />
+    //     Thanks!
+    //     <br />
+    //     Arjun
+    //   </div>
+    // );
 
     return (
       <div className='container-content-wrapper'>
@@ -92,6 +93,8 @@ export default class App extends Component {
         <Landing key={1} theme={this.props.theme} />
         
         <AboutMe key={4} theme={this.props.theme} pos={this.state.scroll} />
+        
+        <Testimonials key={6} theme={this.props.theme}/>
         
         <Projects key={2} theme={this.props.theme} />
         
