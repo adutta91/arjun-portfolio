@@ -47,16 +47,22 @@ export default class Landing extends Component {
     
     renderContent() {
         // NOTE - uncomment when ready
-        return null;
+        // return null;
         
         return (
             <h1 className={`${this.state.fade1 ? 'in' : ''}`}>
-                Coming soon!
-                <div className={`sub ${this.state.fade2 ? 'in' : ''}`}>
-                    Please <a href="#" onClick={this.scrollToBottom.bind(this)}>say hi</a> for more info!
-                </div>
+                Welcome!
             </h1>
         );
+        
+        // return (
+        //     <h1 className={`${this.state.fade1 ? 'in' : ''}`}>
+        //         Coming soon!
+        //         <div className={`sub ${this.state.fade2 ? 'in' : ''}`}>
+        //             Please <a href="#" onClick={this.scrollToBottom.bind(this)}>say hi</a> for more info!
+        //         </div>
+        //     </h1>
+        // );
     }
     
     render() {

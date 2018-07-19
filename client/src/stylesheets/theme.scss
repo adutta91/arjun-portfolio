@@ -382,7 +382,8 @@ body {
       &.landing {
         height: 100vh; // height override
         position: relative;
-      
+        padding: 0;
+        
         > .scene {
           width: 100%;
           height: 100%;
