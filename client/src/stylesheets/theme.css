@@ -505,6 +505,9 @@ body {
         #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .summary > .greeting {
           width: 100%;
           text-align: center; }
+        #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .summary > p {
+          line-height: 32px;
+          margin-bottom: 25px; }
       #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .skills-wrapper {
         display: flex;
         opacity: 0;
@@ -580,9 +583,9 @@ body {
 @media screen and (max-width: 1048px) {
   .container-content.aboutme {
     flex-direction: column; }
-    .container-content.aboutme > .container-abilities {
+    .container-content.aboutme > .skills-wrapper > .container-abilities {
       align-items: flex-start !important;
       margin: 25px !important; }
-      .container-content.aboutme > .container-abilities > .ability {
+      .container-content.aboutme > .skills-wrapper > .container-abilities > .ability {
         align-items: flex-start;
         width: auto !important; } }

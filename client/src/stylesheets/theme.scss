@@ -788,6 +788,11 @@ body {
             width: 100%;
             text-align: center;
           }
+          
+          > p {
+            line-height: 32px;
+            margin-bottom: 25px;
+          }
         }
         
         > .skills-wrapper {
@@ -909,13 +914,16 @@ body {
   .container-content.aboutme {
     flex-direction: column;
     
-    > .container-abilities {
-      align-items: flex-start !important;
-      margin: 25px !important;
+    > .skills-wrapper {
       
-      > .ability {
-        align-items: flex-start;
-        width: auto !important;
+      > .container-abilities {
+        align-items: flex-start !important;
+        margin: 25px !important;
+        
+        > .ability {
+          align-items: flex-start;
+          width: auto !important;
+        }
       }
     }
   }  
