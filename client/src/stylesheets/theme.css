@@ -583,9 +583,11 @@ body {
 @media screen and (max-width: 1048px) {
   .container-content.aboutme {
     flex-direction: column; }
-    .container-content.aboutme > .skills-wrapper > .container-abilities {
-      align-items: flex-start !important;
-      margin: 25px !important; }
-      .container-content.aboutme > .skills-wrapper > .container-abilities > .ability {
-        align-items: flex-start;
-        width: auto !important; } }
+    .container-content.aboutme > .skills-wrapper {
+      flex-direction: column; }
+      .container-content.aboutme > .skills-wrapper > .container-abilities {
+        align-items: flex-start !important;
+        margin: 25px !important; }
+        .container-content.aboutme > .skills-wrapper > .container-abilities > .ability {
+          align-items: flex-start;
+          width: auto !important; } }

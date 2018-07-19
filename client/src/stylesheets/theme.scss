@@ -915,6 +915,7 @@ body {
     flex-direction: column;
     
     > .skills-wrapper {
+      flex-direction: column;
       
       > .container-abilities {
         align-items: flex-start !important;
