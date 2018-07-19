@@ -418,7 +418,11 @@ body {
                 overflow-x: hidden;
                 overflow-y: scroll; }
               #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item > .sampleCode > .sample-text > pre {
-                margin: 0; }
+                margin: 0;
+                display: flex;
+                align-items: center; }
+                #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item > .sampleCode > .sample-text > pre > code {
+                  margin: 0 auto; }
       #arjun-portfolio-main .container-content-wrapper .container-content.todo {
         margin-bottom: 100px; }
         #arjun-portfolio-main .container-content-wrapper .container-content.todo > .todo-item-wrapper {

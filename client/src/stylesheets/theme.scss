@@ -660,6 +660,12 @@ body {
                 
                 > pre {
                   margin: 0;
+                  display: flex;
+                  align-items: center;
+                  
+                  > code {
+                    margin: 0 auto;
+                  }
                 }
               }
             }
