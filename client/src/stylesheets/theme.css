@@ -164,8 +164,8 @@ pre {
   background-color: #264d73 !important; }
   pre > code {
     margin: 0 auto;
-    background-color: #264d73 !important;
-    color: #fbf3e3 !important; }
+    background-color: #272822 !important;
+    color: #f3eee5 !important; }
 
 .fade-out {
   opacity: 1;
@@ -219,10 +219,10 @@ pre {
       font-weight: lighter;
       font-size: 28px;
       margin: 0;
-      color: white; }
+      color: #f3eee5; }
     #arjun-portfolio-main .container-content-wrapper .header > a {
       text-decoration: none;
-      color: white; }
+      color: #f3eee5; }
   #arjun-portfolio-main .container-content-wrapper .footer {
     display: flex;
     flex-direction: column;
@@ -244,14 +244,14 @@ pre {
       align-items: center;
       justify-content: space-around;
       margin-bottom: 25px;
-      color: #fbf3e3;
+      color: #f3eee5;
       color: opacity(0.8); }
       #arjun-portfolio-main .container-content-wrapper .footer > .icons > i {
         cursor: pointer;
         transition: color .2s ease-out, transform .1s ease-out; }
         #arjun-portfolio-main .container-content-wrapper .footer > .icons > i:hover {
           opacity: 1;
-          color: #f5e0b6; }
+          color: #e3d7c2; }
         #arjun-portfolio-main .container-content-wrapper .footer > .icons > i:active {
           transform: scale(0.9); }
     #arjun-portfolio-main .container-content-wrapper .footer > a {
@@ -277,7 +277,7 @@ pre {
       position: relative;
       padding: 0;
       padding-top: 80px;
-      background-color: #264d73; }
+      background-color: #272822; }
       #arjun-portfolio-main .container-content-wrapper .container-content.landing > .scene {
         width: 100%;
         height: 100%; }
@@ -294,7 +294,7 @@ pre {
         position: absolute;
         bottom: 5px;
         right: 20px;
-        color: #fbf3e3;
+        color: #f3eee5;
         transition: all 3s ease-out; }
         #arjun-portfolio-main .container-content-wrapper .container-content.landing > i.in {
           opacity: 1; }
@@ -312,9 +312,12 @@ pre {
         align-items: flex-end;
         position: absolute;
         top: 80px; }
-        #arjun-portfolio-main .container-content-wrapper .container-content.landing > .landing-message > pre > code {
-          margin: 0;
-          width: 100%; }
+        #arjun-portfolio-main .container-content-wrapper .container-content.landing > .landing-message > pre {
+          background-color: #272822 !important; }
+          #arjun-portfolio-main .container-content-wrapper .container-content.landing > .landing-message > pre > code {
+            margin: 0;
+            width: 100%;
+            background-color: #272822 !important; }
         #arjun-portfolio-main .container-content-wrapper .container-content.landing > .landing-message.in {
           opacity: 1; }
         #arjun-portfolio-main .container-content-wrapper .container-content.landing > .landing-message > .line {
@@ -390,7 +393,7 @@ pre {
     #arjun-portfolio-main .container-content-wrapper .container-content.projects {
       display: flex;
       flex-direction: column;
-      background-color: #fbf3e3;
+      background-color: #f3eee5;
       padding-top: 0; }
       #arjun-portfolio-main .container-content-wrapper .container-content.projects > .project-item {
         padding: 100px;
@@ -556,7 +559,7 @@ pre {
       flex-direction: column;
       border-bottom: 1px solid lightgray;
       padding: 50px 0;
-      background-color: #fbf3e3; }
+      background-color: #f3eee5; }
       #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .summary {
         max-width: 600px;
         padding: 0 30px; }
@@ -609,7 +612,7 @@ pre {
               #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .skills-wrapper > .container-skills > .skill > .desc > .container-progress {
                 width: 250px;
                 height: 15px;
-                background: #fbf3e3;
+                background: #f3eee5;
                 border-radius: 3px;
                 flex: 2; }
                 #arjun-portfolio-main .container-content-wrapper .container-content.aboutme > .skills-wrapper > .container-skills > .skill > .desc > .container-progress > .progress {
@@ -619,7 +622,7 @@ pre {
                   background: #4080bf;
                   border-radius: 3px;
                   width: 80%;
-                  color: #fbf3e3;
+                  color: #f3eee5;
                   display: flex;
                   align-items: center; }
     #arjun-portfolio-main .container-content-wrapper .container-content.testimonials {

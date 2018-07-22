@@ -33,7 +33,7 @@ $light-blue : lighten(#336699, 10%);
 $off-white-blue : #e9f8f9;
 
 $background-code-color: #403836;
-$background-light: #fbf3e3;
+$background-light: #f3eee5;
 
 $green: #73AF55;
 $red: #D06079;
@@ -264,7 +264,7 @@ pre {
   
   > code {
     margin: 0 auto;
-    background-color: $theme-dark !important;
+    background-color: $darkgray !important;
     color: $background-light !important;
   }
 }
@@ -347,12 +347,12 @@ pre {
         font-weight: lighter;
         font-size: 28px;
         margin: 0;
-        color: white;
+        color: $background-light;
       }
       
       > a {
         text-decoration: none;
-        color: white;
+        color: $background-light;
       }
     }
     
@@ -444,7 +444,8 @@ pre {
         position: relative;
         padding: 0;
         padding-top: 80px;
-        background-color: $theme-dark;
+        background-color: $darkgray;
+        // background-color: $theme-dark;
         
         > .scene {
           width: 100%;
@@ -494,9 +495,16 @@ pre {
           position: absolute;
           top: 80px;
           
-          > pre > code {
-            margin: 0;
-            width: 100%;
+          > pre {
+            // background-color: $theme-dark !important;
+            background-color: $darkgray !important;
+            
+            > code {
+              margin: 0;
+              width: 100%;
+              background-color: $darkgray !important;
+              // background-color: $theme-dark !important;
+            }
           }
           
           &.in {
