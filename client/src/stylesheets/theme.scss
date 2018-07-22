@@ -20,8 +20,10 @@ $font-header: 2.25em;
 $red  : #f33;
 $gray : #666;
 $lightgray : lighten(#666, 30%);
-$darkgray : darken(#666, 20%);
 $superlightgray : lighten(#666, 50%);
+$darkgray : #272822;
+$theme-dark :darken(#336699, 10%);
+// $theme-dark : darken(#336699, 10%);
 // $superlightgray : #ece9e9;
 
 $blue       : #336699;
@@ -243,6 +245,7 @@ body {
   margin: 0;
   transition: all .2s ease-out;
   background-color: #f3e4c9;
+  color: $theme-dark;
   
   &.light {
     background-color: $lt-default-background-color;
@@ -257,10 +260,11 @@ pre {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-color: $darkgray;
+  background-color: $theme-dark !important;
   
   > code {
     margin: 0 auto;
+    background-color: $theme-dark !important;
     color: $background-light !important;
   }
 }
@@ -357,8 +361,8 @@ pre {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: $darkgray;
       color: white;
+      background-color: $theme-dark;
       transition: all .3s ease-out;
       position: absolute;
       width: 100%;
@@ -404,8 +408,8 @@ pre {
     .section-header {
       background: white;
       // background: #4c4a4a;
-      color: $darkgray;
       padding: 40px;
+      color: $theme-dark;
       font-size: 24px;
     }
     
@@ -426,20 +430,21 @@ pre {
         color: white;
       }
       
-      &.landing.light {
-        background-color: #272822;
-      }
+      // &.landing.light {
+      //   background-color: #272822;
+      // }
       
-      &.landing.dark {
-        // background: linear-gradient(to bottom left, #301c8a 0%, #0c7cd6 100%);            
-        background: linear-gradient(to bottom left, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);            
-      }
+      // &.landing.dark {
+      //   // background: linear-gradient(to bottom left, #301c8a 0%, #0c7cd6 100%);            
+      //   background: linear-gradient(to bottom left, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);            
+      // }
       
       &.landing {
         height: calc(100vh - 80px); // height override
         position: relative;
         padding: 0;
         padding-top: 80px;
+        background-color: $theme-dark;
         
         > .scene {
           width: 100%;
@@ -659,13 +664,13 @@ pre {
               
               > div {
                 margin-right: 20px;
-                border-color: $darkgray;
               }
+              border-color: $theme-dark;
               
               > i {
                 margin-right: 20px;
-                color: $darkgray;
               }
+              color: $theme-dark;
               
               &:last-child {
                 margin-right: 0;
@@ -704,19 +709,19 @@ pre {
               align-items: center;
               cursor: pointer;
               margin-right: 5px;
-              color: $darkgray;
               
+              color: $theme-dark;
               > i {
-                color: $darkgray;
               }
+              color: $theme-dark;
               
               > .text {
                 transition: all .2s ease-out;
                 margin-left: 5px;
                 width: 0;
                 overflow: hidden;
-                color: $darkgray;
               }
+              color: $theme-dark;
               
               &:hover {
                 > .text {
@@ -728,8 +733,8 @@ pre {
             > .sample-text {
               transition: all .3s ease-in-out;
               height: 100%;
-              background-color: $darkgray !important;
               
+              background-color: $theme-dark !important;
               > .close {
                 position: absolute;
                 top: 25px;
@@ -964,8 +969,8 @@ pre {
       }
       
       &.testimonials {
-        background-color: $darkgray;
         color: #f7ecd7;
+        background-color: $theme-dark;
         display: flex;
         flex-direction: column;
         justify-content: center;
