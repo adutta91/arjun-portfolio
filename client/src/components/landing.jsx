@@ -3,7 +3,6 @@ import TreeScene from './scenes/tree-scene';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import { map } from 'lodash';
-import ReactPrism from 'react-prism';
 
 import { toggleTheme } from '../app/actions';
 import { landingMessage, parseText} from '../app/app';
