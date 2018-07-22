@@ -104,7 +104,7 @@ export const projects = [
             of items while still being symmetrically displayed, as well as giving the implementor options for types of menu items (icon, image or text), as well as a couple different animations. 
         `,
         sampleCode: `/*
-    The following are method definitions on the ReactRevolverMenu react component class.
+    The following are few method definitions on the ReactRevolverMenu react component class.
     Specifically, these deal with rendering the menu items to display. The challenge in
     this part of the component was managing the history of the menu's interactions such
     that the previous set of items could be displayed again by clicking the back button.
@@ -116,6 +116,8 @@ export const projects = [
 
 renderItems() {
     let items = this.props.items;
+    
+    // if on a sub-set of items as maintained by state
     if (this.state.subItems.length) items = this.state.subItems;
     
     return _.map(items, (item, idx) => {
@@ -124,21 +126,31 @@ renderItems() {
 }
 
 renderItem(item, idx) {
-    let interval = parseInt(360 / this.props.items.length);
     
-    if (this.state.subItems.length) interval = parseInt(360 / this.state.subItems.length)
+    // stagger render delay based on number of items
+    // to evenly render in sequence around the circle
     
+    let interval;
+    if (this.state.subItems.length) {
+        interval = parseInt(360 / this.state.subItems.length)
+    } else {
+        interval = parseInt(360 / this.props.items.length);
+    }
+    
+    // get any animation styles as provided by props
     const style = this.getStyle(item, interval, idx);
     
+    // construct the props for this specific menu-item
     const props = {
         key          : idx,
-        className    : \`menu - item \${ item.className || '' } \${ this.state.showStyle[idx] ? 'show' : '' }\`,
+        className    : \`menu-item \${ item.className || '' } \${ this.state.showStyle[idx] ? 'show' : '' }\`,
         onClick      : this.itemClick.bind(this, item, idx),
         style        : style,
         onMouseOver  : this.setOnHover.bind(this, idx, true),
         onMouseLeave : this.setOnHover.bind(this, idx, false)
     };
-
+    
+    // return a node based on the menu-item type
     return this.itemSwitchBoard(item, props, idx);
 }
 

@@ -5,7 +5,7 @@ import $ from 'jquery';
 import { map } from 'lodash';
 
 import { toggleTheme } from '../app/actions';
-import { landingMessage, parseText} from '../app/app';
+import { landingMessage, parseText, scrollToId } from '../app/app';
 
 export default class Landing extends Component {    
     state = {
@@ -118,7 +118,7 @@ export default class Landing extends Component {
                 </div> */}
                 {/* {this.renderScene()} */}
                 
-                <i className={`fas fa-2x fa-chevron-down ${this.state.showIndicator ? 'in' : 'out'}`} />                 
+                <i className={`fas fa-2x fa-chevron-down ${this.state.showIndicator ? 'in' : 'out'}`} onClick={scrollToId.bind(this, 'aboutme')}/>                 
             </div>
         );
     }

@@ -161,7 +161,7 @@ pre {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-color: #264d73 !important; }
+  background-color: #272822 !important; }
   pre > code {
     margin: 0 auto;
     background-color: #272822 !important;
@@ -292,10 +292,11 @@ pre {
             width: 10px; }
       #arjun-portfolio-main .container-content-wrapper .container-content.landing > i {
         position: absolute;
-        bottom: 5px;
-        right: 20px;
+        bottom: 20px;
+        right: 25px;
         color: #f3eee5;
-        transition: all 3s ease-out; }
+        transition: all 3s ease-out;
+        cursor: pointer; }
         #arjun-portfolio-main .container-content-wrapper .container-content.landing > i.in {
           opacity: 1; }
         #arjun-portfolio-main .container-content-wrapper .container-content.landing > i.out {

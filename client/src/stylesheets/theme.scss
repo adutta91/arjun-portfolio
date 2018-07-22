@@ -260,7 +260,7 @@ pre {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-color: $theme-dark !important;
+  background-color: $darkgray !important;
   
   > code {
     margin: 0 auto;
@@ -467,10 +467,11 @@ pre {
         
         > i {
           position: absolute;
-          bottom: 5px;
-          right: 20px;
+          bottom: 20px;
+          right: 25px;
           color: $background-light;
           transition: all 3s ease-out;
+          cursor: pointer;
           // animation: pulse 2s infinite !important;
           
           &.in {

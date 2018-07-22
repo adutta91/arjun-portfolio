@@ -1,19 +1,27 @@
 import React from 'react';
 import { map } from 'lodash';
+import $ from 'jquery';
 
 export const goTo = (url) => {
   if (url) window.open(url, '_blank');
 };
 
+export const scrollToId = (id) => {
+  if (!id) return;
+  $('html, body').animate({
+    scrollTop: $(`#${id}`).offset().top
+  }, 500);
+}
+
 export const landingMessage = `
 import Developer from 'world';
 
 let arjun = new Developer({
-    name : "Arjun Dutta",
-    title : "Full-Stack Web Developer",
-    location : "Seattle, WA",
-    timeAsDeveloper : "2+ years",
-    favoriteColor : "Blue. No! Yellow!",
+    name: "Arjun Dutta",
+    title: "Full-Stack Web Developer",
+    location: "Seattle, WA",
+    timeAsDeveloper: "2+ years",
+    favoriteColor: "Blue. No! Yellow!",
 });
  
 function initPortfolio(person) {
