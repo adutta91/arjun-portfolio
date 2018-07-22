@@ -15,7 +15,7 @@ export default class Testimonials extends Component {
                     {testimonial.text}
                 </div>
                 <div className="from">
-                    - {testimonial.from}
+                    {testimonial.from}
                 </div>
               </div>  
             );

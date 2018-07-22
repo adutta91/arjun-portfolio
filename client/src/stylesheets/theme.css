@@ -641,6 +641,9 @@ pre {
         margin: 25px; }
         #arjun-portfolio-main .container-content-wrapper .container-content.testimonials > .testimonial > .text {
           margin: 25px 0;
+          text-align: center;
+          max-width: 450px; }
+        #arjun-portfolio-main .container-content-wrapper .container-content.testimonials > .testimonial > .from {
           text-align: center; }
 
 .modal-demo > .modal-wrapper {

@@ -118,11 +118,27 @@ export const testimonials = [
   },
   {
     text : `Arjun helped me build exactly the website I wanted. He's diligent, patient and thorough.`,
-    from : 'Danny F.'
+    from : (
+      <div>
+        Danny F. 
+        <div>
+          <i>Singer/Songwriter</i>
+        </div>
+      </div>
+    )
   },
   {
-    text : 'Not too bad of a guy, though he talks to himself through website copy',
-    from : 'A. Dutta'
+    text: `
+      Arjun is the rare devoted and creative professional who strives to continually learn and who thinks like an owner; he was a top-notch addition to our team.
+    `,
+    from : (
+      <div>
+        Doug C. 
+        <div>
+          <i>CEO, Foxtrot Systems</i>
+        </div>
+      </div>
+    )
   },
 ];
 
