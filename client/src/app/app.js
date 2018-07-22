@@ -1,7 +1,113 @@
+import React from 'react';
+import { map } from 'lodash';
 
 export const goTo = (url) => {
   if (url) window.open(url, '_blank');
 };
+
+export const landingMessage = `
+import Developer from 'world';
+
+let arjun = new Developer({
+    name : "Arjun Dutta",
+    title : "Full-Stack Web Developer",
+    location : "Seattle, WA",
+    timeAsDeveloper : "2+ years",
+    favoriteColor : "Blue... No! Yellow!",
+});
+ 
+function initPortfolio(person) {
+    // a brief overview about me
+    renderSummary(arjun);
+ 
+    // what a few nice people have to say
+    renderReviews(arjun);
+ 
+    // a short list of some of what I've worked on
+    renderProjects(arjun);
+    
+    return;
+}
+
+initPortfolio(arjun);`;
+
+export const parseText = (line) => {
+  let content = [];
+  
+  let parts = line.split('(link)');
+  
+  return map(parts, (part, idx) => {
+    // if odd return link, otherwise return span with text
+    if (idx % 2) { 
+      let linkParts = part.split('>');
+      return {
+        type    : 'link',
+        content : <a key={idx} href={`#${linkParts[0]}`}>{linkParts[1]}</a>
+      }; 
+    } else {
+      return {
+        type    : 'text',
+        content : <span key={idx}>{part}</span>
+      };
+    }
+  });
+};
+
+export const skills = [
+  {
+    name : 'JavaScript',
+    proficiency : 85,
+    label : 'Advanced'
+  },
+  {
+    name : 'React',
+    proficiency : 90,
+    label : 'Advanced'
+  },
+  {
+    name : 'Redux',
+    proficiency : 85,
+    label : 'Advanced'
+  },
+  {
+    name : 'HTML/CSS',
+    proficiency : 83,
+    label : 'Advanced'
+  },
+  {
+    name : 'MySQL',
+    proficiency : 80,
+    label : 'Proficient'
+  },
+  {
+    name : 'NodeJS',
+    proficiency : 75,
+    label : 'Proficient'
+  },
+];
+
+export const traits = [
+  {
+    name : 'Diligent',
+    positive : true
+  },
+  {
+    name : 'Enthusiastic',
+    positive : true
+  },
+  {
+    name : 'Collaborative',
+    positive : true
+  },
+  {
+    name : 'Friendly',
+    positive : true
+  },
+  {
+    name : 'Good Dancer',
+    positive : false
+  },
+]
 
 export const testimonials = [
   {
@@ -9,8 +115,8 @@ export const testimonials = [
     from : 'Arjun D.'
   },
   {
-    text : 'Great to work with - makes killer jokes',
-    from : 'Arjun Dutta'
+    text : `Arjun helped me build exactly the website I wanted. He's diligent, patient and thorough.`,
+    from : 'Danny F.'
   },
   {
     text : 'Not too bad of a guy, though he talks to himself through website copy',

@@ -6,9 +6,9 @@ import { testimonials } from '../app/app';
 
 export default class Testimonials extends Component {
     renderTestimonials() {
-        return map(testimonials, (testimonial) => {
+        return map(testimonials, (testimonial, idx) => {
             return (
-              <div className='testimonial'>
+              <div className='testimonial' key={idx}>
                 <i className="fas fa-2x fa-quote-right"></i>
 
                 <div className="text">

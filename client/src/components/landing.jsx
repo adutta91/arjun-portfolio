@@ -2,25 +2,50 @@ import React, { Component } from 'react';
 import TreeScene from './scenes/tree-scene';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
+import { map } from 'lodash';
+import ReactPrism from 'react-prism';
 
 import { toggleTheme } from '../app/actions';
+import { landingMessage, parseText} from '../app/app';
 
 export default class Landing extends Component {    
     state = {
-        fade1 : false,
-        fade2 : false,
-        activeScene : null
+        fade1 : true,
+        fade2 : true,
+        activeScene : null,
+        landingPos : 0,
     }
     
     componentDidMount() {
+        let typingSpeed = 40;
+        let variance = 100;
+        
+        this.typingTimeout(this.state.landingPos + 1, typingSpeed, variance);
+    }
+    
+    typingTimeout(pos, delay, variance) {
+        // determine whether offset is positive or negative
+        let signVal = Math.random() < 0.5 ? -1 : 1;
+
+        // offset to emulate variable differences between keystrokes
+        let offset = (variance * Math.random()) * signVal;
+
+        let speed = delay + offset;
+
+        // sanity bounds: don't let it go too fast or slow
+        if (speed < (delay - variance)) speed = delay - variance;
+        if (speed > (delay + variance)) speed = delay + variance;
+        
+        // override for spaces - lowest possible speed given variance
+        if (landingMessage.slice(0, pos + 1)[pos] == ' ') speed = delay - variance;
+        
         this.timeout = setTimeout(() => {
-            this.setState({ fade1 : true });
-            clearTimeout(this.timeout);
+            this.setState({ landingPos : pos });
             
-            this.timeout = setTimeout(() => {
-               this.setState({ fade2 : true }) ;
-            }, 1000);
-        }, 1000);
+            if (this.state.landingPos < landingMessage.length) {
+                this.typingTimeout(pos + 1, delay, variance);
+            }
+        }, speed);
     }
     
     componentWillUnmount() {
@@ -48,13 +73,19 @@ export default class Landing extends Component {
     renderContent() {
         // NOTE - uncomment when ready
         // return null;
-        
+        let text = landingMessage.slice(0, this.state.landingPos);
+    
+        let code = text + '|';
         return (
-            <h1 className={`${this.state.fade1 ? 'in' : ''}`}>
-                Welcome!
-            </h1>
+            <div className={`landing-message ${this.state.fade1 ? 'in' : ''}`}>
+                <pre>
+                    <code className="language-jsx">
+                        {code.trim()}
+                    </code>
+                </pre>
+            </div>
         );
-        
+    
         // return (
         //     <h1 className={`${this.state.fade1 ? 'in' : ''}`}>
         //         Coming soon!

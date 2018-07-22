@@ -31,7 +31,10 @@ export default class ProjectItem extends Component {
                 <div className="btn close" onClick={this.toggleSampleCode.bind(this, false)}>Close</div>
                 <pre>
                     <code className="language-jsx">
-                        {this.props.sampleCode}
+                        <div>
+                            
+                            {this.props.sampleCode}
+                        </div>
                     </code>
                 </pre>
             </div>

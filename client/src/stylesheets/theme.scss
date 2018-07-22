@@ -31,6 +31,7 @@ $light-blue : lighten(#336699, 10%);
 $off-white-blue : #e9f8f9;
 
 $background-code-color: #403836;
+$background-light: #fbf3e3;
 
 // --------------------------------------------------
 // variables
@@ -204,6 +205,7 @@ body {
   font-weight: 200;
   margin: 0;
   transition: all .2s ease-out;
+  background-color: #f3e4c9;
   
   &.light {
     background-color: $lt-default-background-color;
@@ -213,6 +215,19 @@ body {
     background-color: $dk-default-background-color;
   }
 }
+
+pre {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: $darkgray;
+  
+  > code {
+    margin: 0 auto;
+    color: $background-light !important;
+  }
+}
+
 
 .fade-out {
   opacity: 1;
@@ -275,11 +290,11 @@ body {
         }
         
         > h3 {
-          color: white;
+          color: #fbf3e3;
         }
         
         > a {
-          color: white;
+          color: #fbf3e3;
         }
       }
       
@@ -289,7 +304,7 @@ body {
       
       > h3 {
         font-weight: lighter;
-        font-size: 2.5vw;
+        font-size: 28px;
         margin: 0;
         color: white;
       }
@@ -324,14 +339,18 @@ body {
         align-items: center;
         justify-content: space-around;
         margin-bottom: 25px;
-        color: darken(white, 20%);
+        color: $background-light;
+        color: opacity(.8);
+        // color: darken(white, 20%);
+        
         
         > i {
           cursor: pointer;
           transition: color .2s ease-out, transform .1s ease-out;
           
           &:hover {
-            color: white;
+            opacity: 1;
+            color: $background-light;
           }
           
           &:active {
@@ -371,7 +390,7 @@ body {
       }
       
       &.landing.light {
-        background: linear-gradient(to top right, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);
+        background-color: #272822;
       }
       
       &.landing.dark {
@@ -402,20 +421,29 @@ body {
           }
         }
         
-        > h1 {
+        > .landing-message {
           font-weight: lighter;
           color: white;
           opacity: 0;
           transition: all .5s ease-in-out;
-          position: absolute;
-          top: 30%;
-          text-align: center;
+          text-align: left;
           width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          
+          > pre > code {
+            min-width: 450px;
+            margin: 0;
+            width: 100%;
+          }
           
           &.in {
             opacity: 1;
-            top: 33%;
-            position: absolute;
+          }
+          
+          > .line {
+            height: 24px;
           }
           
           > .sub {
@@ -521,6 +549,8 @@ body {
       &.projects {
         display: flex;
         flex-direction: column;
+        background-color: $background-light;
+        padding-top: 0;
         
         > .project-item {
           padding: 100px;
@@ -634,11 +664,12 @@ body {
             > .sample-text {
               transition: all .3s ease-in-out;
               height: 100%;
+              background-color: $darkgray !important;
               
               > .close {
                 position: absolute;
-                top: 15px;
-                right: 15px;
+                top: 25px;
+                right: 25px;
               }
               
               &.closed {
@@ -656,16 +687,6 @@ body {
                 color: white;
                 overflow-x: hidden;
                 overflow-y: scroll;
-              }
-              
-              > pre {
-                margin: 0;
-                display: flex;
-                align-items: center;
-                
-                > code {
-                  margin: 0 auto;
-                }
               }
             }
           }
@@ -780,9 +801,11 @@ body {
         flex-direction: column;
         border-bottom: 1px solid lightgray;
         padding: 50px 0;
+        background-color: $background-light;
         
         > .summary {
           max-width: 600px;
+          padding: 0 30px;
           
           > .greeting {
             width: 100%;
@@ -799,6 +822,7 @@ body {
           display: flex;
           opacity: 0;
           transition: all .5s ease-out;
+          min-height: 300px;
           
           &.inView {
             opacity: 1;
@@ -830,12 +854,17 @@ body {
               display: flex;
               align-items: center;
               
+              > span {
+                flex: 1;
+              }
+              
               > .container-progress {
                 width: 250px;
-                margin-right: 15px;
+                margin-left: 15px;
                 height: 15px;
-                background: $superlightgray;
+                background: $background-light;
                 border-radius: 3px;
+                flex: 2;
                 
                 > .progress {
                   width: 0;
@@ -843,6 +872,10 @@ body {
                   height: 100%;
                   background: $light-blue;
                   border-radius: 3px;
+                  width: 80%;
+                  color: $background-light;
+                  display: flex;
+                  align-items: center;
                 }
               }
             }
@@ -852,7 +885,7 @@ body {
       
       &.testimonials {
         background-color: $darkgray;
-        color: white;
+        color: #f7ecd7;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -868,6 +901,7 @@ body {
           
           > .text {
             margin: 25px 0;
+            text-align: center;
           }
         }
       }
@@ -916,6 +950,8 @@ body {
     
     > .skills-wrapper {
       flex-direction: column;
+      min-height: 600px !important;
+      align-items: center;
       
       > .container-abilities {
         align-items: flex-start !important;
