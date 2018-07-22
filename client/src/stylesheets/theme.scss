@@ -368,7 +368,7 @@ pre {
       width: 100%;
       bottom: 0;
       height: 150px;
-      z-index: $z-1;
+      z-index: $z-2;
       
       &.out {
         bottom: -175px
@@ -1020,6 +1020,7 @@ pre {
     width: 100%;
     height: 100%;
     transition: all .2s ease-out;
+    z-index: $z1;
     
     &.closed {
       opacity: 0;
