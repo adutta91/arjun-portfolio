@@ -659,10 +659,12 @@ pre {
               
               > div {
                 margin-right: 20px;
+                border-color: $darkgray;
               }
               
               > i {
                 margin-right: 20px;
+                color: $darkgray;
               }
               
               &:last-child {
@@ -702,12 +704,18 @@ pre {
               align-items: center;
               cursor: pointer;
               margin-right: 5px;
+              color: $darkgray;
+              
+              > i {
+                color: $darkgray;
+              }
               
               > .text {
                 transition: all .2s ease-out;
                 margin-left: 5px;
                 width: 0;
                 overflow: hidden;
+                color: $darkgray;
               }
               
               &:hover {
