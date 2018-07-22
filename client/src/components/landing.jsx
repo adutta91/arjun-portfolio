@@ -85,7 +85,6 @@ export default class Landing extends Component {
                         {code.trim()}
                     </code>
                 </pre>
-                <i className={`fas fa-2x fa-chevron-down ${this.state.showIndicator ? 'in' : 'out'}`} /> 
             </div>
         );
     
@@ -118,6 +117,8 @@ export default class Landing extends Component {
                     <i className={`fas fa-2x fa-book ${this.state.activeScene == 'book' ? 'on' : 'off'} disabled`} onClick={this.setScene.bind(this, 'book')}/>
                 </div> */}
                 {/* {this.renderScene()} */}
+                
+                <i className={`fas fa-2x fa-chevron-down ${this.state.showIndicator ? 'in' : 'out'}`} />                 
             </div>
         );
     }

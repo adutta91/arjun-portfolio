@@ -357,7 +357,7 @@ pre {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: $dark-blue;
+      background-color: $darkgray;
       color: white;
       transition: all .3s ease-out;
       position: absolute;
@@ -387,7 +387,7 @@ pre {
           
           &:hover {
             opacity: 1;
-            color: $background-light;
+            color: darken($background-light, 10%);
           }
           
           &:active {
@@ -436,7 +436,7 @@ pre {
       }
       
       &.landing {
-        height: 100vh; // height override
+        height: calc(100vh - 80px); // height override
         position: relative;
         padding: 0;
         padding-top: 80px;
@@ -459,6 +459,23 @@ pre {
           }
         }
         
+        > i {
+          position: absolute;
+          bottom: 5px;
+          right: 20px;
+          color: $background-light;
+          transition: all 3s ease-out;
+          // animation: pulse 2s infinite !important;
+          
+          &.in {
+            opacity: 1;
+          }
+          
+          &.out {
+            opacity: 0;
+          }
+        }
+        
         > .landing-message {
           font-weight: lighter;
           color: white;
@@ -469,23 +486,8 @@ pre {
           display: flex;
           justify-content: center;
           align-items: flex-end;
-          
-          > i {
-            position: absolute;
-            bottom: 5px;
-            right: 20px;
-            color: $background-light;
-            transition: all 3s ease-out;
-            // animation: pulse 2s infinite !important;
-            
-            &.in {
-              opacity: 1;
-            }
-            
-            &.out {
-              opacity: 0;
-            }
-          }
+          position: absolute;
+          top: 80px;
           
           > pre > code {
             margin: 0;
