@@ -33,6 +33,9 @@ $off-white-blue : #e9f8f9;
 $background-code-color: #403836;
 $background-light: #fbf3e3;
 
+$green: #73AF55;
+$red: #D06079;
+
 // --------------------------------------------------
 // variables
 // --------------------------------------------------
@@ -113,6 +116,40 @@ $dk-default-header-background-color: rgba(255,255,255,0.15);
   to   { left: -240px; }
 }
 
+// -------------pulse
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity:.4;
+    bottom: 10px
+  }
+  20% {
+    transform: scale(.96);
+    opacity:.7;
+    bottom: 5px;
+  }
+  40% {
+    transform: scale(.92);
+    opacity: 1;
+    bottom: 0px;
+  }
+  600% {
+    transform: scale(.92);
+    opacity:.1;
+    bottom: 0px;
+  }
+  80% {
+    transform: scale(.96);
+    opacity: .7;
+    bottom: 5px;
+  }
+  100% {
+    transform: scale(1);
+    opacity: .4;
+    bottom: 10px;
+  }
+}
+
 // ******---------------------------------------------
 // ******---------------------------------------------
 // SVG
@@ -149,10 +186,10 @@ p {
   margin: 20px 0 60px;
   font-size: 1.25em;
   &.success {
-    color: #73AF55;
+    color: $green;
   }
   &.error {
-    color: #D06079;
+    color: $red;
   }
 }
 
@@ -269,7 +306,7 @@ pre {
     
     .header {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
       padding: 20px 40px;
       position: fixed;
@@ -402,6 +439,7 @@ pre {
         height: 100vh; // height override
         position: relative;
         padding: 0;
+        padding-top: 80px;
         
         > .scene {
           width: 100%;
@@ -432,8 +470,24 @@ pre {
           justify-content: center;
           align-items: flex-end;
           
+          > i {
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
+            color: $background-light;
+            transition: all 3s ease-out;
+            // animation: pulse 2s infinite !important;
+            
+            &.in {
+              opacity: 1;
+            }
+            
+            &.out {
+              opacity: 0;
+            }
+          }
+          
           > pre > code {
-            min-width: 450px;
             margin: 0;
             width: 100%;
           }
@@ -818,12 +872,14 @@ pre {
           }
         }
         
-        > .skills-wrapper {
-          display: flex;
-          opacity: 0;
-          transition: all .5s ease-out;
-          min-height: 300px;
-          
+          > .skills-wrapper {
+            display: flex;
+            opacity: 0;
+            transition: all .5s ease-out;
+            min-height: 600px;
+            flex-direction: column;
+            align-items: center;
+            
           &.inView {
             opacity: 1;
           }
@@ -832,14 +888,15 @@ pre {
             flex: 1;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
-            
+            align-items: flex-start;
+            margin: 25px;
+             
             > .ability {
               display: flex;
-              align-items: center;
               justify-content: flex-start;
-              width: 250px;
               height: 50px;
+              align-items: center;
+              width: auto;
             }
           }
           
@@ -849,33 +906,46 @@ pre {
             flex-direction: column;
             
             > .skill {
-              // width: 250px;
-              height: 50px;
+              margin-top: 20px;
               display: flex;
-              align-items: center;
+              align-items: flex-start;
+              padding: 10px;
               
               > span {
                 flex: 1;
               }
               
-              > .container-progress {
-                width: 250px;
-                margin-left: 15px;
-                height: 15px;
-                background: $background-light;
-                border-radius: 3px;
-                flex: 2;
+              > .desc {
+                display: flex;
+                margin-left: 25px;
                 
-                > .progress {
-                  width: 0;
-                  transition: width 1s ease-out;
-                  height: 100%;
-                  background: $light-blue;
+                > span {
+                  flex: 1;
+                  
+                  &:last-child {
+                    text-align: right;
+                    color: $green;
+                  }
+                }
+                
+                > .container-progress {
+                  width: 250px;
+                  height: 15px;
+                  background: $background-light;
                   border-radius: 3px;
-                  width: 80%;
-                  color: $background-light;
-                  display: flex;
-                  align-items: center;
+                  flex: 2;
+                  
+                  > .progress {
+                    width: 0;
+                    transition: width 1s ease-out;
+                    height: 100%;
+                    background: $light-blue;
+                    border-radius: 3px;
+                    width: 80%;
+                    color: $background-light;
+                    display: flex;
+                    align-items: center;
+                  }
                 }
               }
             }
@@ -949,17 +1019,15 @@ pre {
     flex-direction: column;
     
     > .skills-wrapper {
-      flex-direction: column;
-      min-height: 600px !important;
-      align-items: center;
       
-      > .container-abilities {
-        align-items: flex-start !important;
-        margin: 25px !important;
+      > .container-skills {
         
-        > .ability {
-          align-items: flex-start;
-          width: auto !important;
+        > .skill {
+          flex-direction: column;
+          
+          > .desc {
+            margin-left: 0 !important;
+          }
         }
       }
     }

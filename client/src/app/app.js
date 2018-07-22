@@ -13,17 +13,19 @@ let arjun = new Developer({
     title : "Full-Stack Web Developer",
     location : "Seattle, WA",
     timeAsDeveloper : "2+ years",
-    favoriteColor : "Blue... No! Yellow!",
+    favoriteColor : "Blue. No! Yellow!",
 });
  
 function initPortfolio(person) {
     // a brief overview about me
     renderSummary(arjun);
  
-    // what a few nice people have to say
+    // what a few nice people have
+    // to say
     renderReviews(arjun);
  
-    // a short list of some of what I've worked on
+    // a short list of some of what
+    // I've worked on
     renderProjects(arjun);
     
     return;

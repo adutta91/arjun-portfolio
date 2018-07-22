@@ -11,6 +11,7 @@ export default class Landing extends Component {
     state = {
         fade1 : true,
         fade2 : true,
+        showIndicator : false,
         activeScene : null,
         landingPos : 0,
     }
@@ -43,6 +44,8 @@ export default class Landing extends Component {
             
             if (this.state.landingPos < landingMessage.length) {
                 this.typingTimeout(pos + 1, delay, variance);
+            } else {
+                this.setState({ showIndicator : true });
             }
         }, speed);
     }
@@ -82,6 +85,7 @@ export default class Landing extends Component {
                         {code.trim()}
                     </code>
                 </pre>
+                <i className={`fas fa-2x fa-chevron-down ${this.state.showIndicator ? 'in' : 'out'}`} /> 
             </div>
         );
     

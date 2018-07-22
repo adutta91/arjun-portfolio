@@ -37,7 +37,7 @@ export default class AboutMe extends Component {
                 {map(traits, (trait, idx) => {
                     return (
                         <div className="ability" key={idx}>
-                            <Checkmark delay={idx * 300} success={trait.positive} />
+                            <Checkmark delay={1200 + (idx * 300)} success={trait.positive} />
                             <span>{trait.name}</span>
                         </div>
                     );
@@ -54,9 +54,11 @@ export default class AboutMe extends Component {
                 {map(skills, (skill, idx) => {
                     return (  
                         <div className="skill" key={idx}>
-                            <span>{skill.label}</span>
-                            <ProgressBar progress={skill.proficiency} delay={idx * 200} />
                             <span>{skill.name}</span>
+                            <div className='desc'>
+                                <ProgressBar progress={skill.proficiency} delay={idx * 200} />
+                                <span>{skill.label}</span>
+                            </div>
                         </div>
                     );
                 })}
@@ -85,8 +87,8 @@ export default class AboutMe extends Component {
             <div className={`container-content aboutme ${this.props.theme}`}>
                 {this.renderSummary()}
                 <div className={`skills-wrapper ${this.state.inView ? 'inView' : ''}`}>
-                    {this.renderAbilities()}
                     {this.renderSkills()}
+                    {this.renderAbilities()}
                 </div>
             </div>
         );
