@@ -9,12 +9,14 @@ import ProjectItem from './project-item';
 export default class Projects extends Component {
     render() {
         return (
-            <div className={`container-content projects ${this.props.theme}`}>
-                {
-                    map(projects, (project, idx) => {
-                        return <ProjectItem key={idx} {...project} other={idx % 2 == 1} />
-                    })
-                }
+            <div className='content-section projects'>
+                <div className={`container-content projects ${this.props.theme}`}>
+                    {
+                        map(projects, (project, idx) => {
+                            return <ProjectItem key={idx} {...project} other={idx % 2 == 1} />
+                        })
+                    }
+                </div>
             </div>
         );
     }

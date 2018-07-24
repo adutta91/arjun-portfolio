@@ -8,10 +8,8 @@ import FooterContainer from '../containers/footer-container';
 
 import Landing from './landing';
 import Projects from './projects';
-import Todo from './todo';
 import AboutMe from './aboutme';
 import Testimonials from './testimonials';
-import SectionHeader from './section-header';
 
 import { setScrolled, toggleHeader, showFooter } from '../app/actions';
 
@@ -90,13 +88,14 @@ export default class App extends Component {
     return (
       <div className='container-content-wrapper'>
         <HeaderContainer key={0}/>
-        <Landing key={1} theme={this.props.theme} />
         
-        <AboutMe key={4} theme={this.props.theme} pos={this.state.scroll} />
+          <Landing key={1} theme={this.props.theme} />
         
-        <Testimonials key={6} theme={this.props.theme}/>
+          <AboutMe key={4} theme={this.props.theme} pos={this.state.scroll} />
         
-        <Projects key={2} theme={this.props.theme} />
+          <Testimonials key={6} theme={this.props.theme}/>
+        
+          <Projects key={2} theme={this.props.theme} />
         
         {/* <Todo key={3} theme={this.props.theme} /> */}
         

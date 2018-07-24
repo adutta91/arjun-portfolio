@@ -140,10 +140,12 @@ renderItem(item, idx) {
     // get any animation styles as provided by props
     const style = this.getStyle(item, interval, idx);
     
+    
     // construct the props for this specific menu-item
+    let additionalClasses = \`\${ item.className} \${ this.state.showStyle[idx] ? 'show' : '' }\`
     const props = {
         key          : idx,
-        className    : \`menu-item \${ item.className || '' } \${ this.state.showStyle[idx] ? 'show' : '' }\`,
+        className    : \`menu-item \${additionalClasses}\`,
         onClick      : this.itemClick.bind(this, item, idx),
         style        : style,
         onMouseOver  : this.setOnHover.bind(this, idx, true),

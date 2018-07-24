@@ -46,7 +46,7 @@ export default class ProjectItem extends Component {
         
         return (
             <div className={`sampleCode ${this.state.showSampleCode ? 'open' : 'closed'}`}>
-                {this.renderSampleTag()}
+                {/* {this.renderSampleTag()} */}
                 {this.renderSampleText()}
             </div>
         );
@@ -78,6 +78,7 @@ export default class ProjectItem extends Component {
                     </div>
                     <div className="links">
                         {this.renderLinks()}
+                        <div className="btn btn-outline" onClick={this.toggleSampleCode.bind(this, true)}>Sample Code</div>
                         {this.props.component || null}
                     </div>
                 </div>

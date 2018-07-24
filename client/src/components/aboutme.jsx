@@ -84,11 +84,13 @@ export default class AboutMe extends Component {
     
     render() {
         return (
-            <div id='aboutme' className={`container-content aboutme ${this.props.theme}`}>
-                {this.renderSummary()}
-                <div className={`skills-wrapper ${this.state.inView ? 'inView' : ''}`}>
-                    {this.renderSkills()}
-                    {this.renderAbilities()}
+            <div className='content-section aboutme'>
+                <div id='aboutme' className={`container-content aboutme ${this.props.theme}`}>
+                    {this.renderSummary()}
+                    <div className={`skills-wrapper ${this.state.inView ? 'inView' : ''}`}>
+                        {this.renderSkills()}
+                        {this.renderAbilities()}
+                    </div>
                 </div>
             </div>
         );

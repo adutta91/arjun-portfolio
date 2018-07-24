@@ -24,8 +24,10 @@ export default class Testimonials extends Component {
     
     render() {
         return (
-            <div className={`container-content testimonials ${this.props.theme}`}>
-               {this.renderTestimonials()}
+            <div className='content-section testimonials'>
+                <div className={`container-content testimonials ${this.props.theme}`}>
+                    {this.renderTestimonials()}
+                </div>
             </div>
         );
     }

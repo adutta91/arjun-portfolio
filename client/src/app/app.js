@@ -121,10 +121,6 @@ export const traits = [
 
 export const testimonials = [
   {
-    text : 'This is a test. Passed. Good job Arjun',
-    from : 'Arjun D.'
-  },
-  {
     text : `Arjun helped me build exactly the website I wanted. He's diligent, patient and thorough.`,
     from : (
       <div>
