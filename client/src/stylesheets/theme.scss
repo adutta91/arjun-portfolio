@@ -160,6 +160,99 @@ $dk-default-header-background-color: rgba(255,255,255,0.15);
 
 // ******---------------------------------------------
 // ******---------------------------------------------
+// Javscript Parser
+// ******---------------------------------------------
+// ******---------------------------------------------
+$variable-color: #c558c5;
+$base-color: $background-light;
+$comment-color: gray;
+$operation-color: #32cdff;
+$import-color: #c36867;
+$function-color: #3baaff;
+$class-color: #ffff88;
+$string-color: #a1d31e;
+$link-color: #40dad5;
+
+.parsed-code {
+  font-family: 'Inconsolata', monospace;
+  color: $base-color;
+  min-width: 375px;
+  
+  .line-wrapper {
+    display: flex;
+    
+    .line-number {
+      width: 16px;
+      padding-right: 8px;
+      margin-right: 16px;
+      border-right: 1px solid $comment-color;
+      text-align: right;
+    }
+    
+    .line {
+      min-height: 16px;
+    }
+  }
+  
+  .comment {
+    color: $comment-color;
+  }
+  
+  .word {
+    margin-right: 10px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+    
+    &.variable {
+      font-weight: bold;
+      color: $variable-color;
+    }
+    
+    &.operation {
+      font-weight: bold;
+      color: $operation-color;
+    }
+    
+    &.import {
+      color: $import-color;
+    }
+    
+    &.string {
+      color: $string-color;
+    }
+    
+    &.link {
+      color: $link-color;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  
+  .punctuation {
+    color: $base-color;
+  }
+  
+  .function {
+    color: $function-color;
+  }
+  
+  .class {
+    font-weight: bold;    
+    color: $class-color;
+  }
+  
+  .space {
+    display: inline-block;
+    min-width: 10px;
+  }
+}
+
+
+
+// ******---------------------------------------------
+// ******---------------------------------------------
 // SVG
 // ******---------------------------------------------
 // ******---------------------------------------------
@@ -499,7 +592,7 @@ pre {
             color: $background-light;
             transition: all 3s ease-out;
             cursor: pointer;
-            animation: bounce 3s infinite !important;
+            animation: bounce 1.75s infinite !important;
             
             &.in {
               opacity: 1;

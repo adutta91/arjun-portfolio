@@ -13,27 +13,26 @@ export const scrollToId = (id) => {
   }, 500);
 }
 
-export const landingMessage = `
-import Developer from 'world';
+export const landingMessage = `import Developer from 'world';
 
 let arjun = new Developer({
-    name: "Arjun Dutta",
-    title: "Full-Stack Web Developer",
-    location: "Seattle, WA",
-    timeAsDeveloper: "2+ years",
-    favoriteColor: "Blue. No! Yellow!",
+    name : "Arjun Dutta",
+    title : "Full-Stack Web Developer",
+    location : "Seattle, WA",
+    timeAsDeveloper : "2+ years",
+    favoriteColor : "Blue. No! Yellow!",
 });
  
 function initPortfolio(person) {
-    // a brief overview about me
+    // a brief overview about_me(link)>aboutme
     renderSummary(arjun);
  
     // what a few nice people have
-    // to say
+    // to_say(link)>testimonials
     renderReviews(arjun);
  
     // a short list of some of what
-    // I've worked on
+    // I've worked_on(link)>projects
     renderProjects(arjun);
     
     return;
