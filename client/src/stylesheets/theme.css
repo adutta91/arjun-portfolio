@@ -148,8 +148,9 @@
 .preview {
   max-width: 100px;
   font-size: 4px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   height: 100%;
+  height: calc(100% - 20px);
   padding: 10px;
   position: absolute;
   right: 0; }
@@ -346,11 +347,11 @@ pre {
       align-items: center;
       justify-content: center; }
       #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing {
-        height: calc(100vh - 80px);
+        height: calc(100vh - 120px);
         min-height: 700px;
         position: relative;
         padding: 0;
-        padding-top: 80px;
+        padding-top: 120px;
         background-color: #272822;
         align-items: flex-start; }
         #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > .scene {

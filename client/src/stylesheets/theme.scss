@@ -257,8 +257,9 @@ $link-color: #40dad5;
 .preview {
   max-width: 100px;
   font-size: 4px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   height: 100%;
+  height: calc(100% - 20px);
   padding: 10px;
   position: absolute;
   right: 0;
@@ -590,11 +591,11 @@ pre {
         // }
         
         &.landing {
-          height: calc(100vh - 80px); // height override
+          height: calc(100vh - 120px); // height override
           min-height: 700px;
           position: relative;
           padding: 0;
-          padding-top: 80px;
+          padding-top: 120px;
           background-color: $darkgray;
           align-items: flex-start;
           // background-color: $theme-dark;
