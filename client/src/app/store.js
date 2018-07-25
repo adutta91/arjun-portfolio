@@ -5,13 +5,15 @@ import {
   TOGGLE_HEADER,
   SHOW_FOOTER,
   TOGGLE_THEME,
+  SET_MOBILE,
 } from './actions';
 
 const initialState = {
   scrolled : false,
   showHeader : true,
   showFooter : false,
-  theme : 'light'
+  theme : 'light',
+  isMobile : false,
 };
 
 const AppReducer = (state = initialState, action) => {
@@ -20,6 +22,7 @@ const AppReducer = (state = initialState, action) => {
     case TOGGLE_HEADER: return { ...state, showHeader : action.val };
     case SHOW_FOOTER: return { ...state, showFooter : action.val };
     case TOGGLE_THEME: return { ...state, theme : action.theme };
+    case SET_MOBILE: return { ...state, isMobile : action.val };
     default: return state;
   }
 };

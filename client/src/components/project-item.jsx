@@ -42,7 +42,7 @@ export default class ProjectItem extends Component {
     }
     
     renderSampleCode() {https://www.npmjs.com/package/react-revolver-menu
-        if (!this.props.sampleCode) return null;
+        if (!this.props.sampleCode || this.props.isMobile) return null;
         
         return (
             <div className={`sampleCode ${this.state.showSampleCode ? 'open' : 'closed'}`}>
@@ -78,7 +78,7 @@ export default class ProjectItem extends Component {
                     </div>
                     <div className="links">
                         {this.renderLinks()}
-                        <div className="btn btn-outline" onClick={this.toggleSampleCode.bind(this, true)}>Sample Code</div>
+                        {this.props.isMobile ? null :<div className="btn btn-outline" onClick={this.toggleSampleCode.bind(this, true)}>Sample Code</div>}
                         {this.props.component || null}
                     </div>
                 </div>
@@ -97,4 +97,5 @@ ProjectItem.propTypes = {
     sampleCode : PropTypes.string,
     other : PropTypes.bool,
     component : PropTypes.node,
+    isMobile : PropTypes.bool
 };

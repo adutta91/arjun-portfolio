@@ -5,13 +5,13 @@ import $ from 'jquery';
 
 import HeaderContainer from '../containers/header-container';
 import FooterContainer from '../containers/footer-container';
+import ProjectsContainer from '../containers/projects-container';
 
 import Landing from './landing';
-import Projects from './projects';
 import AboutMe from './aboutme';
 import Testimonials from './testimonials';
 
-import { setScrolled, toggleHeader, showFooter } from '../app/actions';
+import { setScrolled, toggleHeader, showFooter, setMobile } from '../app/actions';
 
 export default class App extends Component {
   constructor(props) {
@@ -51,6 +51,17 @@ export default class App extends Component {
       }
       this.setState(state);
     });
+    
+    this.checkWindowSize();
+    $(window).on('resize', this.checkWindowSize.bind(this));
+  }
+  
+  checkWindowSize() {
+    if ($(window).width() <= 900 && !this.props.isMobile) {
+      setMobile(true);
+    } else if ($(window).width() > 900 && this.props.isMobile) {
+      setMobile(false);
+    }
   }
   
   calculateScrollSpeed(scroll1) {
@@ -95,7 +106,7 @@ export default class App extends Component {
         
           <Testimonials key={6} theme={this.props.theme}/>
         
-          <Projects key={2} theme={this.props.theme} />
+          <ProjectsContainer key={2} />
         
         {/* <Todo key={3} theme={this.props.theme} /> */}
         
@@ -109,4 +120,5 @@ App.propTypes = {
   scrolled : PropTypes.bool,
   showFooter : PropTypes.bool,
   theme : PropTypes.string,
+  isMobile : PropTypes.bool,
 }

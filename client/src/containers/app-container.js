@@ -8,6 +8,7 @@ const mapStateToProps = (state, props) => {
     scrolled : state.scrolled,
     showFooter : state.showFooter,
     theme : state.theme,
+    isMobile : state.isMobile,
   });
 };
 

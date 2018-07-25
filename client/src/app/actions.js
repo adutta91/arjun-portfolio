@@ -32,3 +32,11 @@ export const showFooter = (val) => {
     val
   });
 };
+
+export const SET_MOBILE = 'SET_MOBILE';
+export const setMobile = (val) => {
+  Store.dispatch({
+    type : SET_MOBILE,
+    val
+  });
+};

@@ -12,7 +12,7 @@ export default class Projects extends Component {
             <div id="projects" className='content-section projects'>
                 <div className={`container-content projects ${this.props.theme}`}>
                     {map(projects, (project, idx) => {
-                        return <ProjectItem key={idx} {...project} other={false} />
+                        return <ProjectItem key={idx} {...project} other={false} isMobile={this.props.isMobile}/>
                     })}
                 </div>
             </div>
@@ -22,5 +22,6 @@ export default class Projects extends Component {
 
 
 Projects.propTypes = {
-    theme: PropTypes.string
+    theme: PropTypes.string,
+    isMobile: PropTypes.bool,
 };
