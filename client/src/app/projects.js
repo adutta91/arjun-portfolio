@@ -92,6 +92,96 @@ const revolverMenuProps = {
 
 export const projects = [
     {
+        title: 'React Typeable',
+        skills: ['ReactJS', 'JavaScript', 'HTML/CSS', 'NPM'],
+        links: {
+            github : 'https://github.com/adutta91/react-typeable',
+            npm : 'https://www.npmjs.com/package/react-typeable',
+        },
+        description: `
+            A React component built to emulate typing text. It's very lightweight, but versatile, allowing for text transformation such as text highlighting, as well as controlling typing speed and variance between keystrokes to more accurately mimic natural typing. The component recursively sets timeouts to render each character. 
+        `,
+        sampleCode: `import React, { Component } from 'react';
+import PropTypes from 'prop-types'
+
+export default class Typeable extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            pos: 0
+        };
+    }
+
+    componentDidMount() {
+        this.typingTimeout(this.state.pos + 1, this.props.speed, this.props.variance);
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.timeout);
+    }
+
+    typingTimeout(pos, delay, variance) {
+        // determine whether offset is positive or negative
+        let signVal = Math.random() < 0.5 ? -1 : 1;
+
+        // offset to emulate variable differences between keystrokes
+        let offset = (variance * Math.random()) * signVal;
+
+        let speed = delay + offset;
+
+        // sanity bounds: don't let it go too fast or slow
+        if (speed < (delay - variance)) speed = delay - variance;
+        if (speed > (delay + variance)) speed = delay + variance;
+
+        // override for spaces - lowest possible speed given variance
+        if (this.props.text.slice(0, pos + 1)[pos] == ' ') speed = delay - variance;
+
+        this.timeout = setTimeout(() => {
+            this.setState({ pos });
+
+            if (this.state.pos < this.props.text.length) {
+                this.typingTimeout(pos + 1, delay, variance);
+            } else {
+                if (this.props.done) this.props.done();
+            }
+        }, speed);
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.timeout);
+    }
+
+    renderText() {
+        let text = this.props.text.slice(0, this.state.pos);
+
+        if (this.props.transformText) {
+            return this.props.transformText(text);
+        } else {
+            return text;
+        }
+    }
+
+    render() {
+        return (
+            <div className='typeable'>
+                {this.renderText()}
+                {this.props.showCursor ? <span className="cursor">|</span> : null}
+            </div>
+        );
+    }
+};
+
+Typeable.propTypes = {
+    text: PropTypes.string,
+    speed: PropTypes.number,
+    variance: PropTypes.number,
+    done: PropTypes.func,
+    transformText: PropTypes.func,
+    showCursor: PropTypes.bool
+};`
+    },
+    {
         title: 'React Revolver Menu',
         skills: ['ReactJS', 'JavaScript', 'HTML/CSS', 'NPM'],
         links: {
@@ -100,8 +190,8 @@ export const projects = [
         },
         component: <MenuDemo {...revolverMenuProps} />,
         description: `
-            A circular menu I built using React that is available as an NPM module. The idea is an arbitrarily deep menu arranged in a circle, with option to go back to the higher level in the menu through a button in the center. I had a lot of fun figuring out the challenge of making it as dynamic as possible - allowing for any number
-            of items while still being symmetrically displayed, as well as giving the implementor options for types of menu items (icon, image or text), as well as a couple different animations. 
+            A circular menu I built using React that is available as an NPM module. The idea is an arbitrarily deep menu arranged in a circle, with the option to go back to a higher level in the menu through a button in the center. I had a lot of fun figuring out the challenge of making it as dynamic as possible - allowing for any number
+            of items while still being symmetrically displayed, giving the implementor options for types of menu items (icon, image or text), as well as a couple different animations. 
         `,
         sampleCode: `/*
     The following are few method definitions on the ReactRevolverMenu react component class.

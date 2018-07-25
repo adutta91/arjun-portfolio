@@ -20,6 +20,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.0.13",
+    "react-typeable": "^2.1.0",
     "redux": "^3.7.2",
     "three": "^0.87.1"
   },

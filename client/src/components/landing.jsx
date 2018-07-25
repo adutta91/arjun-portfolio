@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import $ from 'jquery';
 import { map } from 'lodash';
 
-import Typeable from './typeable';
+// import Typeable from './typeable';
+import Typeable from 'react-typeable';
 
 import { toggleTheme } from '../app/actions';
 import { landingMessage, parseText, scrollToId } from '../app/app';

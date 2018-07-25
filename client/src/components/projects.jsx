@@ -12,7 +12,7 @@ export default class Projects extends Component {
             <div id="projects" className='content-section projects'>
                 <div className={`container-content projects ${this.props.theme}`}>
                     {map(projects, (project, idx) => {
-                        return <ProjectItem key={idx} {...project} other={idx % 2 == 1} />
+                        return <ProjectItem key={idx} {...project} other={false} />
                     })}
                 </div>
             </div>
