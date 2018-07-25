@@ -2,7 +2,6 @@
 
 A site for my personal portfolio. Built with ReactJS and a simple Express backend it features some of my custom-built components, as well as provides links to my github, linkedin, and resume.
 
-## TODO
 As always, while the portfolio is released and ready, there are a few things I still want to achieve. Below are some goals to make this portfolio even better. Also, if you have any feedback, critiques, or questions - or better yet, you want to work together on a side project (of which I have several in my back pocket that I've been meaning to work on), please reach out to me!
 
   - add more projects to the project list
