@@ -16,7 +16,8 @@ export default class Landing extends Component {
         fade1 : true,
         fade2 : true,
         showIndicator : false,
-        activeScene : null
+        activeScene : null,
+        progress : '',
     }
     
     setScene(scene) {
@@ -37,6 +38,10 @@ export default class Landing extends Component {
         }, 500);
     }
     
+    trackProgress(text) {
+        this.setState({ progress : text })
+    }
+    
     renderContent() {
 
         return (
@@ -47,7 +52,11 @@ export default class Landing extends Component {
                     variance={100}
                     done={() => { this.setState({ showIndicator: true }); }}
                     transformText={parseJavascript}
-                    showCursor={false} />
+                    showCursor={false}
+                    onChange={this.trackProgress.bind(this)}/>
+                <div className="preview">
+                    {parseJavascript(this.state.progress)}
+                </div>
             </div>
         );
     }
