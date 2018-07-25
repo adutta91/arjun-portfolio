@@ -6,8 +6,8 @@ import $ from 'jquery';
 import HeaderContainer from '../containers/header-container';
 import FooterContainer from '../containers/footer-container';
 import ProjectsContainer from '../containers/projects-container';
+import LandingContainer from '../containers/landing-container';
 
-import Landing from './landing';
 import AboutMe from './aboutme';
 import Testimonials from './testimonials';
 
@@ -100,7 +100,7 @@ export default class App extends Component {
       <div className='container-content-wrapper'>
         <HeaderContainer key={0}/>
         
-          <Landing key={1} theme={this.props.theme} />
+          <LandingContainer key={1} />
         
           <AboutMe key={4} theme={this.props.theme} pos={this.state.scroll} />
         

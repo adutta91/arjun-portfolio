@@ -42,6 +42,16 @@ export default class Landing extends Component {
         this.setState({ progress : text })
     }
     
+    renderPreview() {
+        if (this.props.isMobile) return null;
+        
+        return (
+            <div className="preview">
+                {parseJavascript(this.state.progress)}
+            </div>
+        );
+    }
+    
     renderContent() {
 
         return (
@@ -54,9 +64,7 @@ export default class Landing extends Component {
                     transformText={parseJavascript}
                     showCursor={false}
                     onChange={this.trackProgress.bind(this)}/>
-                <div className="preview">
-                    {parseJavascript(this.state.progress)}
-                </div>
+                {this.renderPreview()}
             </div>
         );
     }
