@@ -160,6 +160,31 @@ $dk-default-header-background-color: rgba(255,255,255,0.15);
 
 // ******---------------------------------------------
 // ******---------------------------------------------
+// Mixins
+// ******---------------------------------------------
+// ******---------------------------------------------
+@mixin flex {
+    // write the css here
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin transform ($transform) {
+  -webkit-transform: $transform;
+  -moz-transform:  $transform;
+  -ms-transform:  $transform;
+  -o-transform:  $transform;
+}
+
+@mixin transition ($transition) {
+  -webkit-transition: $transition;  
+  -moz-transition:    $transition;
+  -ms-transition:     $transition; 
+  -o-transition:      $transition;  
+}
+
+// ******---------------------------------------------
+// ******---------------------------------------------
 // Javscript Parser
 // ******---------------------------------------------
 // ******---------------------------------------------
@@ -592,7 +617,6 @@ pre {
         
         &.landing {
           height: calc(100vh - 120px); // height override
-          min-height: 700px;
           position: relative;
           padding: 0;
           padding-top: 120px;
@@ -1231,6 +1255,32 @@ pre {
     &.testimonials {
       flex-direction: column;
       align-items: center !important;
+    }
+    
+    &.projects {
+      
+      > .project-item {
+        padding: 50px 0 !important;
+        
+        > .content-wrapper {
+          
+          > .title {
+            padding: 0 20px;
+          }
+          
+          > .description {
+            padding: 0 20px;
+          }
+          
+          > .skills {
+            padding: 0 20px;
+          }
+          
+          > .links {
+            padding: 0 20px;
+          }
+        }
+      }
     }
   }
 }
