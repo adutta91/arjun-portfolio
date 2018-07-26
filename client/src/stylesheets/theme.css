@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes grow-sm {
   from {
     width: 0; }
@@ -68,37 +69,64 @@
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform:    scale(1);
+    -ms-transform:    scale(1);
+    -o-transform:    scale(1);
     opacity: .4;
     bottom: 10px; }
   20% {
-    transform: scale(0.96);
+    -webkit-transform: scale(0.96);
+    -moz-transform:    scale(0.96);
+    -ms-transform:    scale(0.96);
+    -o-transform:    scale(0.96);
     opacity: .7;
     bottom: 5px; }
   40% {
-    transform: scale(0.92);
+    -webkit-transform: scale(0.92);
+    -moz-transform:    scale(0.92);
+    -ms-transform:    scale(0.92);
+    -o-transform:    scale(0.92);
     opacity: 1;
     bottom: 0px; }
   600% {
-    transform: scale(0.92);
+    -webkit-transform: scale(0.92);
+    -moz-transform:    scale(0.92);
+    -ms-transform:    scale(0.92);
+    -o-transform:    scale(0.92);
     opacity: .1;
     bottom: 0px; }
   80% {
-    transform: scale(0.96);
+    -webkit-transform: scale(0.96);
+    -moz-transform:    scale(0.96);
+    -ms-transform:    scale(0.96);
+    -o-transform:    scale(0.96);
     opacity: .7;
     bottom: 5px; }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform:    scale(1);
+    -ms-transform:    scale(1);
+    -o-transform:    scale(1);
     opacity: .4;
     bottom: 10px; } }
 
 @keyframes bounce {
   0% {
-    transform: translateY(0); }
+    -webkit-transform: translateY(0);
+    -moz-transform:    translateY(0);
+    -ms-transform:    translateY(0);
+    -o-transform:    translateY(0); }
   50% {
-    transform: translateY(-5px); }
+    -webkit-transform: translateY(-5px);
+    -moz-transform:    translateY(-5px);
+    -ms-transform:    translateY(-5px);
+    -o-transform:    translateY(-5px); }
   100% {
-    transform: translateY(0); } }
+    -webkit-transform: translateY(0);
+    -moz-transform:    translateY(0);
+    -ms-transform:    translateY(0);
+    -o-transform:    translateY(0); } }
 
 .parsed-code {
   font-family: 'Inconsolata', monospace;
@@ -166,7 +194,10 @@
 svg {
   width: 50px;
   display: block;
-  transform: scale(0.5); }
+  -webkit-transform: scale(0.5);
+  -moz-transform:    scale(0.5);
+  -ms-transform:    scale(0.5);
+  -o-transform:    scale(0.5); }
 
 .path {
   stroke-dasharray: 1000;
@@ -220,7 +251,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   margin: 0;
-  transition: all .2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
   background-color: #f3e4c9;
   color: #264d73; }
   body.light {
@@ -259,7 +293,10 @@ pre {
 
 .btn {
   cursor: pointer;
-  transition: all .2s ease-out; }
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out; }
   .btn.btn-outline {
     border: 1px solid;
     padding: 5px;
@@ -275,7 +312,10 @@ pre {
     padding: 20px 40px;
     position: fixed;
     width: calc(100% - 80px);
-    transition: all .3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
     height: 40px;
     top: 0;
     z-index: 1000; }
@@ -304,7 +344,10 @@ pre {
     justify-content: center;
     color: white;
     background-color: #264d73;
-    transition: all .3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
     width: 100%;
     height: 150px;
     z-index: 900; }
@@ -320,12 +363,18 @@ pre {
       color: opacity(0.8); }
       #arjun-portfolio-main .container-content-wrapper .footer > .icons > i {
         cursor: pointer;
-        transition: color .2s ease-out, transform .1s ease-out; }
+        -webkit-transition: color 0.2s ease-out, transform 0.1s ease-out;
+        -moz-transition: color 0.2s ease-out, transform 0.1s ease-out;
+        -ms-transition: color 0.2s ease-out, transform 0.1s ease-out;
+        -o-transition: color 0.2s ease-out, transform 0.1s ease-out; }
         #arjun-portfolio-main .container-content-wrapper .footer > .icons > i:hover {
           opacity: 1;
           color: #e3d7c2; }
         #arjun-portfolio-main .container-content-wrapper .footer > .icons > i:active {
-          transform: scale(0.9); }
+          -webkit-transform: scale(0.9);
+          -moz-transform:    scale(0.9);
+          -ms-transform:    scale(0.9);
+          -o-transform:    scale(0.9); }
     #arjun-portfolio-main .container-content-wrapper .footer > a {
       color: lightblue; }
   #arjun-portfolio-main .container-content-wrapper .section-header {
@@ -359,7 +408,10 @@ pre {
           #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > .scene.tree {
             position: relative; }
             #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > .scene.tree > .tree {
-              transition: all .2s ease-out;
+              -webkit-transition: all 0.2s ease-out;
+              -moz-transition: all 0.2s ease-out;
+              -ms-transition: all 0.2s ease-out;
+              -o-transition: all 0.2s ease-out;
               position: absolute;
               bottom: 0;
               background: green;
@@ -372,7 +424,10 @@ pre {
           right: 0;
           text-align: center;
           color: #f3eee5;
-          transition: all 3s ease-out;
+          -webkit-transition: all 3s ease-out;
+          -moz-transition: all 3s ease-out;
+          -ms-transition: all 3s ease-out;
+          -o-transition: all 3s ease-out;
           cursor: pointer;
           animation: bounce 1.75s infinite !important; }
           #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > i.in {
@@ -383,7 +438,10 @@ pre {
           font-weight: lighter;
           color: white;
           opacity: 0;
-          transition: all .5s ease-in-out;
+          -webkit-transition: all 0.5s ease-in-out;
+          -moz-transition: all 0.5s ease-in-out;
+          -ms-transition: all 0.5s ease-in-out;
+          -o-transition: all 0.5s ease-in-out;
           text-align: left;
           width: 100%;
           display: flex;
@@ -402,7 +460,10 @@ pre {
             opacity: 0;
             font-size: 22px;
             margin-top: 12px;
-            transition: all .5s ease-in-out; }
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out; }
             #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > .landing-message > .sub > a {
               color: white;
               font-weight: 600;
@@ -413,7 +474,10 @@ pre {
           display: flex;
           justify-content: center;
           position: absolute;
-          transition: all .3s ease-out;
+          -webkit-transition: all 0.3s ease-out;
+          -moz-transition: all 0.3s ease-out;
+          -ms-transition: all 0.3s ease-out;
+          -o-transition: all 0.3s ease-out;
           margin-left: auto;
           margin-right: auto;
           left: 0;
@@ -424,7 +488,10 @@ pre {
             bottom: 150px; }
           #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > .buttons > .coming-soon {
             opacity: 0;
-            transition: all .2s ease-out;
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            -ms-transition: all 0.2s ease-out;
+            -o-transition: all 0.2s ease-out;
             position: absolute;
             bottom: 20px;
             pointer-events: none;
@@ -453,14 +520,20 @@ pre {
             justify-content: center;
             border-radius: 50%;
             opacity: 0.25;
-            transition: all .3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -ms-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
             cursor: pointer; }
             #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > .buttons > i.on {
               opacity: .8; }
             #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > .buttons > i:hover {
               opacity: 1; }
             #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > .buttons > i:active {
-              transform: scale(0.9); }
+              -webkit-transform: scale(0.9);
+              -moz-transform:    scale(0.9);
+              -ms-transform:    scale(0.9);
+              -o-transform:    scale(0.9); }
             #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > .buttons > i.disabled {
               opacity: 0.5 !important;
               pointer-events: none; }
@@ -514,11 +587,17 @@ pre {
                 margin-right: 0; }
               #arjun-portfolio-main .container-content-wrapper .content-section .container-content.projects > .project-item > .content-wrapper > .links > .icon {
                 cursor: pointer;
-                transition: color .2s ease-out, transform .1s ease-out; }
+                -webkit-transition: color 0.2s ease-out, transform 0.1s ease-out;
+                -moz-transition: color 0.2s ease-out, transform 0.1s ease-out;
+                -ms-transition: color 0.2s ease-out, transform 0.1s ease-out;
+                -o-transition: color 0.2s ease-out, transform 0.1s ease-out; }
                 #arjun-portfolio-main .container-content-wrapper .content-section .container-content.projects > .project-item > .content-wrapper > .links > .icon:hover {
                   color: #666; }
                 #arjun-portfolio-main .container-content-wrapper .content-section .container-content.projects > .project-item > .content-wrapper > .links > .icon:active {
-                  transform: scale(0.9); }
+                  -webkit-transform: scale(0.9);
+                  -moz-transform:    scale(0.9);
+                  -ms-transform:    scale(0.9);
+                  -o-transform:    scale(0.9); }
           #arjun-portfolio-main .container-content-wrapper .content-section .container-content.projects > .project-item > .sampleCode {
             height: 100%;
             position: absolute;
@@ -538,14 +617,20 @@ pre {
               color: #264d73;
               color: #264d73; }
               #arjun-portfolio-main .container-content-wrapper .content-section .container-content.projects > .project-item > .sampleCode > .sample-tag > .text {
-                transition: all .2s ease-out;
+                -webkit-transition: all 0.2s ease-out;
+                -moz-transition: all 0.2s ease-out;
+                -ms-transition: all 0.2s ease-out;
+                -o-transition: all 0.2s ease-out;
                 margin-left: 5px;
                 width: 0;
                 overflow: hidden; }
               #arjun-portfolio-main .container-content-wrapper .content-section .container-content.projects > .project-item > .sampleCode > .sample-tag:hover > .text {
                 width: 65px; }
             #arjun-portfolio-main .container-content-wrapper .content-section .container-content.projects > .project-item > .sampleCode > .sample-text {
-              transition: all .3s ease-in-out;
+              -webkit-transition: all 0.3s ease-in-out;
+              -moz-transition: all 0.3s ease-in-out;
+              -ms-transition: all 0.3s ease-in-out;
+              -o-transition: all 0.3s ease-in-out;
               height: 100%;
               background-color: #272822 !important; }
               #arjun-portfolio-main .container-content-wrapper .content-section .container-content.projects > .project-item > .sampleCode > .sample-text > .close {
@@ -578,20 +663,32 @@ pre {
             margin: 20px;
             position: relative;
             padding-bottom: 40px;
-            transition: all .2s ease-out;
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            -ms-transition: all 0.2s ease-out;
+            -o-transition: all 0.2s ease-out;
             background-color: white; }
             #arjun-portfolio-main .container-content-wrapper .content-section .container-content.todo > .todo-item-wrapper > .todo-item > .expand {
               position: absolute;
               top: 10px;
               right: 10px;
-              transform: rotate(45deg) scale(1.5);
+              -webkit-transform: rotate(45deg) scale(1.5);
+              -moz-transform:    rotate(45deg) scale(1.5);
+              -ms-transform:    rotate(45deg) scale(1.5);
+              -o-transform:    rotate(45deg) scale(1.5);
               color: #b3b3b3;
               cursor: pointer;
-              transition: all .2s ease-out; }
+              -webkit-transition: all 0.2s ease-out;
+              -moz-transition: all 0.2s ease-out;
+              -ms-transition: all 0.2s ease-out;
+              -o-transition: all 0.2s ease-out; }
               #arjun-portfolio-main .container-content-wrapper .content-section .container-content.todo > .todo-item-wrapper > .todo-item > .expand:hover {
                 color: #666; }
               #arjun-portfolio-main .container-content-wrapper .content-section .container-content.todo > .todo-item-wrapper > .todo-item > .expand:active {
-                transform: rotate(45deg) scale(1.25); }
+                -webkit-transform: rotate(45deg) scale(1.25);
+                -moz-transform:    rotate(45deg) scale(1.25);
+                -ms-transform:    rotate(45deg) scale(1.25);
+                -o-transform:    rotate(45deg) scale(1.25); }
             #arjun-portfolio-main .container-content-wrapper .content-section .container-content.todo > .todo-item-wrapper > .todo-item > .title {
               font-weight: lighter;
               font-size: 24px;
@@ -656,7 +753,10 @@ pre {
         #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skills-wrapper {
           display: flex;
           opacity: 0;
-          transition: all .5s ease-out;
+          -webkit-transition: all 0.5s ease-out;
+          -moz-transition: all 0.5s ease-out;
+          -ms-transition: all 0.5s ease-out;
+          -o-transition: all 0.5s ease-out;
           min-height: 600px;
           flex-direction: column;
           align-items: center; }
@@ -701,7 +801,10 @@ pre {
                   flex: 2; }
                   #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skills-wrapper > .container-skills > .skill > .desc > .container-progress > .progress {
                     width: 0;
-                    transition: width 1s ease-out;
+                    -webkit-transition: width 1s ease-out;
+                    -moz-transition: width 1s ease-out;
+                    -ms-transition: width 1s ease-out;
+                    -o-transition: width 1s ease-out;
                     height: 100%;
                     background: #4080bf;
                     border-radius: 3px;
@@ -738,7 +841,10 @@ pre {
   justify-content: center;
   width: 100%;
   height: 100%;
-  transition: all .2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
   z-index: 1000; }
   .modal-demo > .modal-wrapper.closed {
     opacity: 0;

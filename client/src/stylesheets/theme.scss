@@ -55,6 +55,27 @@ $dk-default-background-color: #3c3939;
 
 $lt-default-header-background-color: rgba(0,0,0,0.15);
 $dk-default-header-background-color: rgba(255,255,255,0.15);
+
+// ******---------------------------------------------
+// ******---------------------------------------------
+// Mixins
+// ******---------------------------------------------
+// ******---------------------------------------------
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform:  $transform;
+  -ms-transform:  $transform;
+  -o-transform:  $transform;
+};
+
+@mixin transition($args...) {
+  -webkit-transition : ($args);
+  -moz-transition : ($args);
+  -ms-transition : ($args);
+  -o-transition : ($args);
+}
+
 // --------------------------------------------------
 // animations
 // --------------------------------------------------
@@ -121,66 +142,41 @@ $dk-default-header-background-color: rgba(255,255,255,0.15);
 // -------------pulse
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    @include transform(scale(1));
     opacity:.4;
     bottom: 10px
   }
   20% {
-    transform: scale(.96);
+    @include transform(scale(.96));
     opacity:.7;
     bottom: 5px;
   }
   40% {
-    transform: scale(.92);
+    @include transform(scale(.92));
     opacity: 1;
     bottom: 0px;
   }
   600% {
-    transform: scale(.92);
+    @include transform(scale(.92));
     opacity:.1;
     bottom: 0px;
   }
   80% {
-    transform: scale(.96);
+    @include transform(scale(.96));
     opacity: .7;
     bottom: 5px;
   }
   100% {
-    transform: scale(1);
+    @include transform(scale(1));
     opacity: .4;
     bottom: 10px;
   }
 }
 
 @keyframes bounce {
- 0% {transform: translateY(0);}
- 50% {transform: translateY(-5px);}
- 100% {transform: translateY(0);}
-}
-
-// ******---------------------------------------------
-// ******---------------------------------------------
-// Mixins
-// ******---------------------------------------------
-// ******---------------------------------------------
-@mixin flex {
-    // write the css here
-    display: -webkit-flex;
-    display: flex;
-}
-
-@mixin transform ($transform) {
-  -webkit-transform: $transform;
-  -moz-transform:  $transform;
-  -ms-transform:  $transform;
-  -o-transform:  $transform;
-}
-
-@mixin transition ($transition) {
-  -webkit-transition: $transition;  
-  -moz-transition:    $transition;
-  -ms-transition:     $transition; 
-  -o-transition:      $transition;  
+ 0% {@include transform(translateY(0));}
+ 50% {@include transform(translateY(-5px));}
+ 100% {@include transform(translateY(0));}
 }
 
 // ******---------------------------------------------
@@ -319,7 +315,8 @@ $link-color: #40dad5;
 svg {
   width: 50px;
   display: block;
-  transform: scale(.5); // hack - TODO: set hardcoded measures correctly
+  @include transform(scale(.5));
+  // transform: scale(.5); // hack - TODO: set hardcoded measures correctly
 }
 
 .path {
@@ -401,7 +398,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   margin: 0;
-  transition: all .2s ease-out;
+  @include transition(all .2s ease-out);
   background-color: #f3e4c9;
   color: $theme-dark;
   
@@ -455,7 +452,7 @@ pre {
 
 .btn {
   cursor: pointer;
-  transition: all .2s ease-out;
+  @include transition(all .2s ease-out);
   
   &.btn-outline {
     border: 1px solid;
@@ -476,7 +473,7 @@ pre {
       padding: 20px 40px;
       position: fixed;
       width: calc(100% - 80px);
-      transition: all .3s ease-out;
+      @include transition(all .3s ease-out);
       height: 40px;
       top: 0;
       z-index: $z-1;
@@ -524,7 +521,7 @@ pre {
       justify-content: center;
       color: white;
       background-color: $theme-dark;
-      transition: all .3s ease-out;
+      @include transition(all .3s ease-out);
       // position: absolute;
       // bottom: 0;
       width: 100%;
@@ -548,7 +545,7 @@ pre {
         
         > i {
           cursor: pointer;
-          transition: color .2s ease-out, transform .1s ease-out;
+          @include transition(color .2s ease-out, transform .1s ease-out);
           
           &:hover {
             opacity: 1;
@@ -556,7 +553,7 @@ pre {
           }
           
           &:active {
-            transform: scale(.9);
+            @include transform(scale(.9));
           }
         }
       }
@@ -632,7 +629,7 @@ pre {
               position: relative;
               
               > .tree {
-                transition: all .2s ease-out;
+                @include transition(all .2s ease-out);
                 position: absolute;
                 bottom: 0;
                 background: green;
@@ -649,7 +646,7 @@ pre {
             right: 0;
             text-align: center;
             color: $background-light;
-            transition: all 3s ease-out;
+            @include transition(all 3s ease-out);
             cursor: pointer;
             animation: bounce 1.75s infinite !important;
             
@@ -666,7 +663,7 @@ pre {
             font-weight: lighter;
             color: white;
             opacity: 0;
-            transition: all .5s ease-in-out;
+            @include transition(all .5s ease-in-out);
             text-align: left;
             width: 100%;
             display: flex;
@@ -697,7 +694,7 @@ pre {
               opacity: 0;              
               font-size: 22px;
               margin-top: 12px;
-              transition: all .5s ease-in-out;              
+              @include transition(all .5s ease-in-out); 
               
               > a {
                 color: white;
@@ -715,7 +712,7 @@ pre {
             display: flex;
             justify-content: center;
             position: absolute;
-            transition: all .3s ease-out;
+            @include transition(all .3s ease-out);
             margin-left: auto;
             margin-right: auto;
             left: 0;
@@ -729,7 +726,7 @@ pre {
             
             > .coming-soon {
               opacity: 0;
-              transition: all .2s ease-out;
+              @include transition(all .2s ease-out);
               position: absolute;
               bottom: 20px;
               pointer-events: none;
@@ -766,7 +763,7 @@ pre {
               justify-content: center;
               border-radius: 50%;
               opacity: 0.25;
-              transition: all .3s ease-out;
+              @include transition(all .3s ease-out);
               cursor: pointer;
               
               &.on {
@@ -778,7 +775,7 @@ pre {
               }
               
               &:active {
-                transform: scale(.9);
+                @include transform(scale(.9));
               }
               
               &.disabled {
@@ -868,14 +865,14 @@ pre {
                 
                 > .icon {
                   cursor: pointer;
-                  transition: color .2s ease-out, transform .1s ease-out;
+                  @include transition(color .2s ease-out, transform .1s ease-out);
                   
                   &:hover {
                     color: $gray;
                   }
                   
                   &:active {
-                    transform: scale(.9);
+                    @include transform(scale(.9));
                   }
                 }
               }
@@ -906,7 +903,7 @@ pre {
                 color: $theme-dark;
                 
                 > .text {
-                  transition: all .2s ease-out;
+                  @include transition(all .2s ease-out);
                   margin-left: 5px;
                   width: 0;
                   overflow: hidden;
@@ -921,7 +918,7 @@ pre {
               }
               
               > .sample-text {
-                transition: all .3s ease-in-out;
+                @include transition(all .3s ease-in-out);
                 height: 100%;
                 background-color: $darkgray !important;
                 
@@ -971,24 +968,24 @@ pre {
               margin: 20px;
               position: relative;
               padding-bottom: 40px;
-              transition: all .2s ease-out;
+              @include transition(all .2s ease-out);
               background-color: white;
               
               > .expand {
                 position: absolute;
                 top: 10px;
                 right: 10px;
-                transform: rotate(45deg) scale(1.5);
+                @include transform(rotate(45deg) scale(1.5));
                 color: $lightgray;
                 cursor: pointer;
-                transition: all .2s ease-out;
+                @include transition(all .2s ease-out);
                 
                 &:hover {
                   color: $gray;
                 }
                 
                 &:active {
-                  transform: rotate(45deg) scale(1.25);
+                  @include transform(rotate(45deg) scale(1.25));
                 }
               }
               
@@ -1085,7 +1082,7 @@ pre {
             > .skills-wrapper {
               display: flex;
               opacity: 0;
-              transition: all .5s ease-out;
+              @include transition(all .5s ease-out);
               min-height: 600px;
               flex-direction: column;
               align-items: center;
@@ -1147,7 +1144,7 @@ pre {
                     
                     > .progress {
                       width: 0;
-                      transition: width 1s ease-out;
+                      @include transition(width 1s ease-out);
                       height: 100%;
                       background: $light-blue;
                       border-radius: 3px;
@@ -1206,7 +1203,7 @@ pre {
     justify-content: center;
     width: 100%;
     height: 100%;
-    transition: all .2s ease-out;
+    @include transition(all .2s ease-out);
     z-index: $z-1;
     
     &.closed {
