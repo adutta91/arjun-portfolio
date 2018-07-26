@@ -111,7 +111,7 @@
     opacity: .4;
     bottom: 10px; } }
 
-@keyframes bounce {
+@keyframes bounce-down {
   0% {
     -webkit-transform: translateY(0);
     -moz-transform:    translateY(0);
@@ -424,12 +424,8 @@ pre {
           right: 0;
           text-align: center;
           color: #f3eee5;
-          -webkit-transition: all 3s ease-out;
-          -moz-transition: all 3s ease-out;
-          -ms-transition: all 3s ease-out;
-          -o-transition: all 3s ease-out;
           cursor: pointer;
-          animation: bounce 1.75s infinite !important; }
+          animation: bounce-down 1.75s infinite !important; }
           #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > i.in {
             opacity: 1; }
           #arjun-portfolio-main .container-content-wrapper .content-section .container-content.landing > i.out {

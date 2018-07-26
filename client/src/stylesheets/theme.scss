@@ -173,7 +173,7 @@ $dk-default-header-background-color: rgba(255,255,255,0.15);
   }
 }
 
-@keyframes bounce {
+@keyframes bounce-down {
  0% {@include transform(translateY(0));}
  50% {@include transform(translateY(-5px));}
  100% {@include transform(translateY(0));}
@@ -646,9 +646,9 @@ pre {
             right: 0;
             text-align: center;
             color: $background-light;
-            @include transition(all 3s ease-out);
+            // @include transition(all 3s ease-out);
             cursor: pointer;
-            animation: bounce 1.75s infinite !important;
+            animation: bounce-down 1.75s infinite !important;
             
             &.in {
               opacity: 1;
