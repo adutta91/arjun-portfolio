@@ -230,6 +230,15 @@ $link-color: #40dad5;
     color: $comment-color;
   }
   
+   
+  .punctuation {
+    color: $base-color;
+    
+    &.string {
+      color: $string-color;
+    }
+  }
+  
   .word {
     margin-right: 10px;
     
@@ -258,10 +267,6 @@ $link-color: #40dad5;
     
     &.string {
       color: $string-color;
-      
-      > .punctuation {
-        color: $string-color !important;
-      }
     }
     
     &.link {
@@ -269,10 +274,6 @@ $link-color: #40dad5;
       text-decoration: underline;
       cursor: pointer;
     }
-  }
-  
-  .punctuation {
-    color: $base-color;
   }
   
   .function {

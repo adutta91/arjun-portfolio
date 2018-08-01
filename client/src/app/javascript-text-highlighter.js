@@ -1,7 +1,7 @@
 import React from 'react';
 import { map, clone } from 'lodash';
 
-import { scrollToId } from './app';
+import { scrollToId, linkIdentifier } from './app';
 
 let classNameLookup = {
     'let' : 'variable',
@@ -24,10 +24,9 @@ let classNameLookup = {
 
 // JSON for ease of look up
 let punctuationMap = {
-    '.' : true,
     ',' : true,
-    ';' : true,
-}
+    ';' : true
+};
 
 // checks if word is a function definition
 let functionCheck = (line, word, idx) => {
@@ -128,12 +127,13 @@ function parseLine(line, isCurrent) {
     );
 
     let result = map(words, (word, idx) => {
-        if (word == '') return <span key={idx} className='space' ></span>
+        if (word == '') return <span key={idx} className='space' ></span>;
         else return parseWord(line, word, idx);
     });
     
+    // add cursor to end
     if (isCurrent) {
-        result.push(<span key={'cursor'}className="cursor">|</span>)
+        result.push(<span key={'cursor'}className="cursor">|</span>);
     }
     
     return result;
@@ -150,12 +150,10 @@ function parseWord(line, word, idx) {
     // remove semicolon while searching for className
     let trimmed = word.trim().split(punctuation).join('');
 
-    // look up class name in map first
-    let className = classNameLookup[trimmed];
-
+    // look up class name in map first,
     // if not found, run through other checks to find className
-    if (!className) className = findClassName(line, trimmed, idx);
-    
+    let className = classNameLookup[trimmed] || findClassName(line, trimmed, idx);
+
     // if accessing a property on an object
     if (word.split('.').length > 1 && !stringCheck(line, word, idx)) {
         return [
@@ -178,7 +176,6 @@ function parseWord(line, word, idx) {
         );
     }
     
-    
     // special case for classes
     if (className == 'class') {
         return (
@@ -190,11 +187,10 @@ function parseWord(line, word, idx) {
         );
     }
     
-    
     return (
         <span key={idx} className={`word ${className}`}>
             {trimmed}
-            {punctuation ? <span className="punctuation">{punctuation}</span> : null}
+            {punctuation ? <span className={punctuationClassName(line, word, idx)}>{punctuation}</span> : null}
         </span>
     );
         
@@ -209,8 +205,21 @@ function findClassName(line, word, idx) {
     else return ''
 };
 
+function punctuationClassName(line, word, idx) {
+    let className = 'punctuation';
+    
+    // if word is in string and not the last word, punctuation is in string
+    if (stringCheck(line, word, idx)) {
+        if (word[word.length - 2] !== '"' && word[word.length - 2] !== '\'') {
+            className += ' string';
+        }
+    }
+    
+    return className;
+}
+
 function isLink(word) {
-    if (word.indexOf('(link)') !== -1) {
+    if (word.indexOf(linkIdentifier) !== -1) {
         return true;
     } else {
         return false;
@@ -218,7 +227,7 @@ function isLink(word) {
 }
 
 function parseLink(word, key) {
-    let linkParts = word.split('(link)').join('').split('>');
+    let linkParts = word.split(linkIdentifier).join('').split('>');
     
     // placeholders until full link is parsed
     if (linkParts.length < 2) linkParts = ['', ''];

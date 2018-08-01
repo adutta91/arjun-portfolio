@@ -152,6 +152,10 @@
       min-height: 16px; }
   .parsed-code .comment {
     color: gray; }
+  .parsed-code .punctuation {
+    color: #f3eee5; }
+    .parsed-code .punctuation.string {
+      color: #a1d31e; }
   .parsed-code .word {
     margin-right: 10px; }
     .parsed-code .word:last-child {
@@ -169,14 +173,10 @@
       margin-right: 0; }
     .parsed-code .word.string {
       color: #a1d31e; }
-      .parsed-code .word.string > .punctuation {
-        color: #a1d31e !important; }
     .parsed-code .word.link {
       color: #40dad5;
       text-decoration: underline;
       cursor: pointer; }
-  .parsed-code .punctuation {
-    color: #f3eee5; }
   .parsed-code .function {
     color: #3baaff; }
   .parsed-code .class {

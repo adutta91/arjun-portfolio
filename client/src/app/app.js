@@ -13,6 +13,8 @@ export const scrollToId = (id) => {
   }, 500);
 }
 
+export const linkIdentifier = ':l';
+
 export const landingMessage = `import Developer from 'world';
 
 let arjun = new Developer({
@@ -20,20 +22,20 @@ let arjun = new Developer({
     title : "Full-Stack Web Developer",
     location : "Seattle, WA",
     timeAsDeveloper : "2+ years",
-    favoriteColor : "Blue. No! Yellow!",
+    favoriteColor : "Blue. No! Yellow!"
 });
  
-function initPortfolio(person) {
-    // a brief overview about_me(link)>aboutme
-    person.renderSummary();
+function initPortfolio(dev) {
+    // a brief overview about_me${linkIdentifier}>aboutme
+    dev.renderSummary();
  
     // what a few nice people have
-    // to_say(link)>testimonials
-    person.renderReviews();
+    // to_say${linkIdentifier}>testimonials
+    dev.renderReviews();
  
     // a short list of some of what
-    // I've worked_on(link)>projects
-    person.renderProjects();
+    // I've worked_on${linkIdentifier}>projects
+    dev.renderProjects();
     
     return;
 }
@@ -43,7 +45,7 @@ initPortfolio(arjun);`;
 export const parseText = (line) => {
   let content = [];
   
-  let parts = line.split('(link)');
+  let parts = line.split(linkIdentifier);
   
   return map(parts, (part, idx) => {
     // if odd return link, otherwise return span with text
