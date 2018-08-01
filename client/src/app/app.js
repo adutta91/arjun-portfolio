@@ -25,15 +25,15 @@ let arjun = new Developer({
  
 function initPortfolio(person) {
     // a brief overview about_me(link)>aboutme
-    renderSummary(arjun);
+    person.renderSummary();
  
     // what a few nice people have
     // to_say(link)>testimonials
-    renderReviews(arjun);
+    person.renderReviews();
  
     // a short list of some of what
     // I've worked_on(link)>projects
-    renderProjects(arjun);
+    person.renderProjects();
     
     return;
 }

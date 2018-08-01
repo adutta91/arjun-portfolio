@@ -128,6 +128,14 @@
     -ms-transform:    translateY(0);
     -o-transform:    translateY(0); } }
 
+@keyframes pulse-opacity {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
 .parsed-code {
   font-family: 'Inconsolata', monospace;
   color: #f3eee5;
@@ -156,8 +164,13 @@
       color: #32cdff; }
     .parsed-code .word.import {
       color: #c36867; }
+    .parsed-code .word.object {
+      color: #c36867;
+      margin-right: 0; }
     .parsed-code .word.string {
       color: #a1d31e; }
+      .parsed-code .word.string > .punctuation {
+        color: #a1d31e !important; }
     .parsed-code .word.link {
       color: #40dad5;
       text-decoration: underline;
@@ -172,6 +185,12 @@
   .parsed-code .space {
     display: inline-block;
     min-width: 10px; }
+  .parsed-code .cursor {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    animation: pulse-opacity 1.5s infinite !important; }
 
 .preview {
   max-width: 100px;

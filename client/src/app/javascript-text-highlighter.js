@@ -156,6 +156,16 @@ function parseWord(line, word, idx) {
     // if not found, run through other checks to find className
     if (!className) className = findClassName(line, trimmed, idx);
     
+    // if accessing a property on an object
+    if (word.split('.').length > 1 && !stringCheck(line, word, idx)) {
+        return [
+            <span key={`${idx}-0`} className='word object'>
+                {word.split('.')[0]}
+                <span className="punctuation">.</span>
+            </span>,
+            parseWord(line, word.split('.')[1], `${idx}-1`)
+        ];
+    }
     
     // special case for functions
     if (className == 'function') {
