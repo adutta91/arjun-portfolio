@@ -91,7 +91,7 @@ let commentCheck = (line) => {
 }
 
 
-export const parseJavascript = (text, showCursor) => {
+export const parseJavascript = (text, opt) => {
     let lines = text.split('\n');
     
     return (
@@ -101,7 +101,7 @@ export const parseJavascript = (text, showCursor) => {
                     <div className="line-wrapper" key={idx}>
                         <div className="line-number">{idx + 1}</div>
                         <div className="line" key={idx}>
-                            {parseLine(line, idx == (lines.length - 1))}
+                            {parseLine(line, idx == (lines.length - 1), opt)}
                         </div>
                     </div>
                 );
@@ -111,7 +111,7 @@ export const parseJavascript = (text, showCursor) => {
 };
 
 
-function parseLine(line, isCurrent) {
+function parseLine(line, isCurrent, opt) {
     let words = line.split(' ');
     
     // if line is commented
