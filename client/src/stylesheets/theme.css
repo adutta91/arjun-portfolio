@@ -765,6 +765,14 @@ pre {
           #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .summary > p {
             line-height: 32px;
             margin-bottom: 25px; }
+        #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skill-logos {
+          display: flex;
+          width: 100%;
+          flex-wrap: wrap;
+          justify-content: space-around; }
+          #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skill-logos > .logo {
+            width: 100px;
+            margin: 10px; }
         #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skills-wrapper {
           display: flex;
           opacity: 0;

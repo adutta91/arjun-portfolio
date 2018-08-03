@@ -6,7 +6,7 @@ import { map } from 'lodash';
 import Checkmark from './checkmark';
 import ProgressBar from './progress-bar';
 
-import { traits, skills } from '../app/app';
+import { traits, skills, skillLogos } from '../app/app';
 
 export default class AboutMe extends Component {
     constructor(props) {
@@ -82,6 +82,12 @@ export default class AboutMe extends Component {
         )
     }
     
+    renderSkillLogos() {
+        return map(skillLogos, (skill, idx) => {
+            return <img key={skill.name} src={`/assets/logos/${skill.file}`} className='logo'/>
+        });
+    }
+    
     render() {
         return (
             <div className='content-section aboutme'>
@@ -91,6 +97,11 @@ export default class AboutMe extends Component {
                         {this.renderSkills()}
                         {this.renderAbilities()}
                     </div> */}
+                    <h3>My Toolkit</h3>
+                    <div className="skill-logos">
+                        {this.renderSkillLogos()}
+                    </div>
+                    <h4>and more to come!</h4>
                 </div>
             </div>
         );

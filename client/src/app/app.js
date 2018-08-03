@@ -68,7 +68,7 @@ export const skills = [
   {
     name : 'JavaScript',
     proficiency : 85,
-    label : 'Advanced'
+    label : 'Advanced',
   },
   {
     name : 'React',
@@ -78,24 +78,75 @@ export const skills = [
   {
     name : 'Redux',
     proficiency : 85,
-    label : 'Advanced'
+    label : 'Advanced',
   },
   {
     name : 'HTML/CSS',
     proficiency : 83,
-    label : 'Advanced'
+    label : 'Advanced',
   },
   {
     name : 'MySQL',
     proficiency : 80,
-    label : 'Proficient'
+    label : 'Proficient',
   },
   {
     name : 'NodeJS',
     proficiency : 75,
-    label : 'Proficient'
+    label : 'Proficient',
   },
 ];
+
+export const skillLogos = [
+  {
+    name: 'JavaScript',
+    file: 'javascript-plain.svg',
+  },
+  {
+    name: 'ReactJS',
+    file: 'react-original-wordmark.svg',
+  },
+  {
+    name: 'Redux',
+    file: 'redux.svg',
+  },
+  {
+    name: 'NodeJS',
+    file: 'nodejs-original-wordmark.svg',
+  },
+  {
+    name: 'HTML5',
+    file: 'html5-plain-wordmark.svg',
+  },
+  {
+    name: 'CSS3',
+    file: 'css3-plain-wordmark.svg',
+  },
+  {
+    name: 'Sass',
+    file: 'sass-original.svg',
+  },
+  {
+    name: 'Express',
+    file: 'express-original-wordmark.svg',
+  },
+  {
+    name: 'Github',
+    file: 'github-original-wordmark.svg',
+  },
+  {
+    name: 'MySQL',
+    file: 'mysql-plain-wordmark.svg',
+  },
+  {
+    name: 'NPM',
+    file: 'npm-original-wordmark.svg',
+  },
+  {
+    name: 'Sequelize',
+    file: 'sequelize-original-wordmark.svg',
+  }
+]
 
 export const traits = [
   {

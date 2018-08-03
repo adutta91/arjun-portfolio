@@ -1100,6 +1100,18 @@ pre {
             }
           }
           
+          > .skill-logos {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+            > .logo {
+              width: 100px;
+              margin: 10px;
+            }
+          }
+          
             > .skills-wrapper {
               display: flex;
               opacity: 0;
