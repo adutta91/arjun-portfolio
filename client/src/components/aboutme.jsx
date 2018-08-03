@@ -101,7 +101,7 @@ export default class AboutMe extends Component {
                     <div className="skill-logos">
                         {this.renderSkillLogos()}
                     </div>
-                    <h4>and more to come!</h4>
+                    <h4>ask me about more!</h4>
                 </div>
             </div>
         );
