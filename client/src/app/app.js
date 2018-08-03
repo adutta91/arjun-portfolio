@@ -111,8 +111,20 @@ export const skillLogos = [
     file: 'redux.svg',
   },
   {
+    name: 'jQuery',
+    file: 'jquery-plain-wordmark.svg',
+  },
+  {
     name: 'NodeJS',
     file: 'nodejs-original-wordmark.svg',
+  },
+  {
+    name: 'MySQL',
+    file: 'mysql-plain-wordmark.svg',
+  },
+  {
+    name: 'Sequelize',
+    file: 'sequelize-original-wordmark.svg',
   },
   {
     name: 'HTML5',
@@ -135,17 +147,9 @@ export const skillLogos = [
     file: 'github-original-wordmark.svg',
   },
   {
-    name: 'MySQL',
-    file: 'mysql-plain-wordmark.svg',
-  },
-  {
     name: 'NPM',
     file: 'npm-original-wordmark.svg',
   },
-  {
-    name: 'Sequelize',
-    file: 'sequelize-original-wordmark.svg',
-  }
 ]
 
 export const traits = [
