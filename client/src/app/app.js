@@ -111,10 +111,6 @@ export const skillLogos = [
     file: 'redux.svg',
   },
   {
-    name: 'jQuery',
-    file: 'jquery-plain-wordmark.svg',
-  },
-  {
     name: 'NodeJS',
     file: 'nodejs-original-wordmark.svg',
   },
@@ -125,6 +121,10 @@ export const skillLogos = [
   {
     name: 'Sequelize',
     file: 'sequelize-original-wordmark.svg',
+  },
+  {
+    name: 'jQuery',
+    file: 'jquery-plain-wordmark.svg',
   },
   {
     name: 'HTML5',
