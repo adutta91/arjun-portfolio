@@ -1107,8 +1107,42 @@ pre {
             justify-content: space-around;
             
             > .logo {
-              width: 100px;
-              margin: 10px;
+              align-items: center;
+              position: relative;
+              justify-content: center;
+              display: flex;
+              
+              > .name {
+                position: absolute;
+                opacity: 0;
+                color: $background-light;
+                transform: scale(1.2);
+                @include transition(all .3s ease-out);
+              }
+              
+              > img {
+                width: 100px;
+                margin: 10px;
+                cursor: pointer;
+                @include transition(all .3s ease-out);
+              }
+              
+              
+              &:hover {
+                
+                > .name {
+                  opacity: 1;
+                  color: $darkgray;
+                  font-weight: bold;
+                  transform: scale(1);
+                }
+                
+                > img {
+                  background: $background-light;
+                  filter: blur(2px);
+                  opacity: .4;
+                }
+              }
             }
           }
           

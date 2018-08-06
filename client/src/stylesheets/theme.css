@@ -771,8 +771,36 @@ pre {
           flex-wrap: wrap;
           justify-content: space-around; }
           #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skill-logos > .logo {
-            width: 100px;
-            margin: 10px; }
+            align-items: center;
+            position: relative;
+            justify-content: center;
+            display: flex; }
+            #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skill-logos > .logo > .name {
+              position: absolute;
+              opacity: 0;
+              color: #f3eee5;
+              transform: scale(1.2);
+              -webkit-transition: all 0.3s ease-out;
+              -moz-transition: all 0.3s ease-out;
+              -ms-transition: all 0.3s ease-out;
+              -o-transition: all 0.3s ease-out; }
+            #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skill-logos > .logo > img {
+              width: 100px;
+              margin: 10px;
+              cursor: pointer;
+              -webkit-transition: all 0.3s ease-out;
+              -moz-transition: all 0.3s ease-out;
+              -ms-transition: all 0.3s ease-out;
+              -o-transition: all 0.3s ease-out; }
+            #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skill-logos > .logo:hover > .name {
+              opacity: 1;
+              color: #272822;
+              font-weight: bold;
+              transform: scale(1); }
+            #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skill-logos > .logo:hover > img {
+              background: #f3eee5;
+              filter: blur(2px);
+              opacity: .4; }
         #arjun-portfolio-main .container-content-wrapper .content-section .container-content.aboutme > .skills-wrapper {
           display: flex;
           opacity: 0;

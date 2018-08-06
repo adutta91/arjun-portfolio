@@ -84,7 +84,12 @@ export default class AboutMe extends Component {
     
     renderSkillLogos() {
         return map(skillLogos, (skill, idx) => {
-            return <img key={skill.name} src={`/assets/logos/${skill.file}`} className='logo'/>
+            return (
+                <div className="logo" key={skill.name}>
+                    <div className="name">{skill.name}</div>
+                    <img src={`/assets/logos/${skill.file}`} />
+                </div>
+            )
         });
     }
     
