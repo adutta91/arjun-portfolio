@@ -6,9 +6,10 @@ const Skill = require('../mongoose/skill');
 
 
 router.get('/test', (req, res) => {
-    Skill.find({}).exec((err, skills) => {
-        res.json(skills);
-    });
+    res.json({ success : true });
+    // Skill.find({}).exec((err, skills) => {
+    //     res.json(skills);
+    // });
 });
 
 module.exports = router;

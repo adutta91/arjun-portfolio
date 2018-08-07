@@ -11,8 +11,8 @@ const api = require('./routes/api');
 app.use(express.static(path.join(__dirname, 'client/build')));
   
 // TODO: figure out environment variables
-// mongoose.connect('mongodb://localhost:27017/local');
-mongoose.connect('mongodb://portfolio:mongobongo42@ds113942.mlab.com:13942/arjun_portfolio');
+mongoose.connect('mongodb://localhost:27017/local');
+// mongoose.connect('mongodb://portfolio:mongobongo42@ds113942.mlab.com:13942/arjun_portfolio');
 
 var db = mongoose.connection;
 db.on('error', ()=> {console.log( '---FAILED to connect to mongoose')});
