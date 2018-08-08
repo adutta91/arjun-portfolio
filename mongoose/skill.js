@@ -5,9 +5,7 @@ var Schema = mongoose.Schema;
 var skillSchema = new Schema({
     skillId: Number,
     name: String,
-    logo: String,
-    proficiency: Number,
-    proficiencyLabel: String
+    logo: String
 }, { collection: "skills" });
 
 // we need to create a model using it
