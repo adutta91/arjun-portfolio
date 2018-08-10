@@ -6,6 +6,7 @@ import {
   SHOW_FOOTER,
   TOGGLE_THEME,
   SET_MOBILE,
+  SKILLS_RECEIVED,
 } from './actions';
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   showFooter : false,
   theme : 'light',
   isMobile : false,
+  skills : [],
 };
 
 const AppReducer = (state = initialState, action) => {
@@ -23,6 +25,7 @@ const AppReducer = (state = initialState, action) => {
     case SHOW_FOOTER: return { ...state, showFooter : action.val };
     case TOGGLE_THEME: return { ...state, theme : action.theme };
     case SET_MOBILE: return { ...state, isMobile : action.val };
+    case SKILLS_RECEIVED: return { ...state, skills : action.skills };
     default: return state;
   }
 };

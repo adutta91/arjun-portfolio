@@ -4,13 +4,12 @@ var router = express.Router();
 
 const mongoose = require('mongoose');
 // TODO: figure out environment variables
-mongoose.connect('mongodb://localhost:27017/local');
-// mongoose.connect('mongodb://portfolio:mongobongo42@ds113942.mlab.com:13942/arjun_portfolio');
+// mongoose.connect('mongodb://localhost:27017/local');
+mongoose.connect('mongodb://portfolio:mongobongo42@ds113942.mlab.com:13942/arjun_portfolio');
 
 var db = mongoose.connection;
 db.on('error', () => { console.log('---FAILED to connect to mongoose') });
 db.once('open', () => {
-    console.log('db.collections *****---->>>', db.collections);
     console.log('+++Connected to mongoose');
 });
 
@@ -30,32 +29,33 @@ router.get('/skills', (req, res) => {
 
 // creates skills
 router.post('/skills', (req, res) => {
-    console.log('db *****---->>>', db);
-    // if (req.body.skills && req.body.skills.length) {
-    //     async.forEach(req.body.skills, (skill, acb) => {
-    //         let newSkill = new Skill({
-    //             skillId : getNextSequenceValue('skills'),
-    //             name : skill.name,
-    //             logo : skill.logo
-    //         });
-            
-    //         newSkill.save(acb);
-    //     }, (err) => {
-    //        if (err) {
-    //             return res.json({ success : false, msg : err });
-    //        } else {
-    //             return res.json({ success : true });
-    //        }
-    //     });
-    // } else {
-    //     res.json({ success : false, msg : 'No skills provided in request body' });
-    // }
+    if (req.body.skills && req.body.skills.length) {
+        async.forEach(req.body.skills, (skill, acb) => {
+            if (skill.name && skill.logo) {
+                let newSkill = new Skill({
+                    name : skill.name,
+                    logo : skill.logo
+                });
+                
+                newSkill.save(acb);
+            } else {
+                acb(null);
+            }
+        }, (err) => {
+           if (err) {
+                return res.json({ success : false, msg : err });
+           } else {
+                return res.json({ success : true });
+           }
+        });
+    } else {
         res.json({ success : false, msg : 'No skills provided in request body' });
+    }
 });
 
 // fetches a single skill
 router.get('/skills/:id', (req, res) => {
-    console.log('req.params *****---->>>', req.params);
+    // console.log('req.params *****---->>>', req.params);
     res.json({}); 
 });
 

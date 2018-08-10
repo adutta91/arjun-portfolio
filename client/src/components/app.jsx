@@ -7,8 +7,8 @@ import HeaderContainer from '../containers/header-container';
 import FooterContainer from '../containers/footer-container';
 import ProjectsContainer from '../containers/projects-container';
 import LandingContainer from '../containers/landing-container';
+import AboutMeContainer from '../containers/aboutme-container';
 
-import AboutMe from './aboutme';
 import Testimonials from './testimonials';
 
 import { setScrolled, toggleHeader, showFooter, setMobile } from '../app/actions';
@@ -102,7 +102,7 @@ export default class App extends Component {
         
           <LandingContainer key={1} />
         
-          <AboutMe key={4} theme={this.props.theme} pos={this.state.scroll} />
+          <AboutMeContainer key={4} pos={this.state.scroll} />
         
           <Testimonials key={6} theme={this.props.theme}/>
         

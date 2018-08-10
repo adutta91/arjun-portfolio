@@ -6,7 +6,9 @@ import { map } from 'lodash';
 import Checkmark from './checkmark';
 import ProgressBar from './progress-bar';
 
-import { traits, skills, skillLogos } from '../app/app';
+import { fetchSkills } from '../app/utils';
+
+import Spinner from './spinner';
 
 export default class AboutMe extends Component {
     constructor(props) {
@@ -15,6 +17,10 @@ export default class AboutMe extends Component {
         this.state = {
             inView : false
         };
+    }
+    
+    componentWillMount() {
+        fetchSkills();
     }
     
     componentWillReceiveProps(next) {
@@ -27,43 +33,6 @@ export default class AboutMe extends Component {
                 this.setState({ inView : true });
             }, 200);
         }
-    }
-    
-    renderAbilities() {
-        if (!this.state.inView) return null;
-        
-        return (
-            <div className="container-abilities">
-                {map(traits, (trait, idx) => {
-                    return (
-                        <div className="ability" key={idx}>
-                            <Checkmark delay={1200 + (idx * 300)} success={trait.positive} />
-                            <span>{trait.name}</span>
-                        </div>
-                    );
-                })}
-            </div>
-        )
-    }
-    
-    renderSkills() {
-        if (!this.state.inView) return null;
-        
-        return (
-            <div className="container-skills">
-                {map(skills, (skill, idx) => {
-                    return (  
-                        <div className="skill" key={idx}>
-                            <span>{skill.name}</span>
-                            <div className='desc'>
-                                <ProgressBar progress={skill.proficiency} delay={idx * 200} />
-                                <span>{skill.label}</span>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-        );
     }
     
     renderSummary() {
@@ -83,11 +52,11 @@ export default class AboutMe extends Component {
     }
     
     renderSkillLogos() {
-        return map(skillLogos, (skill, idx) => {
+        return map(this.props.skills, (skill, idx) => {
             return (
                 <div className="logo" key={skill.name}>
                     <div className="name">{skill.name}</div>
-                    <img src={`/assets/logos/${skill.file}`} />
+                    <img src={`/assets/logos/${skill.logo}`} />
                 </div>
             )
         });
@@ -98,10 +67,7 @@ export default class AboutMe extends Component {
             <div className='content-section aboutme'>
                 <div id='aboutme' className={`container-content aboutme ${this.props.theme}`}>
                     {this.renderSummary()}
-                    {/* <div className={`skills-wrapper ${this.state.inView ? 'inView' : ''}`}>
-                        {this.renderSkills()}
-                        {this.renderAbilities()}
-                    </div> */}
+
                     <h3>My Toolkit</h3>
                     <div className="skill-logos">
                         {this.renderSkillLogos()}
@@ -115,5 +81,6 @@ export default class AboutMe extends Component {
 
 AboutMe.propTypes = {
     theme : PropTypes.string,
-    pos : PropTypes.number
+    pos : PropTypes.number,
+    skills : PropTypes.array
 };

@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 // create a schema
 var skillSchema = new Schema({
-    skillId: Number,
     name: String,
     logo: String
 }, { collection: "skills" });

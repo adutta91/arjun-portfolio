@@ -40,3 +40,11 @@ export const setMobile = (val) => {
     val
   });
 };
+
+export const SKILLS_RECEIVED = 'SKILLS_RECEIVED';
+export const skillsReceived = (skills) => {
+  Store.dispatch({
+    type : SKILLS_RECEIVED,
+    skills
+  });
+};
