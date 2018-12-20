@@ -1,0 +1,57 @@
+@import './mixins.scss';
+
+.terminal {
+    position: fixed;
+    color: white;
+    bottom: 0;
+    padding: 10px;
+    background-color: black;
+    width: calc(100% - 60px);
+    margin: 20px;
+    border-radius: 5px;
+    display: block;
+    font-family: monospace;
+    font-size: 16px;
+    max-height: 50%;
+    overflow: scroll;
+    @include transition(all .2s ease-out);
+    
+    &.in {
+        opacity: 1;
+        bottom: 10px;
+    }
+    
+    &.out {
+        opacity: 0;
+        bottom: -10px;
+    }
+    
+    > .content {
+    
+        > .main-input {
+            display: flex;
+            
+            > input {
+                background-color: black;
+                color: white;
+                outline: none;
+                border: none;
+                width: 100%;
+                margin: 0 10px;
+                font-size: 16px;
+                font-family: monospace;
+            }
+        }
+        
+        > .previous {
+            
+            > .previous-command {
+                margin: 5px 0;
+                
+                &.system {
+                    color: gray;
+                }
+            }
+        }
+    }
+}

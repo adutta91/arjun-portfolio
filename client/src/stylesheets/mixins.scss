@@ -1,0 +1,20 @@
+
+// ******---------------------------------------------
+// ******---------------------------------------------
+// Mixins
+// ******---------------------------------------------
+// ******---------------------------------------------
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform:  $transform;
+  -ms-transform:  $transform;
+  -o-transform:  $transform;
+};
+
+@mixin transition($args...) {
+  -webkit-transition : ($args);
+  -moz-transition : ($args);
+  -ms-transition : ($args);
+  -o-transition : ($args);
+}

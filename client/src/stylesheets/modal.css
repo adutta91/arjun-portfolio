@@ -1,0 +1,26 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .modal-wrapper.in {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    cursor: pointer; }
+  .modal-wrapper.out {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden; }
+  .modal-wrapper > .modal {
+    width: 400px;
+    height: 400px;
+    z-index: 1001;
+    background-color: white;
+    opacity: 1 !important;
+    padding: 50px;
+    border-radius: 5px; }

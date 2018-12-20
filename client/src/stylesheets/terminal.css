@@ -1,0 +1,39 @@
+.terminal {
+  position: fixed;
+  color: white;
+  bottom: 0;
+  padding: 10px;
+  background-color: black;
+  width: calc(100% - 60px);
+  margin: 20px;
+  border-radius: 5px;
+  display: block;
+  font-family: monospace;
+  font-size: 16px;
+  max-height: 50%;
+  overflow: scroll;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out; }
+  .terminal.in {
+    opacity: 1;
+    bottom: 10px; }
+  .terminal.out {
+    opacity: 0;
+    bottom: -10px; }
+  .terminal > .content > .main-input {
+    display: flex; }
+    .terminal > .content > .main-input > input {
+      background-color: black;
+      color: white;
+      outline: none;
+      border: none;
+      width: 100%;
+      margin: 0 10px;
+      font-size: 16px;
+      font-family: monospace; }
+  .terminal > .content > .previous > .previous-command {
+    margin: 5px 0; }
+    .terminal > .content > .previous > .previous-command.system {
+      color: gray; }
