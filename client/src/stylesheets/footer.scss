@@ -1,0 +1,51 @@
+@import './vars-mixins.scss';
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: $theme-dark;
+    @include transition(all .3s ease-out);
+    // position: absolute;
+    // bottom: 0;
+    width: 100%;
+    height: 150px;
+    z-index: $z-2;
+    
+    &.out {
+        bottom: -175px
+    }
+    
+    > .icons {
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 25px;
+        color: $background-light;
+        color: opacity(.8);
+        // color: darken(white, 20%);
+        
+        
+        > i {
+        cursor: pointer;
+        @include transition(color .2s ease-out, transform .1s ease-out);
+        
+        &:hover {
+            opacity: 1;
+            color: darken($background-light, 10%);
+        }
+        
+        &:active {
+            @include transform(scale(.9));
+        }
+        }
+    }
+    
+    > a {
+        color: lightblue;
+    }
+}

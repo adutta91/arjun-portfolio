@@ -81,32 +81,17 @@ export default class App extends Component {
   }
   
   render() {
-    // mobile disclaimer
-    // if (window.innerWidth < 1048) return (
-    //   <div>
-    //     Oops! The mobile site is under construction...
-    //     <br />
-    //     Please come back soon, or visit the site on device with a wider screen.
-    //     <br /> <br />
-    //     Sorry for the inconvenience! Working on making this great! :)
-    //     <br /> <br />
-    //     Thanks!
-    //     <br />
-    //     Arjun
-    //   </div>
-    // );
-
     return (
       <div className='container-content-wrapper'>
         <HeaderContainer key={0}/>
         
-          <LandingContainer key={1} />
-        
-          <AboutMeContainer key={4} pos={this.state.scroll} />
-        
-          <Testimonials key={6} theme={this.props.theme}/>
-        
-          <ProjectsContainer key={2} />
+        <LandingContainer key={1} />
+      
+        <AboutMeContainer key={4} pos={this.state.scroll} />
+      
+        <Testimonials key={6} theme={this.props.theme}/>
+      
+        <ProjectsContainer key={2} />
         
         {/* <Todo key={3} theme={this.props.theme} /> */}
         

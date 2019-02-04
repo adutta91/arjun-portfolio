@@ -1,0 +1,49 @@
+@import './vars-mixins.scss';
+
+.header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: calc(100% - 80px);
+    @include transition(all .3s ease-out);
+    height: 40px;
+    top: 0;
+    z-index: $z-1;
+    
+    &.scrolled {
+        
+        &.light {
+        background-color: $lt-default-header-background-color;
+        }
+        
+        &.dark {
+        background-color: $dk-default-header-background-color;
+        }
+        
+        > h3 {
+        color: #fbf3e3;
+        }
+        
+        > a {
+        color: #fbf3e3;
+        }
+    }
+    
+    &.up {
+        top : -80px;
+    }
+    
+    > h3 {
+        font-weight: lighter;
+        font-size: 28px;
+        margin: 0;
+        color: $background-light;
+    }
+    
+    > a {
+        text-decoration: none;
+        color: $background-light;
+    }
+}

@@ -1,0 +1,186 @@
+
+// --------------------------------------------------
+// z-indices
+// --------------------------------------------------
+$z-1 : 1000;
+$z-2 : 900;
+$z-3 : 800;
+$z-4 : 700;
+$z-5 : 600;
+
+// --------------------------------------------------
+// font-sizes
+// --------------------------------------------------
+$font-1 : 1.15em;
+$font-header: 2.25em;
+
+// --------------------------------------------------
+// colors
+// --------------------------------------------------
+$red  : #f33;
+$gray : #666;
+$lightgray : lighten(#666, 30%);
+$superlightgray : lighten(#666, 50%);
+$darkgray : #272822;
+$theme-dark :darken(#336699, 10%);
+// $theme-dark : darken(#336699, 10%);
+// $superlightgray : #ece9e9;
+
+$blue       : #336699;
+$dark-blue  : darken(#336699, 10%);
+$light-blue : lighten(#336699, 10%);
+
+$off-white-blue : #e9f8f9;
+
+$background-code-color: #403836;
+$background-light: #f3eee5;
+
+$green: #73AF55;
+$red: #D06079;
+
+// --------------------------------------------------
+// variables
+// --------------------------------------------------
+$default-text-color: lighten($gray, 10%);
+$dash-width-sm: 250px;
+$dash-width-lg: 350px;
+
+
+$lt-default-text-color: lighten($gray, 10%);
+// $dk-default-text-color: darken($gray, 10%);
+
+
+$lt-default-background-color: white;
+$dk-default-background-color: #3c3939;
+
+$lt-default-header-background-color: rgba(0,0,0,0.15);
+$dk-default-header-background-color: rgba(255,255,255,0.15);
+
+// ******---------------------------------------------
+// ******---------------------------------------------
+// Mixins
+// ******---------------------------------------------
+// ******---------------------------------------------
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform:  $transform;
+  -ms-transform:  $transform;
+  -o-transform:  $transform;
+};
+
+@mixin transition($args...) {
+  -webkit-transition : ($args);
+  -moz-transition : ($args);
+  -ms-transition : ($args);
+  -o-transition : ($args);
+}
+
+// --------------------------------------------------
+// animations
+// --------------------------------------------------
+
+// -------------grow
+@keyframes grow-sm {
+  from { width: 0; }
+  to   { width: $dash-width-sm; }
+}
+@keyframes grow-lg {
+  from { width: 0; }
+  to   { width: $dash-width-lg; }
+}
+
+// -------------shrink
+@keyframes shrink-sm {
+  from { width: $dash-width-sm; }
+  to   { width: 0; }
+}
+@keyframes shrink-lg {
+  from { width: $dash-width-lg; }
+  to   { width: 0; }
+}
+
+// -------------fade
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes fade-out-end {
+  0%   { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+// -------------draw
+@keyframes draw-vertical {
+  from { height: 0; }
+  to   { height: 100vh; }
+}
+
+@keyframes draw-horizontal {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+
+// -------------draw
+@keyframes shift-right {
+  from { left: 75px; }
+  to   { left: 380px; }
+}
+@keyframes shift-left {
+  from { left: 75px; }
+  to   { left: -240px; }
+}
+
+// -------------pulse
+@keyframes pulse {
+  0% {
+    @include transform(scale(1));
+    opacity:.4;
+    bottom: 10px
+  }
+  20% {
+    @include transform(scale(.96));
+    opacity:.7;
+    bottom: 5px;
+  }
+  40% {
+    @include transform(scale(.92));
+    opacity: 1;
+    bottom: 0px;
+  }
+  600% {
+    @include transform(scale(.92));
+    opacity:.1;
+    bottom: 0px;
+  }
+  80% {
+    @include transform(scale(.96));
+    opacity: .7;
+    bottom: 5px;
+  }
+  100% {
+    @include transform(scale(1));
+    opacity: .4;
+    bottom: 10px;
+  }
+}
+
+@keyframes bounce-down {
+  0% {@include transform(translateY(0));}
+  50% {@include transform(translateY(-5px));}
+  100% {@include transform(translateY(0));}
+}
+
+@keyframes pulse-opacity {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}

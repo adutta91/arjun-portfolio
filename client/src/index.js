@@ -7,9 +7,10 @@ import { Provider } from 'react-redux';
 import Store from './app/store';
 
 import AppContainer from './containers/app-container.js';
+import ProjectDescription from './components/project-description.jsx';
 
 import registerServiceWorker from './registerServiceWorker';
-import './stylesheets/theme.css';
+import './stylesheets/index.css';
 
 
 const routes = (
@@ -17,7 +18,7 @@ const routes = (
     <BrowserRouter>
       <div>
         <Route exact path="/" component={AppContainer} />
-        <Route path="/:page" component={AppContainer}/>
+        <Route path="/projects/:page" component={ProjectDescription}/>
       </div>
     </BrowserRouter>
   </Provider>
