@@ -330,27 +330,6 @@ pre {
         justify-content: center;
         
         
-        // margin-bottom: 200px;
-        // padding: 150px 0;
-        
-        // &.light {
-        //   background-color: $lt-default-background-color;
-        // }
-        
-        // &.dark {
-        //   background-color: $dk-default-background-color;
-        //   color: white;
-        // }
-        
-        // &.landing.light {
-        //   background-color: #272822;
-        // }
-        
-        // &.landing.dark {
-        //   // background: linear-gradient(to bottom left, #301c8a 0%, #0c7cd6 100%);            
-        //   background: linear-gradient(to bottom left, rgba(33, 150, 243, 0.24) 0%, #0c7cd6 100%);            
-        // }
-        
         &.landing {
           height: calc(100vh - 120px); // height override
           position: relative;
@@ -358,7 +337,7 @@ pre {
           padding-top: 120px;
           background-color: $darkgray;
           align-items: flex-start;
-          // background-color: $theme-dark;
+
           
           > .scene {
             width: 100%;
