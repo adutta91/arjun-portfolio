@@ -5,7 +5,7 @@ const Projects = ({ isMobile, theme }) => {
     return (
         <div id="projects" className='content-section projects'>
             <div className={`container-content projects ${theme}`}>
-                hi
+                {/* hi */}
             </div>
         </div>
     );
