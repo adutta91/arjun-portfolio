@@ -11,7 +11,11 @@ const Projects = ({ isMobile, theme }) => {
     return (
         <div id="projects" className='content-section projects'>
             <div className={`container-content projects ${theme}`}>
+<<<<<<< HEAD
                 {map(projects, (project, idx) => <ProjectListItem key={project.id} project={project} />)}
+=======
+                {/* hi */}
+>>>>>>> 20b31ee80a35e83470972578a3527cb71e16167d
             </div>
             
             <p className='more'>I would love to discuss more upon request!</p>
