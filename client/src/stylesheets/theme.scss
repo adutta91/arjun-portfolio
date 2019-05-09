@@ -298,6 +298,10 @@ pre {
 }
 
 #arjun-portfolio-main {
+  .blur {
+    filter: blur(3px);
+  }
+  
   .container-content-wrapper {
     position: relative;
     overflow: hidden;
@@ -1002,7 +1006,6 @@ pre {
         }
       }
     }
-    
   }
 }
 

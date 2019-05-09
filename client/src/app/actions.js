@@ -33,6 +33,22 @@ export const showFooter = (val) => {
   });
 };
 
+export const OPEN_TERMINAL = 'OPEN_TERMINAL';
+export const openTerminal = (val) => {
+  Store.dispatch({
+    type : OPEN_TERMINAL,
+    val
+  });
+};
+
+export const SET_MODAL = 'SET_MODAL';
+export const setModal = (modal) => {
+  Store.dispatch({
+    type : SET_MODAL,
+    modal
+  });
+};
+
 export const SET_MOBILE = 'SET_MOBILE';
 export const setMobile = (val) => {
   Store.dispatch({

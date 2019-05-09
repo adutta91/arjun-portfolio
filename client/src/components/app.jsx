@@ -8,10 +8,12 @@ import FooterContainer from '../containers/footer-container';
 import ProjectsContainer from '../containers/projects-container';
 import LandingContainer from '../containers/landing-container';
 import AboutMeContainer from '../containers/aboutme-container';
+import TerminalContainer from '../containers/terminal-container';
 
 import Testimonials from './testimonials';
+import Modal from './modal';
 
-import { setScrolled, toggleHeader, showFooter, setMobile } from '../app/actions';
+import { setScrolled, toggleHeader, showFooter, setMobile, openTerminal, setModal } from '../app/actions';
 
 export default class App extends Component {
   constructor(props) {
@@ -26,6 +28,12 @@ export default class App extends Component {
   componentWillReceiveProps(next) {
     $('body').removeClass();
     $('body').addClass(next.theme);
+    
+    $('body').on('keydown', (e) => {
+      if (e.key === 'Enter' && e.shiftKey && e.metaKey) {
+        openTerminal(true);
+      }
+    })
   }
   
   componentDidMount() {
@@ -80,30 +88,46 @@ export default class App extends Component {
     }, 250);
   }
   
+  closeModal() {
+    setModal({
+      show : false,
+      content : ''
+    });
+  }
+  
   render() {
     return (
-      <div className='container-content-wrapper'>
-        <HeaderContainer key={0}/>
+      <div className='container-app'>
+        <Modal show={this.props.modal.show} onClose={this.closeModal.bind(this)}>
+          {this.props.modal.content}
+        </Modal>
         
-        <LandingContainer key={1} />
-      
-        <AboutMeContainer key={4} pos={this.state.scroll} />
-      
-        <Testimonials key={6} theme={this.props.theme}/>
-      
-        <ProjectsContainer key={2} />
+        <div className={`container-content-wrapper ${this.props.modal.show ? 'blur' : ''}`}>
+          
+          <HeaderContainer key={0}/>
+          
+          <LandingContainer key={1} />
         
-        {/* <Todo key={3} theme={this.props.theme} /> */}
+          <AboutMeContainer key={2} pos={this.state.scroll} />
         
-        <FooterContainer key={5}/>
+          <Testimonials key={3} theme={this.props.theme}/>
+        
+          <ProjectsContainer key={4} />
+          
+          <FooterContainer key={5}/>
+          
+          <TerminalContainer key={6} />
+        </div>
       </div>
-    )
+    );
   }
 };
 
 App.propTypes = {
   scrolled : PropTypes.bool,
   showFooter : PropTypes.bool,
+  showTerminal : PropTypes.bool,
   theme : PropTypes.string,
   isMobile : PropTypes.bool,
+  modal : PropTypes.object,
 }

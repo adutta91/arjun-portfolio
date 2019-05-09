@@ -7,8 +7,10 @@ const mapStateToProps = (state, props) => {
   return _.extend(state, {
     scrolled : state.scrolled,
     showFooter : state.showFooter,
+    showTerminal : state.showTerminal,
     theme : state.theme,
     isMobile : state.isMobile,
+    modal : state.modal,
   });
 };
 

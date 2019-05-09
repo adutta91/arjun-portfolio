@@ -458,6 +458,9 @@ pre {
     padding: 5px;
     border-radius: 5px; }
 
+#arjun-portfolio-main .blur {
+  filter: blur(3px); }
+
 #arjun-portfolio-main .container-content-wrapper {
   position: relative;
   overflow: hidden; }
