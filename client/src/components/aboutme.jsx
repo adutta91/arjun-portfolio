@@ -3,12 +3,7 @@ import $ from 'jquery';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
 
-import Checkmark from './checkmark';
-import ProgressBar from './progress-bar';
-
 import { fetchSkills } from '../app/utils';
-
-import Spinner from './spinner';
 
 export default class AboutMe extends Component {
     constructor(props) {
@@ -43,9 +38,7 @@ export default class AboutMe extends Component {
                     I'm Arjun, a full-stack web developer based in Seattle, WA.
                 </p>
                 <p>
-                    I've been coding for well over 2 years now, and with an academic background in Psychology, I have a particular
-                    passion for building experiences that are intuitive and engaging. I find that puzzle of Human-Computer
-                    Interaction incredibly compelling and am always excited to work with like-minded people to create something awesome!
+                    With an academic background in Psychology, I have a particular passion for building experiences that are intuitive and engaging. I find that puzzle of Human-Computer Interaction incredibly compelling and am always excited to work with like-minded people to create something awesome!
                 </p>
             </div>
         )

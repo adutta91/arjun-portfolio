@@ -97,60 +97,64 @@ export const skills = [
   },
 ];
 
-export const skillLogos = [
-  {
+export const skillLogos = {
+  javascript : {
     name: 'JavaScript',
     file: 'javascript-plain.svg',
   },
-  {
+  react : {
     name: 'ReactJS',
     file: 'react-original-wordmark.svg',
   },
-  {
+  redux : {
     name: 'Redux',
     file: 'redux.svg',
   },
-  {
+  node : {
     name: 'NodeJS',
     file: 'nodejs-original-wordmark.svg',
   },
-  {
+  mysql : {
     name: 'MySQL',
     file: 'mysql-plain-wordmark.svg',
   },
-  {
+  sequelize : {
     name: 'Sequelize',
     file: 'sequelize-original-wordmark.svg',
   },
-  {
+  jquery : {
     name: 'jQuery',
     file: 'jquery-plain-wordmark.svg',
   },
-  {
+  html : {
     name: 'HTML5',
     file: 'html5-plain-wordmark.svg',
   },
-  {
+  css : {
     name: 'CSS3',
     file: 'css3-plain-wordmark.svg',
   },
-  {
+  sass : {
     name: 'Sass',
     file: 'sass-original.svg',
   },
-  {
+  express : {
     name: 'Express',
     file: 'express-original-wordmark.svg',
   },
-  {
+  github : {
     name: 'Github',
     file: 'github-original-wordmark.svg',
   },
-  {
+  npm : {
     name: 'NPM',
     file: 'npm-original-wordmark.svg',
   },
-]
+  webpack : {
+    name: 'Webpack',
+    file: 'webpack.svg',
+  }
+};
 
 export const traits = [
   {
@@ -196,6 +200,19 @@ export const testimonials = [
         Doug C. 
         <div>
           <i>CEO, Foxtrot Systems</i>
+        </div>
+      </div>
+    )
+  },
+  {
+    text: `
+      Not too bad of a guy, though he talks to himself through website copy.
+    `,
+    from : (
+      <div>
+        Arjun D. 
+        <div>
+          <i>Software Developer, Atomic Infotech</i>
         </div>
       </div>
     )

@@ -322,6 +322,12 @@ pre {
         background-color: $theme-dark;
       }
       
+      &.projects > .more {
+        margin: 0;
+        padding: 40px 0;
+        font-weight: bold;
+      }
+      
       .container-content {
         max-width: 900px;
         margin: 0 auto;
@@ -514,6 +520,50 @@ pre {
           background-color: $background-light;
           padding-top: 0;
           max-width: 100%;
+          padding: 20px;
+          
+          > .project-list-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            
+            > .image {
+              margin-right: 40px;
+              height: 200px;
+            }
+            
+            > .content {
+              width: 500px;
+              
+              > .name {
+                
+              }
+              
+              > .description {
+                margin: 10px 0 20px;
+                text-align: left;
+              }
+              
+              > .technologies {
+                display: flex;
+                
+                > .tech-icon {
+                  width: 40px;
+                  height: 40px;
+                  margin: 0 10px;
+                  
+                  &:first-child {
+                    margin-left: 0;
+                  }
+                  
+                  &:last-child {
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+          }
+          
           
           > .project-item {
             padding: 50px 0;
@@ -1019,6 +1069,31 @@ pre {
     }
     
     &.projects {
+      
+      > .project-list-item {
+        flex-direction: column;
+        max-width: 400px;
+        margin-bottom: 40px !important;
+        
+        > .image {
+          margin-right: 0 !important;
+          height: auto !important;
+          width: 100%;
+        }
+        
+        > .content {
+          width: 100% !important;
+          
+          > .description {
+            font-size: 1em !important;
+          }
+          
+          > .technologies {
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+        }
+      }
       
       > .project-item {
         padding: 50px 0 !important;

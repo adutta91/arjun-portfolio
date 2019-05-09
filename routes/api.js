@@ -1,6 +1,7 @@
 const express = require('express');
 const async = require('async');
 const router = express.Router();
+const _ = require("lodash");
 
 // Mongoose Models
 const Skill = require('../mongoose/skill');
