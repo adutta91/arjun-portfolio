@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { map } from 'lodash';
-import Viewable from 'react-viewable';
 
 import projects from '../app/projects';
 

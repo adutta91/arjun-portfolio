@@ -15,7 +15,11 @@ const ProjectListItem = ({ project, idx }) => {
     
     return (
         <div className='project-list-item'>
-            <Viewable once delay={(250 * idx)} fadeDir={fadeDir}>
+            <Viewable
+                once
+                delay={(250 * idx)}
+                fadeDir={fadeDir}
+            >
                 { image }
             </Viewable>
             <Viewable once delay={(250 * (idx + 1))} fadeDir={fadeDir}>
