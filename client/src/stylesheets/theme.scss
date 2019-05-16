@@ -20,6 +20,10 @@ $link-color: #40dad5;
   // left: 0;
 }
 
+.container-in-view {
+  transition: all .75s ease-in-out !important;
+}
+
 .parsed-code {
   font-family: 'Inconsolata', monospace;
   color: $base-color;
@@ -395,7 +399,6 @@ pre {
             text-align: left;
             width: 100%;
             display: flex;
-            // justify-content: center;
             position: relative;
             
             > pre {
@@ -519,24 +522,26 @@ pre {
         }
         
         &.projects {
+          height: 800px;
           display: flex;
           flex-direction: column;
           background-color: $background-light;
           padding-top: 0;
           max-width: 100%;
           padding: 20px;
+
           
           > .project-list-item {
             display: flex;
             align-items: center;
             margin: 10px 0;
             
-            > .image {
+            > .container-in-view > .image {
               margin-right: 40px;
               height: 200px;
             }
             
-            > .content {
+            > .container-in-view > .content {
               width: 500px;
               
               > .name {
@@ -1047,6 +1052,10 @@ pre {
   
 @media screen and (max-width: 1048px) {
   .container-content {
+    
+    > .landing-message {
+      justify-content: center;
+    }
 
     &.aboutme {
       flex-direction: column;
@@ -1078,13 +1087,13 @@ pre {
         max-width: 400px;
         margin-bottom: 40px !important;
         
-        > .image {
+        > .container-in-view > .image {
           margin-right: 0 !important;
           height: auto !important;
           width: 100%;
         }
         
-        > .content {
+        > .container-in-view > .content {
           width: 100% !important;
           
           > .description {

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "start-dev": "concurrently --kill-others \"npm run dev\" \"cd client && npm start\"",
+    "start-dev": "concurrently --kill-others \"npm run dev\" \"cd client && npm run dev\"",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build-css && npm run build"
   },
   "engines": {

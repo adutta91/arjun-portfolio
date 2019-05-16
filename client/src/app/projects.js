@@ -7,6 +7,13 @@ const projects = [
     //     image : ''
     // },
     {
+        id: 3,
+        name : 'React Viewable',
+        description : `React wrapper component to only show content once it's in view. Designed to be performative so as not to slow down navigation of the site.`,
+        technologies : ['react', 'javascript', 'npm'],
+        image : 'viewable.gif'
+    },
+    {
         id: 2,
         name : 'WYSIWYG Blog',
         description : `Internal blogging system used by over 200 people daily. Features include a dynamic WYSIWYG editor with markdown keyboard shortcuts, an infinitely scrolling blog index, and flexible article scheduling functionality.`,
