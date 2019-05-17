@@ -22,7 +22,7 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.0.13",
     "react-typeable": "^2.1.1",
-    "react-viewable": "^1.0.2",
+    "react-viewable": "^1.0.4",
     "redux": "^3.7.2",
     "three": "^0.87.1"
   },
