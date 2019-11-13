@@ -1,19 +1,22 @@
-import React from 'react';
-import { map } from 'lodash';
-import $ from 'jquery';
+import React from "react";
+import { map } from "lodash";
+import $ from "jquery";
 
-export const goTo = (url) => {
-  if (url) window.open(url, '_blank');
+export const goTo = url => {
+  if (url) window.open(url, "_blank");
 };
 
-export const scrollToId = (id) => {
+export const scrollToId = id => {
   if (!id) return;
-  $('html, body').animate({
-    scrollTop: $(`#${id}`).offset().top
-  }, 500);
-}
+  $("html, body").animate(
+    {
+      scrollTop: $(`#${id}`).offset().top
+    },
+    500
+  );
+};
 
-export const linkIdentifier = ':l';
+export const linkIdentifier = ":l";
 
 export const landingMessage = `import Developer from 'world';
 
@@ -21,7 +24,7 @@ let arjun = new Developer({
     name : "Arjun Dutta",
     title : "Full-Stack Web Developer",
     location : "Seattle, WA",
-    timeAsDeveloper : "2+ years",
+    startTimestamp : "2015-11-01 09:00:00",
     favoriteColor : "Blue. No! Yellow!"
 });
  
@@ -42,23 +45,27 @@ function initPortfolio(dev) {
 
 initPortfolio(arjun);`;
 
-export const parseText = (line) => {
+export const parseText = line => {
   let content = [];
-  
+
   let parts = line.split(linkIdentifier);
-  
+
   return map(parts, (part, idx) => {
     // if odd return link, otherwise return span with text
-    if (idx % 2) { 
-      let linkParts = part.split('>');
+    if (idx % 2) {
+      let linkParts = part.split(">");
       return {
-        type    : 'link',
-        content : <a key={idx} href={`#${linkParts[0]}`}>{linkParts[1]}</a>
-      }; 
+        type: "link",
+        content: (
+          <a key={idx} href={`#${linkParts[0]}`}>
+            {linkParts[1]}
+          </a>
+        )
+      };
     } else {
       return {
-        type    : 'text',
-        content : <span key={idx}>{part}</span>
+        type: "text",
+        content: <span key={idx}>{part}</span>
       };
     }
   });
@@ -66,125 +73,125 @@ export const parseText = (line) => {
 
 export const skills = [
   {
-    name : 'JavaScript',
-    proficiency : 85,
-    label : 'Advanced',
+    name: "JavaScript",
+    proficiency: 85,
+    label: "Advanced"
   },
   {
-    name : 'React',
-    proficiency : 90,
-    label : 'Advanced'
+    name: "React",
+    proficiency: 90,
+    label: "Advanced"
   },
   {
-    name : 'Redux',
-    proficiency : 85,
-    label : 'Advanced',
+    name: "Redux",
+    proficiency: 85,
+    label: "Advanced"
   },
   {
-    name : 'HTML/CSS',
-    proficiency : 83,
-    label : 'Advanced',
+    name: "HTML/CSS",
+    proficiency: 83,
+    label: "Advanced"
   },
   {
-    name : 'MySQL',
-    proficiency : 80,
-    label : 'Proficient',
+    name: "MySQL",
+    proficiency: 80,
+    label: "Proficient"
   },
   {
-    name : 'NodeJS',
-    proficiency : 75,
-    label : 'Proficient',
-  },
+    name: "NodeJS",
+    proficiency: 75,
+    label: "Proficient"
+  }
 ];
 
 export const skillLogos = {
-  javascript : {
-    name: 'JavaScript',
-    file: 'javascript-plain.svg',
+  javascript: {
+    name: "JavaScript",
+    file: "javascript-plain.svg"
   },
-  react : {
-    name: 'ReactJS',
-    file: 'react-original-wordmark.svg',
+  react: {
+    name: "ReactJS",
+    file: "react-original-wordmark.svg"
   },
-  redux : {
-    name: 'Redux',
-    file: 'redux.svg',
+  redux: {
+    name: "Redux",
+    file: "redux.svg"
   },
-  node : {
-    name: 'NodeJS',
-    file: 'nodejs-original-wordmark.svg',
+  node: {
+    name: "NodeJS",
+    file: "nodejs-original-wordmark.svg"
   },
-  mysql : {
-    name: 'MySQL',
-    file: 'mysql-plain-wordmark.svg',
+  mysql: {
+    name: "MySQL",
+    file: "mysql-plain-wordmark.svg"
   },
-  sequelize : {
-    name: 'Sequelize',
-    file: 'sequelize-original-wordmark.svg',
+  sequelize: {
+    name: "Sequelize",
+    file: "sequelize-original-wordmark.svg"
   },
-  jquery : {
-    name: 'jQuery',
-    file: 'jquery-plain-wordmark.svg',
+  jquery: {
+    name: "jQuery",
+    file: "jquery-plain-wordmark.svg"
   },
-  html : {
-    name: 'HTML5',
-    file: 'html5-plain-wordmark.svg',
+  html: {
+    name: "HTML5",
+    file: "html5-plain-wordmark.svg"
   },
-  css : {
-    name: 'CSS3',
-    file: 'css3-plain-wordmark.svg',
+  css: {
+    name: "CSS3",
+    file: "css3-plain-wordmark.svg"
   },
-  sass : {
-    name: 'Sass',
-    file: 'sass-original.svg',
+  sass: {
+    name: "Sass",
+    file: "sass-original.svg"
   },
-  express : {
-    name: 'Express',
-    file: 'express-original-wordmark.svg',
+  express: {
+    name: "Express",
+    file: "express-original-wordmark.svg"
   },
-  github : {
-    name: 'Github',
-    file: 'github-original-wordmark.svg',
+  github: {
+    name: "Github",
+    file: "github-original-wordmark.svg"
   },
-  npm : {
-    name: 'NPM',
-    file: 'npm-original-wordmark.svg',
+  npm: {
+    name: "NPM",
+    file: "npm-original-wordmark.svg"
   },
-  webpack : {
-    name: 'Webpack',
-    file: 'webpack.svg',
+  webpack: {
+    name: "Webpack",
+    file: "webpack.svg"
   }
 };
 
 export const traits = [
   {
-    name : 'Diligent',
-    positive : true
+    name: "Diligent",
+    positive: true
   },
   {
-    name : 'Enthusiastic',
-    positive : true
+    name: "Enthusiastic",
+    positive: true
   },
   {
-    name : 'Collaborative',
-    positive : true
+    name: "Collaborative",
+    positive: true
   },
   {
-    name : 'Friendly',
-    positive : true
+    name: "Friendly",
+    positive: true
   },
   {
-    name : 'Good Dancer',
-    positive : false
-  },
-]
+    name: "Good Dancer",
+    positive: false
+  }
+];
 
 export const testimonials = [
   {
-    text : `Arjun helped me build exactly the website I wanted. He's diligent, patient and thorough.`,
-    from : (
+    text: `Arjun helped me build exactly the website I wanted. He's diligent, patient and thorough.`,
+    from: (
       <div>
-        Danny F. 
+        Danny F.
         <div>
           <i>Singer/Songwriter</i>
         </div>
@@ -195,9 +202,9 @@ export const testimonials = [
     text: `
       Arjun is the rare devoted and creative professional who strives to continually learn and who thinks like an owner; he was a top-notch addition to our team.
     `,
-    from : (
+    from: (
       <div>
-        Doug C. 
+        Doug C.
         <div>
           <i>CEO, Foxtrot Systems</i>
         </div>
@@ -208,82 +215,95 @@ export const testimonials = [
     text: `
       Not too bad of a guy, though he talks to himself through website copy.
     `,
-    from : (
+    from: (
       <div>
-        Arjun D. 
+        Arjun D.
         <div>
           <i>Software Developer, Atomic Infotech</i>
         </div>
       </div>
     )
-  },
+  }
 ];
 
-export const menuData = (cb) => {
-
+export const menuData = cb => {
   return {
-    animateDelay : 10,
-    diameter     : 10,
-    animateStyle : 'swing',
-    items        : [
+    animateDelay: 10,
+    diameter: 10,
+    animateStyle: "swing",
+    items: [
       {
-        type    : 'img',
-        src     : `${process.env.PUBLIC_URL}/img/projects.png`,
-        popover : 'Projects',
-        items   : [],
-        onClick : () => { alert('In progress! Please check back soon.'); }
+        type: "img",
+        src: `${process.env.PUBLIC_URL}/img/projects.png`,
+        popover: "Projects",
+        items: [],
+        onClick: () => {
+          alert("In progress! Please check back soon.");
+        }
       },
       {
-        type    : 'img',
-        src     : `${process.env.PUBLIC_URL}/img/skills.png`,
-        popover : 'About',
-        items   : [],
-        onClick : () => { window.location.href = '/about'; } // TODO - figure out how tf to do this with react-router
+        type: "img",
+        src: `${process.env.PUBLIC_URL}/img/skills.png`,
+        popover: "About",
+        items: [],
+        onClick: () => {
+          window.location.href = "/about";
+        } // TODO - figure out how tf to do this with react-router
       },
       {
-        type    : 'icon',
-        icon    : 'fa fa-comment-o fa-3x',
-        popover : 'Contact',
-        items   : [],
-        onClick : () => { alert('In progress! Please check back soon.'); }
+        type: "icon",
+        icon: "fa fa-comment-o fa-3x",
+        popover: "Contact",
+        items: [],
+        onClick: () => {
+          alert("In progress! Please check back soon.");
+        }
       },
       {
-        type    : 'icon',
-        icon    : 'fa fa-ellipsis-h fa-3x',
-        popover : 'Miscellaneous',
-        items   : [
+        type: "icon",
+        icon: "fa fa-ellipsis-h fa-3x",
+        popover: "Miscellaneous",
+        items: [
           {
-            type    : 'text',
-            text    : 'Goofy Pictures',
-            items   : [],
-            onClick : () => { alert('In progress! Please check back soon.'); }
+            type: "text",
+            text: "Goofy Pictures",
+            items: [],
+            onClick: () => {
+              alert("In progress! Please check back soon.");
+            }
           },
           {
-            type    : 'text',
-            text    : 'Favorite Things',
-            items   : [],
-            onClick : () => { alert('In progress! Please check back soon.'); }
+            type: "text",
+            text: "Favorite Things",
+            items: [],
+            onClick: () => {
+              alert("In progress! Please check back soon.");
+            }
           },
           {
-            type    : 'text',
-            text    : 'Placeholder',
-            items   : [],
-            onClick : () => { console.log('This is a placeholder - congratulations for finding this output! Call me to receive your prize!'); }
+            type: "text",
+            text: "Placeholder",
+            items: [],
+            onClick: () => {
+              console.log(
+                "This is a placeholder - congratulations for finding this output! Call me to receive your prize!"
+              );
+            }
           }
         ]
       }
     ]
-  }
+  };
 };
 
 export const transitionDuration = {
-  short  : 100,
-  medium : 500,
-  long   : 1000
+  short: 100,
+  medium: 500,
+  long: 1000
 };
 
 export const particlesConfig = {
-  particles : {
+  particles: {
     number: {
       value: 85,
       density: {
@@ -292,19 +312,19 @@ export const particlesConfig = {
       }
     },
     color: {
-      value: '#ffffff'
+      value: "#ffffff"
     },
     shape: {
-      type: 'circle',
+      type: "circle",
       stroke: {
         width: 0,
-        color: '#000000'
+        color: "#000000"
       },
       polygon: {
         nb_sides: 3
       },
       image: {
-        src: 'img/github.svg',
+        src: "img/github.svg",
         width: 100,
         height: 100
       }
@@ -332,17 +352,17 @@ export const particlesConfig = {
     line_linked: {
       enable: false,
       distance: 96.20472365193136,
-      color: '#ffffff',
+      color: "#ffffff",
       opacity: 0.4,
       width: 1
     },
     move: {
       enable: true,
       speed: 6,
-      direction: 'bottom-right',
+      direction: "bottom-right",
       random: true,
       straight: false,
-      out_mode: 'out',
+      out_mode: "out",
       bounce: false,
       attract: {
         enable: false,
@@ -352,15 +372,15 @@ export const particlesConfig = {
     }
   },
   interactivity: {
-    detect_on: 'window',
+    detect_on: "window",
     events: {
       onhover: {
         enable: false,
-        mode: 'bubble'
+        mode: "bubble"
       },
       onclick: {
         enable: true,
-        mode: 'repulse'
+        mode: "repulse"
       },
       resize: true
     },
