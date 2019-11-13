@@ -22,7 +22,7 @@ export const landingMessage = `import Developer from 'world';
 
 let arjun = new Developer({
     name : "Arjun Dutta",
-    title : "Full-Stack Web Developer",
+    title : "Senior Software Developer",
     location : "Seattle, WA",
     startTimestamp : "2015-11-01 09:00:00",
     favoriteColor : "Blue. No! Yellow!"
