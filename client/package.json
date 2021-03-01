@@ -24,7 +24,7 @@
     "react-typeable": "^2.1.1",
     "react-viewable": "^1.0.5",
     "redux": "^3.7.2",
-    "three": "^0.87.1"
+    "three": "^0.125.0"
   },
   "scripts": {
     "start": "react-scripts start",
