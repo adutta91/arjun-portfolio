@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
-    "chart.js": "^2.7.2",
+    "axios": "^0.23.0",
+    "chart.js": "^2.9.4",
     "history": "^4.7.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "moment": "^2.22.2",
     "node-sass-chokidar": "0.0.3",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.25.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
     "react-chartjs": "^0.8.0",
@@ -24,7 +24,7 @@
     "react-typeable": "^2.1.1",
     "react-viewable": "^1.0.5",
     "redux": "^3.7.2",
-    "three": "^0.87.1"
+    "three": "^0.133.1"
   },
   "scripts": {
     "start": "react-scripts start",

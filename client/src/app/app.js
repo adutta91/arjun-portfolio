@@ -24,7 +24,7 @@ let arjun = new Developer({
     name : "Arjun Dutta",
     title : "Senior Software Developer",
     location : "Seattle, WA",
-    startTimestamp : "2015-11-01 09:00:00",
+    startDate : "2015-11-01",
     favoriteColor : "Blue. No! Yellow!"
 });
  

@@ -32,7 +32,6 @@ const ProjectListItem = ({ project, idx }) => {
                         {project.description}
                     </p>
                     
-                    
                     <div className="technologies">
                         {map(project.technologies, tech => {
                             return <img key={tech} className='tech-icon' src={`/assets/logos/${skillLogos[tech].file}`} />

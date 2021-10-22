@@ -4,8 +4,8 @@ const router = express.Router();
 const _ = require("lodash");
 
 // Mongoose Models
-const Skill = require('../mongoose/skill');
-const Project = require('../mongoose/project');
+// const Skill = require('../mongoose/skill');
+// const Project = require('../mongoose/project');
 
 
 // --------------------------------------------------
@@ -14,9 +14,10 @@ const Project = require('../mongoose/project');
 
 // fetches all skills
 router.get('/skills', (req, res) => {
-    Skill.find({}).exec((err, skills) => {
-        res.send(skills);
-    });
+    res.send([])
+    // Skill.find({}).exec((err, skills) => {
+    //     res.send(skills);
+    // });
 });
 
 // creates skills
@@ -47,7 +48,6 @@ router.post('/skills', (req, res) => {
 
 // fetches a single skill
 router.get('/skills/:id', (req, res) => {
-    // console.log('req.params *****---->>>', req.params);
     res.send({});
 });
 
@@ -63,9 +63,10 @@ router.delete('/skills/:id', (req, res) => {
 
 // fetches a all projects
 router.get('/projects', (req, res) => {
-    Project.find({}).exec((err, skills) => {
-        res.send(skills);
-    });
+    res.send([])
+    // Project.find({}).exec((err, skills) => {
+    //     res.send(skills);
+    // });
 });
 
 
