@@ -7,7 +7,7 @@
     "chart.js": "^2.9.4",
     "history": "^4.7.2",
     "lodash": "^4.17.21",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "node-sass-chokidar": "0.0.3",
     "prismjs": "^1.25.0",
     "prop-types": "^15.6.2",
