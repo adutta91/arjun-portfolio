@@ -20,7 +20,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
-    "react-scripts": "1.0.13",
+    "react-scripts": "5.0.1",
     "react-typeable": "^2.1.1",
     "react-viewable": "^1.0.5",
     "redux": "^3.7.2",
